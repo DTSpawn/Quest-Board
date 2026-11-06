@@ -1,51 +1,22 @@
 <!doctype html>
-<html lang="ru">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Quest Board — интерактивные доски заданий для Foundry Virtual Tabletop v14. Загрузка, установка и документация.">
-<title>Quest Board — загрузка и документация</title>
-<style>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Quest Board — интерактивные доски объявлений и заданий для Foundry Virtual Tabletop v14. Загрузка и документация."><title>Quest Board — загрузка и документация</title><style>
 :root{color-scheme:dark;--bg:#111318;--panel:#1b1f27;--panel2:#232936;--text:#f1eee7;--muted:#b5b8c2;--gold:#e2b96f;--line:#343b49;--blue:#9dbbe8}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#3a3024 0,transparent 55%),var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#3a3024 0,transparent 55%),var(--bg);color:var(--text);font:16px/1.68 system-ui,-apple-system,"Segoe UI",sans-serif}
 a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}.wrap{width:min(980px,calc(100% - 36px));margin:auto}
-header{padding:64px 0 42px;text-align:center;border-bottom:1px solid var(--line)}.eyebrow{color:var(--gold);font-size:.8rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
-h1{font-size:clamp(2.4rem,7vw,4.4rem);line-height:1.05;margin:14px 0}.subtitle{max-width:650px;margin:18px auto 0;color:var(--muted);font-size:1.12rem}
-.pills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}.pill{border:1px solid var(--line);border-radius:99px;padding:5px 12px;color:var(--muted);font-size:.85rem}
-main{padding:36px 0 70px}.download{background:linear-gradient(135deg,#29251e,#20242d);border:1px solid #65543a;border-radius:18px;padding:26px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-h2{font-size:1.45rem;margin:0 0 10px}.download p,.muted{color:var(--muted);margin:0}.btn{display:inline-block;background:var(--gold);color:#201a10;font-weight:750;padding:12px 20px;border-radius:9px;white-space:nowrap}.btn:hover{background:#f0ce8d;text-decoration:none}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:22px 0 36px}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}.card h3{margin:0 0 8px;font-size:1.05rem}.card p{margin:0;color:var(--muted);font-size:.94rem}
-section{margin-top:38px}section>p{color:var(--muted)}ol{padding-left:1.3rem}li{padding:4px 0}.note{background:var(--panel2);border-left:3px solid var(--gold);padding:14px 17px;border-radius:0 9px 9px 0;color:var(--muted)}
-footer{border-top:1px solid var(--line);padding:22px 0 35px;color:var(--muted);font-size:.9rem}footer .links{display:flex;gap:18px;flex-wrap:wrap}
-@media(max-width:560px){header{padding-top:45px}.download{padding:20px}.btn{width:100%;text-align:center}}
-</style>
-</head>
-<body>
-<header><div class="wrap">
-<div class="eyebrow">Foundry Virtual Tabletop · Module</div>
-<h1>Quest Board</h1>
-<p class="subtitle">Интерактивные доски объявлений и заданий для вашего игрового мира. Создавайте квесты, оформляйте их в тематическом стиле и управляйте публикациями прямо в Foundry VTT.</p>
-<div class="pills"><span class="pill">Версия 1.3.6</span><span class="pill">Foundry VTT v14</span><span class="pill">Русский · English</span></div>
-</div></header>
-<main class="wrap">
-<div class="download">
-<div><h2>Скачать Quest Board</h2><p>Установочный архив будет опубликован в разделе релизов GitHub.</p></div>
-<a class="btn" href="https://github.com/DTSpawn/Quest-Board/releases" target="_blank" rel="noopener">Открыть загрузки ↗</a>
-</div>
-<div class="grid">
-<article class="card"><h3>Доски и публикации</h3><p>Несколько независимых досок, публикация объявлений и управление доступом игроков.</p></article>
-<article class="card"><h3>Шаблоны и архив</h3><p>Повторно используйте объявления, архивируйте завершённые задания и восстанавливайте их.</p></article>
-<article class="card"><h3>Игровой календарь</h3><p>Задавайте срок публикации в игровых днях. Просроченные объявления перемещаются в архив.</p></article>
-<article class="card"><h3>11 тем оформления</h3><p>Фэнтези, научная фантастика, киберпанк, соларпанк, стимпанк и другие стили.</p></article>
-<article class="card"><h3>Свои изображения</h3><p>Настраивайте фон доски и объявлений, печати, значки и крепления.</p></article>
-<article class="card"><h3>Для ведущего и игроков</h3><p>Ведущий управляет досками и объявлениями; игроки видят доступные доски и опубликованные задания.</p></article>
-</div>
-<section><h2>Установка</h2>
-<ol><li>Откройте раздел <a href="https://github.com/DTSpawn/Quest-Board/releases">Releases</a> и скачайте установочный ZIP последней версии.</li><li>Распакуйте архив. Внутри должна находиться папка <code>quest-board</code>.</li><li>Переместите папку <code>quest-board</code> в <code>Data/modules/</code> вашей установки Foundry VTT.</li><li>Перезапустите Foundry VTT и включите Quest Board в настройках модулей мира.</li></ol>
-<div class="note">Важно: файл <code>module.json</code> должен находиться непосредственно в <code>Data/modules/quest-board/</code>. Не оставляйте дополнительную вложенную папку.</div>
-</section>
-<section><h2>Обновление</h2><p>Перед обновлением сохраните резервную копию папки модуля. Замените файлы модуля новой версией, сохранив пользовательские данные и изображения, если они находятся внутри папки модуля. Настройки мира Foundry хранятся отдельно от файлов модуля.</p></section>
-<section><h2>Документация и исходный код</h2><p>Полное описание возможностей, список изменений и исходный код доступны в репозитории проекта.</p><p><a href="https://github.com/DTSpawn/Quest-Board">Репозиторий Quest Board на GitHub ↗</a></p></section>
-</main>
-<footer><div class="wrap links"><a href="https://github.com/DTSpawn/Quest-Board">GitHub</a><a href="https://github.com/DTSpawn/Quest-Board/releases">Релизы и загрузки</a><span>Quest Board · 1.3.6</span></div></footer>
-</body></html>
+header{padding:42px 0 30px;border-bottom:1px solid var(--line)}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.brand{font-weight:800;font-size:1.2rem;color:var(--text)}nav{display:flex;gap:18px;flex-wrap:wrap}nav a{color:var(--muted);font-size:.94rem}nav a.active{color:var(--gold);font-weight:700}
+.eyebrow{color:var(--gold);font-size:.8rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-top:34px}h1{font-size:clamp(2.2rem,6vw,3.5rem);line-height:1.1;margin:10px 0 12px}h2{font-size:1.55rem;margin:38px 0 12px}h3{font-size:1.08rem;margin:0 0 8px}.lead{max-width:760px;color:var(--muted);font-size:1.1rem;margin:0}
+main{padding:28px 0 70px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:22px 0}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}.card p{margin:0;color:var(--muted);font-size:.95rem}
+section{margin-top:34px}section p,section li{color:var(--muted)}li{padding:4px 0}.note{background:var(--panel2);border-left:3px solid var(--gold);padding:14px 17px;border-radius:0 9px 9px 0;color:var(--muted);margin:18px 0}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}.pill{border:1px solid var(--line);border-radius:99px;padding:4px 11px;color:var(--muted);font-size:.84rem}
+footer{border-top:1px solid var(--line);padding:22px 0 35px;color:var(--muted);font-size:.9rem}.links{display:flex;gap:18px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--gold);color:#201a10;font-weight:750;padding:11px 18px;border-radius:9px}.btn:hover{background:#f0ce8d;text-decoration:none}
+@media(max-width:560px){header{padding-top:28px}nav{gap:12px}}
+
+.hero{text-align:center;padding:60px 0 44px}.hero .eyebrow{margin:0}.subtitle{max-width:680px;margin:18px auto 0;color:var(--muted);font-size:1.12rem}.download{background:linear-gradient(135deg,#29251e,#20242d);border:1px solid #65543a;border-radius:18px;padding:26px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin:30px 0}.download p{color:var(--muted);margin:0}.download h2{margin:0 0 6px}.btn{white-space:nowrap}
+</style></head><body><header><div class="wrap"><div class="top"><a class="brand" href="./index.html">Quest Board</a><nav><a class="active" href="./index.html">Главная</a><a href="./features.html">Возможности</a><a href="./guide.html">Руководство</a></nav></div></div></header>
+<div class="wrap hero"><div class="eyebrow">Foundry Virtual Tabletop · Module</div><h1>Quest Board</h1><p class="subtitle">Интерактивные доски объявлений и заданий для вашего игрового мира. Создавайте квесты, оформляйте их в тематическом стиле и управляйте публикациями прямо в Foundry VTT.</p><div class="pills" style="justify-content:center"><span class="pill">Версия 1.3.6</span><span class="pill">Foundry VTT v14</span><span class="pill">Русский · English</span></div></div>
+<main class="wrap"><div class="download"><div><h2>Скачать Quest Board</h2><p>Установочный архив и предыдущие версии доступны в разделе релизов GitHub.</p></div><a class="btn" href="https://github.com/DTSpawn/Quest-Board/releases" target="_blank" rel="noopener">Открыть загрузки ↗</a></div>
+<section><h2>Доски объявлений для вашего игрового мира</h2><p class="lead">Quest Board позволяет ведущему создавать независимые доски, публиковать задания и управлять ими. Игроки видят доступные им доски и опубликованные объявления.</p></section>
+<div class="grid"><article class="card"><h3>Возможности</h3><p>Все функции модуля: категории, шаблоны, архив, сроки действия, темы оформления и пользовательские изображения.</p><p><a href="./features.html">Посмотреть возможности →</a></p></article><article class="card"><h3>Руководство</h3><p>Пошаговые инструкции по созданию досок, публикации заданий и настройке модуля.</p><p><a href="./guide.html">Открыть руководство →</a></p></article></div>
+<section><h2>Установка</h2><ol><li>Скачайте установочный ZIP из <a href="https://github.com/DTSpawn/Quest-Board/releases">раздела Releases</a>.</li><li>Распакуйте архив и убедитесь, что внутри находится папка <code>quest-board</code>.</li><li>Переместите её в <code>Data/modules/</code> вашей установки Foundry VTT.</li><li>Перезапустите Foundry VTT и включите Quest Board в настройках модулей мира.</li></ol><p class="note">Файл <code>module.json</code> должен находиться непосредственно в <code>Data/modules/quest-board/</code>, без дополнительной вложенной папки.</p></section>
+</main><footer><div class="wrap links"><a href="https://github.com/DTSpawn/Quest-Board">GitHub</a><a href="https://github.com/DTSpawn/Quest-Board/releases">Релизы и загрузки</a><span>Quest Board · 1.3.6</span></div></footer></body></html>
