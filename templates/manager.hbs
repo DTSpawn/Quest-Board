@@ -1,0 +1,31 @@
+<section class="qb-manager">
+  <header class="qb-manager-heading">
+    <div class="qb-manager-heading-copy"><h2>{{localize "QUEST-BOARD.ManagerHeading"}}</h2><p>{{localize "QUEST-BOARD.ManagerDescription"}}</p></div>
+    {{#if isGM}}
+      <nav class="qb-manager-toolbar" aria-label="Quest Board actions">
+        <button type="button" data-action="openTemplates"><i class="fa-solid fa-copy"></i> {{localize "QUEST-BOARD.TemplatesButton"}}</button>
+        <button type="button" data-action="openArchive"><i class="fa-solid fa-box-archive"></i> {{localize "QUEST-BOARD.ArchiveButton"}}</button>
+        <button type="button" data-action="createBoard"><i class="fa-solid fa-plus"></i> {{localize "QUEST-BOARD.CreateBoard"}}</button>
+      </nav>
+    {{/if}}
+  </header>
+  <div class="qb-board-list">
+    {{#each boards as |board|}}
+      <article class="qb-board-row">
+        <div class="qb-board-emblem"><i class="fa-solid fa-clipboard-list"></i></div>
+        <div class="qb-board-meta"><strong>{{board.name}}</strong><span>{{#if board.location}}{{board.location}} · {{/if}}{{localize "QUEST-BOARD.BoardCount" count=board.notes.length}}</span></div>
+        <div class="qb-board-actions">
+          <button type="button" data-action="openBoard" data-board-id="{{board.id}}" title="{{localize "QUEST-BOARD.Open"}}"><i class="fa-solid fa-eye"></i></button>
+          {{#if ../isGM}}
+            <button type="button" data-action="editBoard" data-board-id="{{board.id}}" title="{{localize "QUEST-BOARD.Edit"}}"><i class="fa-solid fa-pen"></i></button>
+            <button type="button" data-action="placeTile" data-board-id="{{board.id}}" title="{{localize "QUEST-BOARD.PlaceOnScene"}}"><i class="fa-solid fa-map-pin"></i></button>
+            <button type="button" data-action="deleteBoard" data-board-id="{{board.id}}" title="{{localize "QUEST-BOARD.Delete"}}"><i class="fa-solid fa-trash"></i></button>
+          {{/if}}
+        </div>
+      </article>
+    {{else}}
+      <div class="qb-empty"><i class="fa-solid fa-scroll"></i><p>{{localize "QUEST-BOARD.NoBoards"}}</p>{{#if isGM}}<span>{{localize "QUEST-BOARD.CreateFirstBoard"}}</span>{{/if}}</div>
+    {{/each}}
+  </div>
+  <footer class="qb-manager-footer">Quest Board <span>{{localize "QUEST-BOARD.ManagerFooterVersion"}}</span></footer>
+</section>

@@ -1,0 +1,16 @@
+<section class="qb-templates qb-utility-window">
+  <header class="qb-utility-heading"><h2>{{localize "QUEST-BOARD.Templates"}}</h2><p>{{localize "QUEST-BOARD.TemplatesHint"}}</p></header>
+  <div class="qb-board-list">
+    {{#each templates as |template|}}
+      <article class="qb-board-row qb-template-row">
+        <div class="qb-board-emblem"><i class="fa-solid fa-file-lines"></i></div>
+        <div class="qb-board-meta"><strong>{{template.name}}</strong><span>{{template.categoryLabel}}</span><p>{{template.summary}}</p></div>
+        <div class="qb-board-actions">
+          <button type="button" data-action="createQuest" data-template-id="{{template.id}}" title="{{localize "QUEST-BOARD.CreateFromTemplate"}}"><i class="fa-solid fa-file-circle-plus"></i></button>
+          <button type="button" data-action="preview" data-template-id="{{template.id}}" title="{{localize "QUEST-BOARD.Preview"}}"><i class="fa-solid fa-eye"></i></button>
+          <button type="button" data-action="remove" data-template-id="{{template.id}}" title="{{localize "QUEST-BOARD.Delete"}}"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </article>
+    {{else}}<p class="qb-empty">{{localize "QUEST-BOARD.TemplatesEmpty"}}</p>{{/each}}
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<form class="qb-form">
+  <div class="form-group">
+    <label>{{localize "QUEST-BOARD.BoardName"}}</label>
+    <input name="name" type="text" value="{{board.name}}" required>
+  </div>
+  <div class="form-group">
+    <label>{{localize "QUEST-BOARD.BoardLocation"}}</label>
+    <input name="location" type="text" value="{{board.location}}" placeholder="{{localize "QUEST-BOARD.BoardLocationPlaceholder"}}">
+  </div>
+  <div class="form-group qb-board-visibility">
+    <label class="qb-checkbox" for="qb-show-board-to-players">
+      <input id="qb-show-board-to-players" type="checkbox" name="showToPlayers" {{#if board.showToPlayers}}checked{{/if}}>
+      <span>{{localize "QUEST-BOARD.ShowBoardToPlayers"}}</span>
+    </label>
+    <p class="hint">{{localize "QUEST-BOARD.ShowBoardToPlayersHint"}}</p>
+  </div>
+  <div class="form-group">
+    <label>{{localize "QUEST-BOARD.BoardImage"}}</label>
+    <div class="qb-input-with-button">
+      <input name="boardImage" type="text" value="{{board.boardImage}}" placeholder="{{localize "QUEST-BOARD.UseDefaultBoardImage"}}">
+      <button type="button" class="qb-file-picker" data-action="pickBoardImage" title="{{localize "QUEST-BOARD.ChooseImageFoundry"}}">
+        <i class="fa-solid fa-folder-open"></i>
+      </button>
+    </div>
+    <p class="hint">{{localize "QUEST-BOARD.DefaultBoardImageHint"}}</p>
+  </div>
+  <footer class="form-footer">
+    <button type="button" data-action="save">{{localize "QUEST-BOARD.Save"}}</button>
+  </footer>
+</form>

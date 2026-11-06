@@ -1,0 +1,16 @@
+<section class="qb-archive qb-utility-window">
+  <header class="qb-utility-heading"><h2>{{localize "QUEST-BOARD.Archive"}}</h2><p>{{localize "QUEST-BOARD.ArchiveHint"}}</p></header>
+  <div class="qb-archive-list">
+    {{#each entries as |entry|}}
+      <article class="qb-board-row">
+        <div class="qb-board-emblem"><i class="fa-solid fa-scroll"></i></div>
+        <div class="qb-board-meta"><strong>{{entry.title}}</strong><span>{{entry.boardName}} · {{entry.statusLabel}}</span></div>
+        <div class="qb-board-actions">
+          <button type="button" data-action="restore" data-archive-id="{{entry.id}}" title="{{localize "QUEST-BOARD.Restore"}}"><i class="fa-solid fa-rotate-left"></i></button>
+          <button type="button" data-action="preview" data-archive-id="{{entry.id}}" title="{{localize "QUEST-BOARD.Preview"}}"><i class="fa-solid fa-eye"></i></button>
+          <button type="button" data-action="remove" data-archive-id="{{entry.id}}" title="{{localize "QUEST-BOARD.DeletePermanently"}}"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </article>
+    {{else}}<p class="qb-empty">{{localize "QUEST-BOARD.ArchiveEmpty"}}</p>{{/each}}
+  </div>
+</section>

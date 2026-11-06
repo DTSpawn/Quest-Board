@@ -1,0 +1,26 @@
+<div class="qb-journal-picker">
+  {{#if hasJournals}}
+    <p class="hint">{{localize "QUEST-BOARD.JournalChooseHint"}}</p>
+    {{#each journals as |journal|}}
+      <section class="qb-journal-picker-entry">
+        <h3><i class="fa-solid fa-book"></i> {{journal.name}}</h3>
+        <div class="qb-journal-picker-pages">
+          {{#each journal.pages as |page|}}
+            <button type="button" data-action="selectPage" data-uuid="{{page.uuid}}">
+              <i class="fa-solid fa-file-lines"></i>
+              <span>{{page.name}}</span>
+              <small>{{page.type}}</small>
+            </button>
+          {{/each}}
+        </div>
+      </section>
+    {{/each}}
+  {{else}}
+    <div class="qb-empty">
+      <i class="fa-solid fa-book-open"></i>
+      <p>{{localize "QUEST-BOARD.NoJournalPages"}}</p>
+      <span>{{localize "QUEST-BOARD.CreateJournalPageHint"}}</span>
+    </div>
+  {{/if}}
+  <footer class="form-footer"><button type="button" data-action="cancel" class="secondary">{{localize "QUEST-BOARD.Close"}}</button></footer>
+</div>

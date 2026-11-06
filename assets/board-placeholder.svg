@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="560" viewBox="0 0 800 560">
+ <defs><linearGradient id="wood" x2="0" y2="1"><stop stop-color="#8b6038"/><stop offset=".5" stop-color="#654126"/><stop offset="1" stop-color="#3d2518"/></linearGradient><linearGradient id="paper" x2="1" y2="1"><stop stop-color="#f0dfb9"/><stop offset="1" stop-color="#c9ae7a"/></linearGradient><filter id="shadow"><feGaussianBlur stdDeviation="9"/></filter></defs>
+ <rect x="18" y="18" width="764" height="524" rx="22" fill="#120b07" opacity=".5" filter="url(#shadow)"/><rect x="22" y="18" width="756" height="524" rx="18" fill="url(#wood)" stroke="#b0834c" stroke-width="15"/><rect x="48" y="44" width="704" height="472" rx="7" fill="#4b2f1d" stroke="#3b2417" stroke-width="8"/>
+ <g fill="url(#paper)" stroke="#b99b68" stroke-width="3"><path d="M100 100l190-5 4 230-192 5z"/><path d="M330 90l190 8-5 230-190-6z"/><path d="M555 110l150-4 2 210-151 4z"/></g>
+ <g fill="#705332" opacity=".75"><path d="M130 150h130v8H130zm0 25h120v6H130zm0 22h140v6H130zm230-75h125v7H360zm0 24h140v6H360zm0 22h110v6H360zm220 0h85v6h-85zm0 23h100v6H580z"/></g>
+ <g fill="#9b3529" stroke="#64221c" stroke-width="3"><circle cx="195" cy="98" r="13"/><circle cx="420" cy="95" r="13"/><circle cx="630" cy="110" r="13"/></g>
+ <text x="400" y="470" text-anchor="middle" font-family="Georgia,serif" font-size="28" fill="#e6c99b" opacity=".8">ДОСКА ОБЪЯВЛЕНИЙ</text>
+</svg>

@@ -1,0 +1,34 @@
+{
+  "id": "quest-board",
+  "title": "Quest Board | Доска объявлений",
+  "description": "Интерактивные доски объявлений с настраиваемыми темами и пользовательскими текстурами для Foundry Virtual Tabletop.",
+  "version": "1.3.6",
+  "authors": [
+    {
+      "name": "Quest Board Team"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "esmodules": [
+    "scripts/quest-board.js"
+  ],
+  "styles": [
+    "styles/quest-board.css"
+  ],
+  "languages": [
+    {
+      "lang": "ru",
+      "name": "Русский",
+      "path": "lang/ru.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "socket": false
+}

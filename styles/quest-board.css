@@ -1,0 +1,1665 @@
+.quest-board .window-content { padding: 0; overflow: auto; }
+.quest-board button { cursor: pointer; }
+.qb-manager, .qb-form, .qb-viewer { padding: 18px; }
+.qb-manager-heading, .qb-board-topline { display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:16px; }
+.qb-manager-heading h2, .qb-board-topline h2 { margin:0; color:#f0dfbd; font-family: Georgia,serif; }
+.qb-manager-heading p, .qb-board-topline span { margin:4px 0 0; color:#bba98b; font-size:12px; }
+.qb-manager-heading button, .qb-board-topline button { border:1px solid #b58a50; border-radius:4px; background:linear-gradient(#8a6338,#5d3e25); color:#fff1d5; padding:8px 12px; }
+.qb-board-list { display:flex; flex-direction:column; gap:8px; }
+.qb-board-row { display:flex; align-items:center; gap:12px; padding:10px; border:1px solid #62482f; border-radius:6px; background:rgba(255,240,210,.055); }
+.qb-board-emblem { width:42px;height:42px;display:grid;place-items:center;border-radius:4px;background:#503820;color:#e4c58f;font-size:20px; }
+.qb-board-meta { flex:1;display:flex;flex-direction:column;gap:4px;min-width:0; }
+.qb-board-meta strong { color:#f2dfba; }
+.qb-board-meta span,.qb-manager-footer { color:#bba98b;font-size:12px; }
+.qb-board-actions { display:flex;gap:4px; }
+.qb-board-actions button,.qb-note-tools button { border:1px solid #735637;background:#39291d;color:#e7d4b2;border-radius:4px;padding:6px 8px; }
+.qb-empty { text-align:center;padding:50px 20px;color:#c4ae89; }.qb-empty i{font-size:32px;color:#a77b45}.qb-empty p{font-family:Georgia,serif;font-size:18px}.qb-empty span{font-size:12px}
+.qb-manager-footer { display:flex;justify-content:space-between;border-top:1px solid #59422e;margin-top:18px;padding-top:10px; }
+.qb-form { display:flex;flex-direction:column;gap:12px; }.qb-form .form-group{display:flex;flex-direction:column;gap:5px}.qb-form label{color:#dfcba7;font-size:13px}.qb-form input,.qb-form textarea,.qb-form select{width:100%;border:1px solid #76583a;border-radius:4px;background:#211a14;color:#f0e2c8;padding:8px}.qb-form textarea{resize:vertical}.qb-form .hint{font-size:11px;color:#bba98b}.form-footer{display:flex;justify-content:flex-end;gap:8px;margin-top:8px}.qb-checkbox{display:flex;align-items:center;gap:8px}.qb-checkbox input{width:auto}.qb-input-with-button{display:flex;gap:5px}.qb-input-with-button input{flex:1}
+.qb-board-window{padding:14px;min-height:100%;}.qb-board-topline{padding:0 4px 10px;border-bottom:1px solid #765536}.qb-board-surface{position:relative;min-height:510px;overflow:hidden;border:12px solid #5a371e;border-radius:8px;background:repeating-linear-gradient(2deg,#76502e 0,#76502e 8px,#684426 9px,#805a35 16px);box-shadow:inset 0 0 0 3px #a47a4c,inset 0 0 35px #1b1009,0 7px 18px #100b08;}
+.qb-wood-dark{background:repeating-linear-gradient(2deg,#4d3020 0,#4d3020 8px,#3d2519 9px,#573723 16px)}.qb-wood-weathered{background:repeating-linear-gradient(2deg,#77634a 0,#77634a 8px,#66553f 9px,#86745a 16px)}
+.qb-board-inner{position:relative;min-height:510px;margin:10px;background:radial-gradient(ellipse at center,rgba(0,0,0,.03),rgba(0,0,0,.24));}.qb-note{position:absolute;width:190px;min-height:150px;z-index:1;touch-action:none;}.qb-note-open{display:flex;flex-direction:column;align-items:stretch;gap:6px;width:100%;min-height:150px;padding:15px 13px 12px;border:0;color:#342414;text-align:left;background:linear-gradient(135deg,#f3e4bd,#d9c391);box-shadow:2px 4px 8px #1b1009a8;clip-path:polygon(1% 1%,99% 0,100% 98%,2% 100%);font-family:Georgia,serif;}.qb-note-open:before{content:"";position:absolute;top:5px;left:50%;width:9px;height:9px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e5b6a0,#8b3024 65%,#4a1712);box-shadow:0 1px 2px #28160d;}.qb-note-title{font-size:16px;font-weight:bold;text-align:center;border-bottom:1px solid #9d8152;padding:5px 0 8px}.qb-note-summary{font-size:12px;line-height:1.3;max-height:54px;overflow:hidden}.qb-note-reward{font-size:11px;font-weight:bold;text-align:right;margin-top:auto;color:#68451d}.qb-note-thumb{width:100%;height:65px;object-fit:cover;border:1px solid #a88d5e}.qb-note-tools{position:absolute;top:-8px;right:-8px;display:none;gap:3px}.qb-note:hover .qb-note-tools{display:flex}.qb-note-tools button{padding:3px 6px;font-size:10px}.qb-board-empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#ead8b7;text-shadow:0 2px 3px #20140c}.qb-board-empty i{font-size:38px}.qb-board-empty p{font:22px Georgia,serif}.qb-board-empty span{font-size:12px}.qb-board-footer{padding:9px 4px 0;color:#bba98b;font-size:11px;text-align:center}
+.qb-parchment-large{position:relative;max-width:590px;margin:0 auto;padding:46px 48px 40px;color:#382819;background:linear-gradient(135deg,#f2e4c3,#dfc99b 45%,#ebd9b2);border:1px solid #ad8d5b;box-shadow:inset 0 0 35px #96754855,0 8px 25px #100a06;font-family:Georgia,serif;min-height:420px}.qb-parchment-large:before{content:"";position:absolute;inset:10px;border:1px solid #9d7b4d;pointer-events:none;opacity:.6}.qb-parchment-large h2{text-align:center;font-size:28px;color:#382819;border-bottom:1px solid #a88a5a;padding-bottom:16px;margin:0 0 8px}.qb-wax-seal{position:absolute}.qb-author{text-align:center;font-style:italic;color:#705533}.qb-hero-image{display:block;max-width:100%;max-height:220px;margin:16px auto;object-fit:contain}.qb-quest-content{font-size:15px;line-height:1.55;overflow-wrap:anywhere}.qb-quest-content img{max-width:100%;height:auto}.qb-reward-box{display:flex;justify-content:space-between;gap:10px;margin-top:24px;padding:12px;border:1px solid #a4875a;background:#d7c18f88}.qb-external-link{margin-top:18px}.qb-external-link a{color:#68451d}.qb-journal-link{margin-top:12px;border:1px solid #9c7c4d;background:#d4bd8d;padding:8px;color:#3c2b1b;border-radius:3px}
+
+.qb-note-grip{position:absolute;z-index:3;top:-8px;left:50%;transform:translateX(-50%);width:34px;height:16px;display:grid;place-items:center;border:1px solid #94764c;border-radius:5px;background:#d8c18f;color:#6c4b26;cursor:grab;font-size:10px;box-shadow:0 1px 3px #1b1009}.qb-note-grip:active{cursor:grabbing}
+
+/* v0.2.0 — aged scroll notices */
+.qb-note { width: 198px; min-height: 156px; }
+.qb-note-open {
+  position: relative; isolation: isolate; overflow: visible;
+  min-height: 156px; padding: 20px 15px 18px;
+  border: 0; border-left: 1px solid #a88958; border-right: 1px solid #a88958;
+  border-radius: 3px; color: #382719;
+  background:
+    radial-gradient(ellipse at 12% 18%, #f7e9c5aa, transparent 34%),
+    radial-gradient(ellipse at 88% 78%, #9d754422, transparent 42%),
+    linear-gradient(90deg, #d0b783 0%, #f0dfb7 8%, #e8d4a6 50%, #f0dfb7 92%, #c9ad78 100%);
+  box-shadow: 2px 5px 9px #160d08c9, inset 0 0 14px #9a754433;
+  clip-path: none; font-family: Georgia, "Times New Roman", serif;
+}
+.qb-note-open::before, .qb-note-open::after {
+  content: ""; position: absolute; z-index: -1; left: -5px; right: -5px; height: 13px;
+  border: 1px solid #79552f; border-radius: 7px;
+  background: linear-gradient(180deg, #bd965b, #80552d 48%, #4b2d19 53%, #a87943);
+  box-shadow: 0 2px 3px #160d08a8;
+}
+.qb-note-open::before { top: -5px; }
+.qb-note-open::after { bottom: -5px; }
+.qb-note-open .qb-note-title { display:block; position:relative; z-index:1; padding: 3px 0 8px; margin-bottom:7px; border-bottom:1px solid #9c7c4c; font-size:16px; text-shadow:0 1px #fff5d8; }
+.qb-note-open .qb-note-summary { display:block; position:relative; z-index:1; max-height:56px; font-size:12px; line-height:1.35; }
+.qb-note-open .qb-note-thumb { position:relative; z-index:1; display:block; width:76px; height:76px; object-fit:cover; margin:0 auto 7px; border:3px solid #9b7849; box-shadow:0 2px 5px #49301888; }
+.qb-note-character { padding-top:19px; }
+.qb-note-type { position:relative; z-index:1; display:block; margin:-8px 0 5px; text-align:center; text-transform:uppercase; letter-spacing:1px; font:bold 9px Georgia,serif; color:#87412d; }
+.qb-note-bottom-mark { display:block; position:relative; z-index:1; margin-top:8px; text-align:right; color:#89683d; font-size:11px; }
+.qb-note-grip { z-index:5; top:-13px; width:32px; height:16px; border-radius:8px; }
+.qb-note-tools { z-index:6; }
+
+.qb-parchment-large {
+  position:relative; max-width:620px; min-height:0; margin:14px auto 20px; padding:0;
+  border:0; background:none; box-shadow:none; color:#382819;
+}
+.qb-scroll-paper {
+  position:relative; z-index:1; min-height:390px; padding:48px 48px 38px;
+  border-left:1px solid #a98755; border-right:1px solid #a98755;
+  background:
+    radial-gradient(ellipse at 7% 12%, #fff0cf66, transparent 35%),
+    radial-gradient(ellipse at 91% 83%, #9a744022, transparent 38%),
+    linear-gradient(90deg, #d3b985 0%, #f0dfb8 7%, #e9d6ad 50%, #f1e1bd 93%, #c8a976 100%);
+  box-shadow:inset 0 0 35px #96754855, 0 5px 14px #100a06aa;
+  font-family:Georgia, "Times New Roman", serif;
+}
+.qb-scroll-paper::before, .qb-scroll-paper::after {
+  content:""; position:absolute; left:0; right:0; height:1px; background:#a38454; opacity:.5;
+}
+.qb-scroll-paper::before { top:18px; }
+.qb-scroll-paper::after { bottom:18px; }
+.qb-scroll-roll {
+  position:relative; z-index:2; height:24px; margin:0 -12px;
+  border:1px solid #654322; border-radius:12px;
+  background:linear-gradient(180deg,#d0ad70 0%,#9b6d39 28%,#6b4324 49%,#4b2b18 55%,#a87943 78%,#d0a96a 100%);
+  box-shadow:0 3px 5px #160d08aa, inset 0 1px 2px #f3d9a2;
+}
+.qb-scroll-roll-top { margin-bottom:-8px; }
+.qb-scroll-roll-bottom { margin-top:-8px; }
+.qb-parchment-large h2 {
+  margin:0 0 18px; padding:0 34px 14px; border-bottom:1px solid #a88a5a;
+  color:#382819; text-align:center; font-size:30px; line-height:1.2;
+}
+.qb-wax-seal { top:20px; right:24px; z-index:3; }
+.qb-hero-image {
+  display:block; max-width:min(70%,300px); max-height:250px; margin:18px auto 22px;
+  padding:6px; border:1px solid #a17e4e; background:#d6bd8e;
+  box-shadow:0 3px 8px #49301855; object-fit:contain;
+}
+.qb-quest-content { min-height:110px; font-size:16px; line-height:1.65; color:#382819; }
+.qb-quest-content p { margin:0 0 0.8em; }
+.qb-author {
+  margin:36px 0 0; padding-top:8px; text-align:right; font-family:Georgia,serif;
+  font-size:17px; font-style:italic; color:#644a2c;
+}
+.qb-author::before { content:""; display:block; width:42%; margin:0 0 9px auto; border-top:1px solid #a88a5a; }
+.qb-external-link { margin-top:20px; }
+.qb-journal-link { margin-top:12px; }
+.qb-character-image-group[hidden] { display:none !important; }
+.qb-quest-form .hint { line-height:1.4; }
+
+
+/* v0.3.0 — distressed medieval notice paper, replacing clean scroll rollers */
+.qb-note { width: 202px; min-height: 168px; filter: drop-shadow(2px 5px 5px #100904cc); }
+.qb-note-open {
+  position:relative; isolation:isolate; overflow:visible; min-height:168px;
+  padding:19px 16px 18px; border:0; border-radius:0; clip-path:polygon(
+    2% 1%, 8% 2%, 13% 0, 20% 2%, 27% 1%, 34% 3%, 41% 1%, 49% 2%, 57% 0,
+    64% 2%, 72% 1%, 79% 3%, 86% 1%, 93% 2%, 99% 0, 98% 8%, 100% 15%, 98% 23%,
+    100% 31%, 98% 40%, 100% 49%, 98% 58%, 100% 66%, 98% 74%, 100% 83%, 97% 91%,
+    99% 98%, 91% 97%, 84% 100%, 76% 98%, 68% 100%, 60% 98%, 51% 100%, 43% 98%,
+    35% 100%, 27% 98%, 19% 100%, 11% 98%, 3% 100%, 2% 92%, 0 84%, 2% 75%,
+    0 66%, 2% 57%, 0 48%, 2% 39%, 0 30%, 2% 21%, 0 12%
+  );
+  color:#302316; text-align:left; font-family:Georgia,"Times New Roman",serif;
+  background-color:#9f8a68;
+  background-image:url("../assets/paper-grain.svg"),
+    radial-gradient(ellipse at 12% 15%,#d4c29a 0,transparent 42%),
+    radial-gradient(ellipse at 82% 75%,#78634788 0,transparent 45%),
+    radial-gradient(ellipse at 50% 48%,#c5b18b 0,#a99570 75%,#776246 100%);
+  background-size:256px 256px, auto, auto, auto;
+  box-shadow:inset 0 0 20px #3a291b66, inset 0 0 5px #21160d99;
+}
+.qb-note-open::before,.qb-note-open::after { content:none !important; }
+.qb-note-open .qb-note-title { display:block; margin:0 0 8px; padding:4px 0 7px; border-bottom:1px solid #6f5938aa; color:#281b10; font:bold 17px Georgia,serif; text-align:center; text-shadow:0 1px #e0d0ad66; }
+.qb-note-open .qb-note-summary { display:block; max-height:52px; overflow:hidden; color:#382819; font:12px/1.35 Georgia,serif; }
+.qb-note-open .qb-note-thumb { display:block; width:100%; height:75px; margin:1px auto 7px; object-fit:cover; border:1px solid #665033; padding:3px; background:#b7a17a; box-shadow:0 1px 4px #24170d99; }
+.qb-note-character { padding-top:18px; }
+.qb-note-type { margin:-5px 0 5px; color:#4b2c1a; font:bold 9px Georgia,serif; letter-spacing:1.2px; text-shadow:0 1px #d7c39b; }
+.qb-note-grip { top:-7px; border:1px solid #4e402e; border-radius:50%; width:14px; height:14px; background:radial-gradient(circle at 35% 30%,#b9b3a1,#555044 60%,#242018); color:#e0d4b9; box-shadow:0 1px 3px #100904; }
+.qb-note-tools { z-index:7; }
+
+/* Full-size notice: ragged, stained paper with four dark iron tacks. */
+.qb-parchment-large {
+  max-width:680px; margin:8px auto 14px; padding:0; border:0; background:none;
+  filter:drop-shadow(0 7px 10px #080604cc); color:#302316;
+}
+.qb-scroll-paper {
+  position:relative; isolation:isolate; min-height:480px; padding:54px 58px 48px;
+  border:0; clip-path:polygon(
+    1% 2%, 5% 1%, 9% 2%, 14% 0, 20% 2%, 27% 1%, 33% 3%, 40% 1%, 47% 2%, 54% 0,
+    61% 2%, 68% 1%, 74% 3%, 81% 1%, 88% 2%, 94% 0, 99% 2%, 98% 7%, 100% 13%,
+    98% 20%, 100% 27%, 98% 34%, 100% 41%, 98% 49%, 100% 56%, 98% 64%, 100% 71%,
+    98% 79%, 100% 86%, 98% 93%, 99% 98%, 93% 97%, 87% 100%, 80% 98%, 73% 100%,
+    66% 98%, 59% 100%, 52% 98%, 45% 100%, 38% 98%, 31% 100%, 24% 98%, 17% 100%,
+    10% 98%, 3% 100%, 2% 94%, 0 87%, 2% 80%, 0 73%, 2% 65%, 0 58%, 2% 50%,
+    0 43%, 2% 35%, 0 28%, 2% 20%, 0 12%
+  );
+  background-color:#a18b68;
+  background-image:
+    radial-gradient(circle at 28px 28px,#c7c1af 0,#77715f 4px,#30291e 6px,#15120e 8px,transparent 10px),
+    radial-gradient(circle at calc(100% - 28px) 28px,#c7c1af 0,#77715f 4px,#30291e 6px,#15120e 8px,transparent 10px),
+    radial-gradient(circle at 28px calc(100% - 28px),#c7c1af 0,#77715f 4px,#30291e 6px,#15120e 8px,transparent 10px),
+    radial-gradient(circle at calc(100% - 28px) calc(100% - 28px),#c7c1af 0,#77715f 4px,#30291e 6px,#15120e 8px,transparent 10px),
+    url("../assets/paper-grain.svg"),
+    radial-gradient(ellipse at 9% 12%,#d1bd92 0,transparent 35%),
+    radial-gradient(ellipse at 89% 80%,#65503988 0,transparent 40%),
+    radial-gradient(ellipse at 48% 48%,#c1ad85 0,#a18b68 72%,#6e5a3d 100%);
+  background-size:auto,auto,auto,auto,256px 256px,auto,auto,auto;
+  box-shadow:inset 0 0 38px #39271799,inset 0 0 8px #21170e;
+  font-family:Georgia,"Times New Roman",serif;
+}
+.qb-scroll-paper::before,.qb-scroll-paper::after { content:none; }
+.qb-parchment-large h2 {
+  margin:0 0 22px; padding:0 32px 15px; border-bottom:1px solid #5f4a30aa;
+  color:#261a10; font:bold 34px Georgia,"Times New Roman",serif; text-align:center;
+  text-shadow:0 1px #e1d0aa66;
+}
+.qb-hero-image {
+  max-width:min(72%,360px); max-height:310px; margin:20px auto 24px;
+  padding:7px; border:1px solid #4e3c26; background:#8e7958;
+  box-shadow:0 2px 8px #1c130caa; filter:none;
+}
+.qb-quest-content { min-height:130px; color:#2d2116; font:17px/1.7 Georgia,"Times New Roman",serif; }
+.qb-quest-content p { margin:0 0 .9em; }
+.qb-quest-content img { border:1px solid #5e4930; padding:4px; background:#a18b68; }
+.qb-author {
+  margin:42px 0 0; padding-top:10px; color:#3c2a19; text-align:right;
+  font:italic 19px Georgia,"Times New Roman",serif;
+}
+.qb-author::before { width:38%; border-color:#5f4a30aa; }
+.qb-external-link a { color:#3b2817; text-decoration:underline; }
+.qb-journal-link { border:1px solid #655039; background:#a99570; color:#2d2116; }
+
+/* v0.4.0 — real parchment image assets with editable HTML text layers */
+.qb-note {
+  width: 204px;
+  min-height: 190px;
+  filter: drop-shadow(2px 5px 6px #080503d9);
+}
+.qb-note-open {
+  position: relative;
+  display: block;
+  isolation: isolate;
+  width: 100%;
+  min-height: 190px;
+  padding: 28px 23px 24px;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  clip-path: none;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #2d1d10;
+  text-align: left;
+  font-family: Georgia, "Times New Roman", serif;
+}
+.qb-note-open::before,
+.qb-note-open::after { content: none !important; }
+.qb-paper-bg {
+  position: absolute;
+  display: block;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+.qb-paper-bg-small {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.qb-note-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-height: 132px;
+}
+.qb-note-open .qb-note-title {
+  display: block;
+  margin: 4px 0 0;
+  padding: 2px 0 7px;
+  border: 0;
+  border-bottom: 1px solid rgba(72, 45, 22, .62);
+  color: #2b1b0e;
+  font: bold 17px/1.15 Georgia, "Times New Roman", serif;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 226, 174, .4);
+}
+.qb-note-open .qb-note-summary {
+  display: block;
+  max-height: 62px;
+  overflow: hidden;
+  color: #382516;
+  font: 12px/1.3 Georgia, "Times New Roman", serif;
+  text-shadow: 0 1px rgba(255, 224, 177, .25);
+}
+.qb-wax-seal {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  height: auto;
+  pointer-events: none;
+  filter: drop-shadow(1px 3px 3px rgba(25, 10, 4, .55));
+}
+.qb-wax-seal-small {
+  width: 43px;
+  top: 5px;
+  right: 9px;
+  transform: rotate(7deg);
+}
+.qb-parchment-large {
+  position: relative;
+  width: min(100%, 700px);
+  max-width: 700px;
+  margin: 8px auto 14px;
+  padding: 0;
+  border: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, .65));
+  color: #2c1b0e;
+}
+.qb-scroll-paper {
+  position: relative;
+  isolation: isolate;
+  min-height: 600px;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  clip-path: none !important;
+  font-family: Georgia, "Times New Roman", serif;
+}
+.qb-paper-bg-large {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.qb-paper-content {
+  position: relative;
+  z-index: 2;
+  min-height: 600px;
+  padding: 78px 76px 68px;
+  color: #2b1b0f;
+  font-family: Georgia, "Times New Roman", serif;
+}
+.qb-parchment-large h2 {
+  margin: 0 0 24px;
+  padding: 0 54px 16px;
+  border: 0;
+  border-bottom: 1px solid rgba(74, 45, 20, .58);
+  color: #28180c;
+  font: bold 36px/1.15 Georgia, "Times New Roman", serif;
+  text-align: center;
+  text-shadow: 0 1px rgba(255, 228, 179, .35);
+}
+.qb-quest-content {
+  min-height: 180px;
+  color: #302012;
+  font: 18px/1.65 Georgia, "Times New Roman", serif;
+  overflow-wrap: anywhere;
+}
+.qb-quest-content p { margin: 0 0 .9em; }
+.qb-author {
+  margin: 42px 0 0;
+  padding-top: 10px;
+  color: #3c2817;
+  text-align: right;
+  font: italic 20px Georgia, "Times New Roman", serif;
+}
+.qb-author::before {
+  content: "";
+  display: block;
+  width: 40%;
+  margin: 0 0 9px auto;
+  border-top: 1px solid rgba(74, 45, 20, .58);
+}
+.qb-wax-seal-large {
+  top: 5%;
+  right: 7%;
+  width: 96px;
+  transform: rotate(8deg);
+}
+.qb-hero-image { display: none !important; }
+.qb-quest-form .hint { line-height: 1.4; }
+
+
+/* v0.6.28 — world-level appearance themes and user-provided assets */
+.qb-custom-theme-fields {
+  border: 1px solid #76583a;
+  border-radius: 5px;
+  padding: 12px;
+  margin: 4px 0;
+}
+.qb-custom-theme-fields legend { color: #dfcba7; padding: 0 6px; }
+.qb-custom-theme-fields[hidden] { display: none !important; }
+.qb-settings-form .form-footer { position: sticky; bottom: 0; padding-top: 10px; }
+.qb-file-setting { margin-bottom: 10px; }
+.qb-file-setting .qb-input-with-button { display: flex; gap: 6px; }
+.qb-file-setting .qb-input-with-button input { min-width: 0; flex: 1; }
+.qb-file-setting .qb-file-picker { flex: 0 0 42px; }
+.qb-board-surface.qb-theme-steampunk {
+  border-color: #76502c;
+  box-shadow: inset 0 0 0 3px #c08a45, inset 0 0 35px #1b1009, 0 7px 18px #100b08;
+}
+.qb-board-surface.qb-theme-cyberpunk {
+  border-color: #31536a;
+  box-shadow: inset 0 0 0 3px #4388a5, inset 0 0 35px #07131c, 0 0 18px #17617c88;
+}
+
+.qb-theme-custom.qb-board-surface {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+.qb-custom-pin { position: absolute; z-index: 4; display: block; pointer-events: none; object-fit: contain; }
+.qb-custom-pin-small { width: 24px; height: 24px; top: 3px; left: calc(50% - 12px); }
+.qb-custom-pin-large { width: 34px; height: 34px; top: 2.5%; left: calc(50% - 17px); }
+
+/* v0.5.1 — responsive board canvas with intrinsic image proportions */
+.quest-board-window .window-content { overflow: auto; }
+.qb-board-window { padding: 12px 14px 8px; min-height: 0; }
+.qb-board-topline { margin-bottom: 8px; }
+.qb-board-stage { width: 100%; max-width: 100%; text-align: center; overflow: auto; }
+.qb-board-surface {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: auto;
+  max-width: 100%;
+  min-height: 0;
+  overflow: visible;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  line-height: 0;
+  container-type: inline-size;
+}
+.qb-board-background {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(100%, 1100px);
+  max-height: calc(100vh - 250px);
+  object-fit: contain;
+  object-position: center;
+  user-select: none;
+  pointer-events: none;
+}
+.qb-board-inner {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  background: transparent;
+  overflow: hidden;
+  line-height: normal;
+}
+.qb-note {
+  position: absolute;
+  width: 18%;
+  height: auto;
+  aspect-ratio: 1.08 / 1;
+  min-height: 0;
+  z-index: 1;
+  filter: drop-shadow(1px 3px 4px rgba(0,0,0,.72));
+}
+.qb-note-open {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 12% 10% 11%;
+  overflow: visible;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  clip-path: none !important;
+  line-height: normal;
+}
+.qb-paper-bg-small { inset: 0; width: 100%; height: 100%; object-fit: fill; }
+.qb-note-content { min-height: 0; height: 100%; gap: 5%; padding: 0; }
+.qb-note-open .qb-note-title {
+  margin: 5% 0 0;
+  padding: 2% 0 5%;
+  font-size: clamp(9px, 1.8cqw, 19px);
+  line-height: 1.12;
+}
+.qb-note-open .qb-note-summary {
+  max-height: 43%;
+  font-size: clamp(8px, 1.3cqw, 14px);
+  line-height: 1.2;
+}
+.qb-wax-seal-small {
+  width: 17%;
+  height: auto;
+  top: auto;
+  right: 6%;
+  bottom: 6%;
+  transform: rotate(7deg);
+}
+.qb-custom-pin-small { width: 12%; height: auto; top: 3%; left: 44%; }
+.qb-note-grip { top: -7%; width: 16%; height: 9%; font-size: clamp(6px, .8cqw, 10px); }
+.qb-note-tools { top: -5%; right: -5%; }
+.qb-note-tools button { font-size: clamp(6px, .75cqw, 10px); padding: 2px 4px; }
+.qb-board-empty { line-height: normal; }
+.qb-board-footer { padding-top: 6px; }
+.qb-board-surface.qb-theme-steampunk,
+.qb-board-surface.qb-theme-cyberpunk { border: 0 !important; box-shadow: none !important; }
+
+
+/* v0.5.2 hotfix: size the board surface from the loaded image's intrinsic aspect ratio. */
+.qb-board-window { padding: 12px 14px 8px; min-height: 0; }
+.qb-board-stage {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: calc(100vh - 245px);
+  overflow: auto;
+  text-align: center;
+  line-height: 0;
+}
+.qb-board-surface {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: min(100%, 1100px);
+  max-width: 100%;
+  min-height: 0;
+  aspect-ratio: 10 / 7;
+  overflow: visible;
+  padding: 0;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  line-height: normal;
+}
+.qb-board-background {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+}
+.qb-board-inner {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+  line-height: normal;
+}
+.qb-note {
+  position: absolute;
+  width: 18%;
+  height: auto;
+  aspect-ratio: 1.08 / 1;
+  min-height: 0;
+  z-index: 1;
+}
+.qb-note-open { width:100%; height:100%; min-height:0; padding:12% 10% 11%; }
+.qb-note-content { min-height:0; height:100%; gap:5%; }
+.qb-note-open .qb-note-title { font-size: clamp(9px, 1.8cqw, 19px); line-height:1.12; }
+.qb-note-open .qb-note-summary { max-height:43%; font-size: clamp(8px, 1.3cqw, 14px); line-height:1.2; }
+.qb-wax-seal-small {
+  width: 13.6%;
+  height: auto;
+  top: auto;
+  right: 6%;
+  bottom: 6%;
+  transform: rotate(7deg);
+}
+.qb-custom-pin-small { width:12%; height:auto; top:3%; left:44%; }
+.qb-note-grip { top:-7%; width:16%; height:9%; font-size:clamp(6px,.8cqw,10px); }
+.qb-note-tools { top:-5%; right:-5%; }
+.qb-board-empty { line-height:normal; }
+.qb-board-footer { padding-top:6px; }
+
+
+/* v0.5.3 — note scale and consistent seal placement */
+.qb-note {
+  width: 15.3%;
+}
+.qb-wax-seal-small {
+  width: 13.6%;
+  top: auto;
+  right: 3%;
+  bottom: 10%;
+  transform: rotate(7deg);
+}
+.qb-wax-seal-large {
+  width: 13.6%;
+  height: auto;
+  top: 5%;
+  right: 3%;
+  bottom: auto;
+  transform: rotate(7deg);
+}
+
+
+/* v0.5.4 — keep seal at the lower-right on both note sizes */
+.qb-wax-seal-small {
+  width: 13.6%;
+  top: auto;
+  right: 7%;
+  bottom: 10%;
+  transform: rotate(7deg);
+}
+.qb-wax-seal-large {
+  width: 96px;
+  height: auto;
+  top: auto;
+  right: 7%;
+  bottom: 10%;
+  transform: rotate(8deg);
+}
+
+
+/* v0.5.5 — configurable theme-specific announcement fasteners */
+.qb-settings-form .qb-fastener-toggle { margin: 10px 0 14px; }
+.qb-settings-form .qb-fastener-toggle .checkbox { display:flex; align-items:center; gap:8px; }
+.qb-settings-form input:disabled,
+.qb-settings-form button:disabled {
+  opacity: .42;
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+.qb-settings-form .qb-file-setting.is-disabled { opacity:.48; }
+.qb-custom-pin { object-fit:contain; }
+
+
+/* v0.5.6 — compact checkbox layout and hide decorative GM drag handle with fasteners */
+.qb-settings-form .qb-fastener-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  width: 100%;
+  padding: 2px 0;
+}
+.qb-settings-form .qb-fastener-toggle .qb-checkbox {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #dfcba7;
+  cursor: pointer;
+}
+.qb-settings-form .qb-fastener-toggle .qb-checkbox input[type="checkbox"] {
+  appearance: auto;
+  -webkit-appearance: checkbox;
+  flex: 0 0 auto;
+  width: 15px !important;
+  height: 15px;
+  margin: 0;
+  padding: 0;
+  accent-color: #a87943;
+}
+.qb-settings-form .qb-fastener-toggle .qb-checkbox span {
+  display: inline;
+  width: auto;
+  color: #dfcba7;
+  font-size: 13px;
+  line-height: 1.3;
+}
+.qb-settings-form .qb-fastener-toggle .hint {
+  margin: 0;
+  padding-left: 24px;
+}
+.qb-note-grip-hidden {
+  opacity: 0 !important;
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  color: transparent !important;
+  pointer-events: auto;
+}
+.qb-note-grip-hidden i { opacity: 0 !important; }
+
+
+/* v0.6.0 — per-asset theme overrides */
+.qb-custom-image-fields.is-disabled {
+  opacity: .48;
+  pointer-events: none;
+}
+.qb-custom-image-fields input:disabled,
+.qb-custom-image-fields button:disabled {
+  opacity: .45;
+  filter: grayscale(1);
+  cursor: not-allowed;
+}
+.qb-settings-form .qb-override-toggle { margin-top: 14px; }
+.qb-settings-form .qb-override-toggle .qb-checkbox,
+.qb-settings-form .qb-fastener-toggle .qb-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+}
+.qb-settings-form .qb-override-toggle input[type="checkbox"],
+.qb-settings-form .qb-fastener-toggle input[type="checkbox"] {
+  appearance: auto;
+  -webkit-appearance: checkbox;
+  width: 15px !important;
+  height: 15px;
+  flex: 0 0 15px;
+  margin: 0;
+  accent-color: #a87943;
+}
+.qb-settings-form .qb-override-toggle .hint { margin-left: 23px; }
+
+
+/* v0.6.11 — explicit GM arrangement mode and visible drag handles */
+.qb-board-header-actions { display:flex; align-items:center; justify-content:flex-end; gap:8px; flex-wrap:wrap; }
+.qb-board-topline .qb-arrange-toggle { background:linear-gradient(#5b6570,#343c45); border-color:#8996a2; }
+.qb-board-topline .qb-arrange-toggle.is-active { background:linear-gradient(#b88743,#795326); border-color:#e0b66f; color:#fff5dc; }
+.qb-note-grip { display:flex; align-items:center; justify-content:center; gap:6px; width:auto; min-width:104px; height:27px; padding:0 9px; top:-15px; border:1px solid #e0bd78; border-radius:6px; background:linear-gradient(#f3d99e,#bd9250); color:#422b16; font: bold 11px/1 Arial,sans-serif; box-shadow:0 2px 5px #160d08cc; cursor:grab; touch-action:none; }
+.qb-note-grip:active { cursor:grabbing; }
+.qb-arrange-mode .qb-note { outline:2px dashed #e0bd78; outline-offset:3px; }
+.qb-arrange-mode .qb-note-open { cursor:default; }
+.qb-arrange-mode .qb-note-grip { z-index:20; }
+
+
+/* v0.6.13 — combined GM note rotate and resize handle */
+.qb-note { transform-origin: 50% 50%; }
+.qb-note-arrange-controls { position:absolute; inset:0; z-index:30; pointer-events:none; }
+.qb-note-arrange-controls button { pointer-events:auto; display:flex; align-items:center; justify-content:center; border:1px solid #e0bd78; color:#422b16; background:linear-gradient(#f3d99e,#bd9250); box-shadow:0 2px 5px #160d08cc; cursor:grab; touch-action:none; user-select:none; }
+.qb-note-arrange-controls button:active { cursor:grabbing; }
+.qb-note-grip { position:absolute; top:-29px; left:50%; transform:translateX(-50%); min-width:104px; height:25px; padding:0 9px; border-radius:6px; gap:6px; font:bold 11px/1 Arial,sans-serif; }
+.qb-note-transform { position:absolute; right:-12px; bottom:-12px; width:29px; height:29px; border-radius:7px; font-size:13px; }
+.qb-arrange-mode .qb-note { outline:2px dashed #e0bd78; outline-offset:3px; }
+.qb-arrange-mode .qb-note-open { cursor:default; }
+.qb-arrange-mode .qb-note-tools { display:none; }
+@media (max-width: 600px) { .qb-note-grip { min-width:86px; font-size:10px; } .qb-note-transform { right:-9px; bottom:-9px; width:25px; height:25px; } }
+
+
+/* v0.6.15 — smaller transform handle with a larger, better-fitted icon */
+.qb-note-transform {
+  width: 25px;
+  height: 25px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 6px;
+  font-size: 17px;
+  line-height: 1;
+  padding: 0;
+}
+.qb-note-transform i {
+  font-size: 17px;
+  line-height: 1;
+}
+@media (max-width: 600px) {
+  .qb-note-transform {
+    width: 23px;
+    height: 23px;
+    right: -8px;
+    bottom: -8px;
+    font-size: 16px;
+  }
+  .qb-note-transform i {
+    font-size: 16px;
+  }
+}
+
+
+/* v0.6.16 — keep the combined transform handle square and constant-sized
+   even when its parent notice is scaled or rotated. */
+.qb-note-transform {
+  box-sizing: border-box !important;
+  width: 25px !important;
+  min-width: 25px !important;
+  max-width: 25px !important;
+  height: 25px !important;
+  min-height: 25px !important;
+  max-height: 25px !important;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  flex: 0 0 25px;
+  transform: scale(calc(1 / var(--note-scale, 1))) rotate(calc(-1 * var(--note-rotation, 0deg)));
+  transform-origin: center;
+}
+.qb-note-transform i {
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+@media (max-width: 600px) {
+  .qb-note-transform {
+    width: 23px !important;
+    min-width: 23px !important;
+    max-width: 23px !important;
+    height: 23px !important;
+    min-height: 23px !important;
+    max-height: 23px !important;
+    flex-basis: 23px;
+  }
+}
+
+
+/* v0.6.18 — keep both arrange controls upright on rotated/scaled notes.
+   The grip retains its horizontal centering while cancelling the parent's
+   scale and rotation. The transform handle also cancels both transforms. */
+/* v0.6.21: the drag grip intentionally follows the notice rotation and scale.
+   Keep only its native horizontal centering transform from the base rule. */
+.qb-note-transform {
+  transform: scale(calc(1 / var(--note-scale, 1))) rotate(calc(-1 * var(--note-rotation, 0deg))) !important;
+  transform-origin: center;
+}
+
+
+/* v0.6.23 — the board window is sized to the selected image's aspect ratio. */
+.quest-board-window .window-content {
+  min-height: 0;
+}
+.qb-board-stage {
+  overflow: visible;
+}
+.qb-board-background {
+  max-height: none;
+}
+
+
+/* v0.6.25 — preserve Foundry's vertical scrollbar when board content exceeds
+   the available window height; horizontal overflow remains clipped. */
+.quest-board-window .window-content {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+.qb-board-stage {
+  overflow: visible !important;
+}
+.qb-board-background {
+  max-width: 100%;
+  max-height: none;
+}
+
+
+/* v0.6.25 final overflow policy */
+.quest-board-window .window-content {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+.quest-board-stage {
+  overflow: visible !important;
+}
+
+
+/* v0.6.26 — center the drag grip on the notice's top edge */
+.qb-note-grip {
+  top: -18px !important;
+}
+
+
+/* v0.6.29 — do not reserve space for individual image controls while disabled. */
+.qb-custom-image-fields[hidden] {
+  display: none !important;
+}
+
+
+/* v0.6.32 — optional per-announcement seal image picker */
+.qb-seal-picker[hidden] {
+  display: none !important;
+}
+.qb-file-picker-row {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+}
+.qb-file-picker-row input {
+  flex: 1;
+  min-width: 0;
+}
+.qb-file-picker-row button {
+  flex: 0 0 42px;
+}
+
+
+
+
+/* v0.7.2 — remove decorative title separators */
+.qb-note-open .qb-note-title,
+.qb-parchment-large h2 {
+  border-bottom: 0 !important;
+}
+
+
+/* v0.7.9: dedicated theme board artwork must retain its original colors. */
+.qb-board-surface.qb-theme-steampunk,
+.qb-board-surface.qb-theme-cyberpunk,
+.qb-board-surface.qb-theme-steampunk .qb-board-background,
+.qb-board-surface.qb-theme-cyberpunk .qb-board-background {
+  filter: none !important;
+}
+
+
+/* v0.7.10: keep all dedicated board artwork in its original colors. */
+.qb-board-surface,
+.qb-board-surface .qb-board-background {
+  filter: none !important;
+}
+
+
+/* v0.7.14 — preserve the portrait proportions of theme-specific quest flyers. */
+.qb-note {
+  width: 190px;
+  aspect-ratio: 3 / 4;
+  min-height: 0;
+}
+.qb-note-open {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 12% 10% 11%;
+}
+.qb-paper-bg-small {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+/* The opened quest uses the same portrait proportions as the flyer asset. */
+.qb-parchment-large {
+  box-sizing: border-box;
+  width: min(100%, 540px);
+  max-width: 540px;
+  aspect-ratio: 3 / 4;
+  min-height: 0;
+}
+.qb-scroll-paper {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+.qb-paper-bg-large {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.qb-paper-content {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 0;
+  height: 100%;
+  padding: 12% 10% 11%;
+}
+
+
+/* v0.7.15 — flyer artwork must retain its source colors without color grading. */
+.qb-paper-bg,
+.qb-paper-bg-small,
+.qb-paper-bg-large {
+  filter: none !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+}
+.qb-hero-image {
+  filter: none !important;
+}
+
+
+/* v0.7.16 — smaller default flyers; keep GM controls at a constant screen size. */
+.qb-note {
+  width: 142.5px;
+  aspect-ratio: 3 / 4;
+}
+
+/* Editing/deleting controls counteract the notice scale and rotation. */
+.qb-note-tools {
+  transform: scale(calc(1 / var(--note-scale, 1))) rotate(calc(-1 * var(--note-rotation, 0deg)));
+  transform-origin: top right;
+  gap: 4px;
+}
+.qb-note-tools button {
+  box-sizing: border-box;
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  min-height: 28px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* The drag grip stays readable and keeps its own fixed dimensions. */
+.qb-note-grip {
+  width: auto !important;
+  min-width: 104px !important;
+  height: 27px !important;
+  min-height: 27px !important;
+  padding: 0 9px !important;
+  font-size: 11px !important;
+  transform: translateX(-50%) scale(calc(1 / var(--note-scale, 1))) rotate(calc(-1 * var(--note-rotation, 0deg)));
+  transform-origin: center;
+}
+.qb-note-transform {
+  transform: scale(calc(1 / var(--note-scale, 1))) rotate(calc(-1 * var(--note-rotation, 0deg))) !important;
+  transform-origin: center;
+}
+
+
+/* v0.8.1 — separate edit/delete controls into opposite top corners. */
+.qb-note-tools {
+  top: -5%;
+  left: -5%;
+  right: -5%;
+  width: 110%;
+  justify-content: space-between;
+  transform-origin: center top;
+}
+
+
+/* v0.8.2 — pin edit/delete buttons to the notice's actual top corners. */
+.qb-note-tools {
+  top: -5%;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: 0;
+  display: none;
+  transform-origin: center top;
+}
+.qb-note:hover .qb-note-tools {
+  display: block;
+}
+.qb-note-tools button {
+  position: absolute;
+  top: 0;
+  margin: 0;
+}
+.qb-note-tools button:first-child {
+  left: -5%;
+}
+.qb-note-tools button:last-child {
+  right: -5%;
+}
+
+
+/* v0.8.3 — anchor controls to the rotated/scaled flyer corners.
+   The toolbar follows the flyer transform; each button counter-transforms
+   around its own center so the controls stay upright and screen-sized. */
+.qb-note-tools {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: 0;
+  display: none;
+  transform: none !important;
+}
+.qb-note:hover .qb-note-tools {
+  display: block;
+}
+.qb-note-tools button {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  transform: scale(calc(1 / var(--note-scale, 1))) rotate(calc(-1 * var(--note-rotation, 0deg)));
+  transform-origin: center center;
+}
+.qb-note-tools button:first-child {
+  left: 0;
+  right: auto;
+  translate: -50% -50%;
+}
+.qb-note-tools button:last-child {
+  right: 0;
+  left: auto;
+  translate: 50% -50%;
+}
+
+
+/* v0.8.6 — journal page selector */
+.qb-journal-picker { padding: 14px; }
+.qb-journal-picker > .hint { margin: 0 0 12px; color: #c4ae89; }
+.qb-journal-picker-entry { margin: 0 0 12px; padding: 10px; border: 1px solid #60472f; border-radius: 5px; background: #241b15; }
+.qb-journal-picker-entry h3 { margin: 0 0 8px; color: #e6cfaa; font: bold 15px Georgia, serif; }
+.qb-journal-picker-pages { display: flex; flex-direction: column; gap: 5px; }
+.qb-journal-picker-pages button { display: flex; align-items: center; gap: 8px; width: 100%; padding: 7px 9px; border: 1px solid #735637; border-radius: 4px; background: #39291d; color: #e7d4b2; text-align: left; }
+.qb-journal-picker-pages button span { flex: 1; min-width: 0; }
+.qb-journal-picker-pages button small { color: #bba98b; }
+.qb-journal-picker-pages button:hover { background: #59402a; }
+.qb-journal-picker .form-footer { justify-content: flex-end; margin-top: 12px; }
+
+
+/* v0.9.7 — theme-specific seal positions; Sci-Fi and Solarpunk override Cyberpunk inheritance. */
+.qb-theme-cyberpunk.qb-theme-sci-fi .qb-wax-seal-small,
+.qb-theme-cyberpunk.qb-theme-sci-fi .qb-wax-seal-large {
+  right: 14%;
+  bottom: 14%;
+}
+.qb-theme-cyberpunk .qb-wax-seal-small,
+.qb-theme-cyberpunk .qb-wax-seal-large {
+  right: 11%;
+  bottom: 14%;
+}
+.qb-theme-cyberpunk.qb-theme-solarpunk .qb-wax-seal-small,
+.qb-theme-cyberpunk.qb-theme-solarpunk .qb-wax-seal-large {
+  right: 18%;
+  bottom: 18%;
+}
+
+/* v0.9.9 — confirmed individual seal positions for High Fantasy, Gothic Horror, Steampunk and Wild West. */
+/* High Fantasy and Gothic Horror. */
+.qb-theme-medieval.qb-theme-high-fantasy .qb-wax-seal-small,
+.qb-theme-medieval.qb-theme-high-fantasy .qb-wax-seal-large,
+.qb-theme-medieval.qb-theme-gothic-horror .qb-wax-seal-small,
+.qb-theme-medieval.qb-theme-gothic-horror .qb-wax-seal-large {
+  right: 13%;
+  bottom: 13%;
+}
+/* Steampunk and Wild West. */
+.qb-theme-steampunk .qb-wax-seal-small,
+.qb-theme-steampunk .qb-wax-seal-large,
+.qb-theme-medieval.qb-theme-wild-west .qb-wax-seal-small,
+.qb-theme-medieval.qb-theme-wild-west .qb-wax-seal-large {
+  right: 14%;
+}
+
+
+
+/* v0.10.1 — remove the legacy frame/background from the opened quest sheet. */
+.quest-board-viewer .qb-parchment-large {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.quest-board-viewer .qb-scroll-paper {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+
+/* v0.10.2 — disable legacy pseudo-element frames around the opened parchment. */
+.quest-board .qb-viewer .qb-parchment-large::before,
+.quest-board .qb-viewer .qb-parchment-large::after,
+.quest-board .qb-viewer .qb-scroll-paper::before,
+.quest-board .qb-viewer .qb-scroll-paper::after {
+  content: none !important;
+  display: none !important;
+  border: 0 !important;
+  outline: 0 !important;
+}
+.quest-board .qb-viewer .qb-paper-bg-large {
+  border: 0 !important;
+  outline: 0 !important;
+}
+
+
+/* v0.10.3 — two corner nails for classic fantasy, post-apocalyptic, gothic and western flyers. */
+.qb-custom-pin-right { display: none; }
+
+/* Small flyers pinned to the notice board. */
+.qb-note.qb-theme-medieval.qb-theme-medieval .qb-custom-pin-left,
+.qb-note.qb-theme-medieval.qb-theme-dark-fantasy .qb-custom-pin-left,
+.qb-note.qb-theme-medieval.qb-theme-high-fantasy .qb-custom-pin-left,
+.qb-note.qb-theme-medieval.qb-theme-post-apocalyptic .qb-custom-pin-left,
+.qb-note.qb-theme-medieval.qb-theme-gothic-horror .qb-custom-pin-left,
+.qb-note.qb-theme-medieval.qb-theme-wild-west .qb-custom-pin-left {
+  left: 5%;
+  right: auto;
+}
+.qb-note.qb-theme-medieval.qb-theme-medieval .qb-custom-pin-right,
+.qb-note.qb-theme-medieval.qb-theme-dark-fantasy .qb-custom-pin-right,
+.qb-note.qb-theme-medieval.qb-theme-high-fantasy .qb-custom-pin-right,
+.qb-note.qb-theme-medieval.qb-theme-post-apocalyptic .qb-custom-pin-right,
+.qb-note.qb-theme-medieval.qb-theme-gothic-horror .qb-custom-pin-right,
+.qb-note.qb-theme-medieval.qb-theme-wild-west .qb-custom-pin-right {
+  display: block;
+  left: auto;
+  right: 5%;
+}
+
+/* Opened flyer: place the pair symmetrically in the upper corners. */
+.qb-parchment-large.qb-theme-medieval.qb-theme-medieval .qb-custom-pin-left,
+.qb-parchment-large.qb-theme-medieval.qb-theme-dark-fantasy .qb-custom-pin-left,
+.qb-parchment-large.qb-theme-medieval.qb-theme-high-fantasy .qb-custom-pin-left,
+.qb-parchment-large.qb-theme-medieval.qb-theme-post-apocalyptic .qb-custom-pin-left,
+.qb-parchment-large.qb-theme-medieval.qb-theme-gothic-horror .qb-custom-pin-left,
+.qb-parchment-large.qb-theme-medieval.qb-theme-wild-west .qb-custom-pin-left {
+  left: 5%;
+  right: auto;
+}
+.qb-parchment-large.qb-theme-medieval.qb-theme-medieval .qb-custom-pin-right,
+.qb-parchment-large.qb-theme-medieval.qb-theme-dark-fantasy .qb-custom-pin-right,
+.qb-parchment-large.qb-theme-medieval.qb-theme-high-fantasy .qb-custom-pin-right,
+.qb-parchment-large.qb-theme-medieval.qb-theme-post-apocalyptic .qb-custom-pin-right,
+.qb-parchment-large.qb-theme-medieval.qb-theme-gothic-horror .qb-custom-pin-right,
+.qb-parchment-large.qb-theme-medieval.qb-theme-wild-west .qb-custom-pin-right {
+  display: block;
+  left: auto;
+  right: 5%;
+}
+
+
+/* v0.10.4 — steampunk bolts: paired at the sides and slightly lower than the other fasteners. */
+.qb-note.qb-theme-steampunk .qb-custom-pin-left,
+.qb-parchment-large.qb-theme-steampunk .qb-custom-pin-left {
+  left: 5%;
+  right: auto;
+  top: 5%;
+}
+.qb-note.qb-theme-steampunk .qb-custom-pin-right,
+.qb-parchment-large.qb-theme-steampunk .qb-custom-pin-right {
+  display: block;
+  left: auto;
+  right: 5%;
+  top: 5%;
+}
+
+
+/* v0.11.1 — leave ApplicationV2 window chrome to the active game system.
+   If the system has no custom window styling, Foundry's standard UI remains the fallback.
+   Quest Board's own board/paper themes are intentionally unaffected. */
+.quest-board .window-content {
+  background: unset;
+  color: unset;
+}
+.quest-board .window-header {
+  background: unset;
+  color: unset;
+}
+
+
+/* v0.11.2 — settings action buttons inherit the active game system / Foundry button skin. */
+.quest-board .qb-settings-form .form-footer button,
+.quest-board .qb-settings-form .qb-file-picker {
+  border: revert;
+  border-radius: revert;
+  background: revert;
+  color: revert;
+  padding: revert;
+  box-shadow: revert;
+  font: revert;
+}
+
+
+
+
+
+/* Quest categories */
+.qb-category-filter{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 2px 10px}
+.qb-category-filter label{font-size:12px;font-weight:600;color:var(--color-text-secondary,#bba98b)}
+.qb-category-filter select{max-width:230px;min-width:170px}
+.qb-category-description{flex-basis:100%;margin:0 0 0 0;font-size:11px;line-height:1.35;color:var(--color-text-secondary,#bba98b)}
+.qb-category-tag{display:inline-block;align-self:center;margin:0 auto 3px;padding:2px 7px;border-radius:10px;font:600 9px/1.35 var(--font-primary,Arial,sans-serif);letter-spacing:.02em;color:#fff;text-shadow:0 1px 1px #0008;background:#777;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.qb-category-gold{background:#9a762b}
+.qb-category-blue{background:#426f98}
+.qb-category-red{background:#9b4545}
+.qb-category-purple{background:#70558f}
+.qb-category-gray{background:#777}
+
+
+/* v1.1.2 — category pictograms replace the text pill on board flyers. */
+.qb-note-content { position: relative; }
+.qb-category-icon-small {
+  position: absolute;
+  z-index: 3;
+  top: -1%;
+  left: auto;
+  right: 7%;
+  transform: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12%;
+  height: 12%;
+  font-size: clamp(11px, 2.3cqw, 22px);
+  line-height: 1;
+  pointer-events: none;
+  text-shadow: 0 1px 1px rgba(255,255,255,.55), 0 1px 3px rgba(40,25,10,.45);
+}
+.qb-category-icon-small.qb-category-gold { color: #9a762b; }
+.qb-category-icon-small.qb-category-blue { color: #426f98; }
+.qb-category-icon-small.qb-category-red { color: #9b4545; }
+.qb-category-icon-small.qb-category-purple { color: #70558f; }
+.qb-category-icon-small.qb-category-gray { color: #777; }
+
+.qb-category-viewer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 0 auto 8px;
+  font: 600 12px/1.2 var(--font-primary, Arial, sans-serif);
+}
+.qb-category-viewer i { font-size: 15px; }
+.qb-category-viewer.qb-category-label-gold { color: #9a762b; }
+.qb-category-viewer.qb-category-label-blue { color: #426f98; }
+.qb-category-viewer.qb-category-label-red { color: #9b4545; }
+.qb-category-viewer.qb-category-label-purple { color: #70558f; }
+.qb-category-viewer.qb-category-label-gray { color: #777; }
+
+/* v1.1.3 — category icon sits in the upper-right corner, clear of the flyer title. */
+.qb-category-icon-small {
+  right: 7%;
+  left: auto;
+  top: -1%;
+  transform: none;
+}
+.qb-category-viewer {
+  background: transparent !important;
+  border: 0 !important;
+  min-height: 0;
+  padding: 0;
+}
+
+
+/* v1.1.4 — lift the board pictogram clear of the quest title. */
+.qb-note-content .qb-category-icon-small {
+  top: -5% !important;
+  right: 7% !important;
+  left: auto !important;
+}
+
+/* v1.1.4 — use the upper parchment area more efficiently on opened quests. */
+.qb-paper-content {
+  padding-top: 5% !important;
+}
+.qb-paper-content .qb-category-viewer {
+  gap: 10px;
+  margin: 0 auto 12px;
+  font-size: 16px;
+  line-height: 1.25;
+}
+.qb-paper-content .qb-category-viewer i {
+  font-size: 22px;
+}
+
+
+/* v1.1.6 — custom transparent fantasy artwork for quest categories. */
+.qb-category-icon-small img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.qb-paper-content .qb-category-viewer img {
+  display: block;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex: 0 0 36px;
+}
+
+
+/* v1.1.7 — category artwork sizing and spacing refinements. */
+/* Do not apply category badge backgrounds to the transparent PNG wrapper. */
+.qb-note-content .qb-category-icon-small {
+  right: 12% !important;
+  top: -5% !important;
+  left: auto !important;
+  width: 20% !important;
+  height: 20% !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+.qb-note-content .qb-category-icon-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent !important;
+  filter: none;
+}
+
+/* Opened quest: larger pictogram, tighter category-to-title spacing. */
+.qb-paper-content .qb-category-viewer {
+  gap: 8px;
+  margin: 0 auto 2px !important;
+  font-size: 18px;
+  line-height: 1.2;
+}
+.qb-paper-content .qb-category-viewer img {
+  width: 48px !important;
+  height: 48px !important;
+  flex: 0 0 48px !important;
+  background: transparent !important;
+}
+.qb-paper-content > h2 {
+  margin-top: 0 !important;
+}
+
+
+/* v1.1.8 — final category icon alignment. */
+.qb-note-content .qb-category-icon-small {
+  top: -8% !important;
+}
+.qb-note-content .qb-category-icon-main img {
+  width: 74% !important;
+  height: 74% !important;
+  margin: auto;
+}
+
+/* Move the category line and quest title upward on the opened parchment. */
+.qb-paper-content {
+  padding-top: 2% !important;
+}
+.qb-paper-content .qb-category-viewer {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  gap: 6px;
+}
+.qb-paper-content > h2 {
+  margin-top: 0 !important;
+}
+
+
+/* ==========================================================================
+   v1.2.5 — Per-theme quest text positioning
+   --------------------------------------------------------------------------
+   Adjust these values independently for each theme.
+
+   BOARD (small flyer):
+     --qb-board-title-y    moves the title vertically
+     --qb-board-summary-y  moves the summary vertically
+
+   OPENED QUEST (large flyer):
+     --qb-viewer-category-y moves the category row vertically
+     --qb-viewer-title-y    moves the title vertically
+     --qb-viewer-body-y     moves the description vertically
+
+   Positive values move an element DOWN; negative values move it UP.
+   Values accept any CSS length, e.g. 12px, -8px, 1.5%.
+   ========================================================================== */
+
+/* Defaults for all themes. */
+.qb-note {
+  --qb-board-title-y: 0px;
+  --qb-board-summary-y: 0px;
+}
+.qb-parchment-large {
+  --qb-viewer-category-y: 0px;
+  --qb-viewer-title-y: 0px;
+  --qb-viewer-body-y: 0px;
+}
+
+/* Apply independent offsets without changing normal document flow. */
+.qb-note .qb-note-title {
+  position: relative;
+  top: var(--qb-board-title-y, 0px) !important;
+}
+.qb-note .qb-note-summary {
+  position: relative;
+  top: var(--qb-board-summary-y, 0px) !important;
+}
+
+/* A permanent category slot keeps title/body positions stable even when
+   the quest has no category or category labels/icons are hidden. */
+.qb-parchment-large .qb-category-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  min-height: 36px;
+  margin: 0 auto 12px;
+  position: relative;
+  top: var(--qb-viewer-category-y, 0px);
+}
+.qb-parchment-large .qb-category-slot .qb-category-viewer {
+  margin: 0;
+}
+.qb-parchment-large .qb-paper-content > h2 {
+  position: relative;
+  top: var(--qb-viewer-title-y, 0px) !important;
+}
+.qb-parchment-large .qb-quest-content {
+  position: relative;
+  top: var(--qb-viewer-body-y, 0px) !important;
+}
+
+/* Theme-specific adjustment points.
+   Edit the values in the matching block; no JavaScript changes are needed. */
+
+.qb-note.qb-theme-medieval {
+  --qb-board-title-y: 0px;
+  --qb-board-summary-y: 0px;
+}
+.qb-parchment-large.qb-theme-medieval {
+  --qb-viewer-category-y: 20px;
+  --qb-viewer-title-y: 20px;
+  --qb-viewer-body-y: 20px;
+}
+
+.qb-note.qb-theme-dark-fantasy {
+  --qb-board-title-y: 0px;
+  --qb-board-summary-y: 0px;
+}
+.qb-parchment-large.qb-theme-dark-fantasy {
+  --qb-viewer-category-y: 40px;
+  --qb-viewer-title-y: 40px;
+  --qb-viewer-body-y: 40px;
+}
+
+.qb-note.qb-theme-high-fantasy {
+  --qb-board-title-y: 10px;
+  --qb-board-summary-y: 10px;
+}
+.qb-parchment-large.qb-theme-high-fantasy {
+  --qb-viewer-category-y: 55px;
+  --qb-viewer-title-y: 55px;
+  --qb-viewer-body-y: 55px;
+}
+
+.qb-note.qb-theme-sci-fi {
+  --qb-board-title-y: 0px;
+  --qb-board-summary-y: 0px;
+}
+.qb-parchment-large.qb-theme-sci-fi {
+  --qb-viewer-category-y: 75px;
+  --qb-viewer-title-y: 60px;
+  --qb-viewer-body-y: 50px;
+}
+
+.qb-note.qb-theme-cyberpunk:not(.qb-theme-sci-fi):not(.qb-theme-modern):not(.qb-theme-solarpunk) {
+  --qb-board-title-y: 0px;
+  --qb-board-summary-y: 0px;
+}
+.qb-parchment-large.qb-theme-cyberpunk:not(.qb-theme-sci-fi):not(.qb-theme-modern):not(.qb-theme-solarpunk) {
+  --qb-viewer-category-y: 85px;
+  --qb-viewer-title-y: 75px;
+  --qb-viewer-body-y: 60px;
+}
+
+.qb-note.qb-theme-solarpunk {
+  --qb-board-title-y: 0px;
+  --qb-board-summary-y: 0px;
+}
+.qb-parchment-large.qb-theme-solarpunk {
+  --qb-viewer-category-y: 85px;
+  --qb-viewer-title-y: 75px;
+  --qb-viewer-body-y: 60px;
+}
+
+.qb-note.qb-theme-steampunk {
+  --qb-board-title-y: 0px;
+  --qb-board-summary-y: 0px;
+}
+.qb-parchment-large.qb-theme-steampunk {
+  --qb-viewer-category-y: 0px;
+  --qb-viewer-title-y: 0px;
+  --qb-viewer-body-y: 0px;
+}
+
+.qb-note.qb-theme-modern {
+  --qb-board-title-y: 0px;
+  --qb-board-summary-y: 0px;
+}
+.qb-parchment-large.qb-theme-modern {
+  --qb-viewer-category-y: 30px;
+  --qb-viewer-title-y: 20px;
+  --qb-viewer-body-y: 10px;
+}
+
+.qb-note.qb-theme-post-apocalyptic {
+  --qb-board-title-y: 0px;
+  --qb-board-summary-y: 0px;
+}
+.qb-parchment-large.qb-theme-post-apocalyptic {
+  --qb-viewer-category-y: 25px;
+  --qb-viewer-title-y: 12px;
+  --qb-viewer-body-y: 0px;
+}
+
+.qb-note.qb-theme-gothic-horror {
+  --qb-board-title-y: 0px;
+  --qb-board-summary-y: 0px;
+}
+.qb-parchment-large.qb-theme-gothic-horror {
+  --qb-viewer-category-y: 0px;
+  --qb-viewer-title-y: 0px;
+  --qb-viewer-body-y: 0px;
+}
+
+.qb-note.qb-theme-wild-west {
+  --qb-board-title-y: 0px;
+  --qb-board-summary-y: 0px;
+}
+.qb-parchment-large.qb-theme-wild-west {
+  --qb-viewer-category-y: 20px;
+  --qb-viewer-title-y: 10px;
+  --qb-viewer-body-y: 0px;
+}
+
+
+
+/* v1.2.8 — improve category label contrast on varied parchment artwork. */
+.qb-category-viewer span {
+  text-shadow:
+    1px 1px 1px rgba(0, 0, 0, 0.9),
+    -1px -1px 1px rgba(0, 0, 0, 0.65),
+    0 0 3px rgba(0, 0, 0, 0.7);
+  -webkit-text-stroke: 0.35px rgba(35, 20, 10, 0.75);
+}
+
+
+/* v1.2.9 — automatic text contrast based on each notice background image. */
+.qb-note-open.qb-auto-text-dark .qb-note-title,
+.qb-note-open.qb-auto-text-dark .qb-note-summary {
+  color: #17130f !important;
+  text-shadow: 0 1px 2px rgba(255,255,255,.72), 0 0 3px rgba(255,255,255,.35) !important;
+}
+.qb-note-open.qb-auto-text-light .qb-note-title,
+.qb-note-open.qb-auto-text-light .qb-note-summary {
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.95), 0 0 4px rgba(0,0,0,.8) !important;
+}
+.qb-scroll-paper.qb-auto-text-dark .qb-paper-content,
+.qb-scroll-paper.qb-auto-text-dark .qb-paper-content h2,
+.qb-scroll-paper.qb-auto-text-dark .qb-paper-content .qb-quest-content,
+.qb-scroll-paper.qb-auto-text-dark .qb-paper-content .qb-author,
+.qb-scroll-paper.qb-auto-text-dark .qb-paper-content .qb-external-link a,
+.qb-scroll-paper.qb-auto-text-dark .qb-paper-content .qb-journal-link {
+  color: #17130f !important;
+  text-shadow: 0 1px 2px rgba(255,255,255,.72), 0 0 3px rgba(255,255,255,.3) !important;
+}
+.qb-scroll-paper.qb-auto-text-light .qb-paper-content,
+.qb-scroll-paper.qb-auto-text-light .qb-paper-content h2,
+.qb-scroll-paper.qb-auto-text-light .qb-paper-content .qb-quest-content,
+.qb-scroll-paper.qb-auto-text-light .qb-paper-content .qb-author,
+.qb-scroll-paper.qb-auto-text-light .qb-paper-content .qb-external-link a,
+.qb-scroll-paper.qb-auto-text-light .qb-paper-content .qb-journal-link {
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.95), 0 0 4px rgba(0,0,0,.8) !important;
+}
+
+
+/* v1.2.10 — move the author signature 50px lower on every opened quest sheet. */
+.qb-scroll-paper .qb-author {
+  margin-top: 92px !important;
+}
+
+
+/* v1.3.1: keep manager actions on a dedicated row below the heading */
+.qb-manager-heading { display:flex; flex-direction:column; align-items:stretch; justify-content:flex-start; gap:12px; margin-bottom:16px; min-width:0; }
+.qb-manager-heading-copy { min-width:0; }
+.qb-manager-toolbar { display:flex; flex-wrap:wrap; align-items:stretch; gap:8px; width:100%; min-width:0; }
+.qb-manager-toolbar button { display:inline-flex; flex:0 1 auto; align-items:center; justify-content:center; gap:7px; min-width:0; white-space:nowrap; line-height:1.2; padding:8px 12px; }
+@media (max-width: 520px) {
+  .qb-manager-toolbar button { flex:1 1 auto; }
+}
+
+/* Quest template manager actions and expandable previews */
+.qb-template-row .qb-board-meta { min-width: 0; }
+.qb-template-details { margin-top: 6px; font-size: 0.9em; }
+.qb-template-details summary { cursor: pointer; color: var(--qb-accent, #d9b77a); }
+.qb-template-details > div { margin-top: 6px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.qb-template-details p { margin: 4px 0; }
+
+
+/* v1.3.3: consistent spacing and action-based template/archive previews */
+.qb-utility-window { padding: 18px; }
+.qb-utility-heading { display: block; margin: 0 0 16px; padding: 0; }
+.qb-utility-heading h2 { margin: 0 0 8px; line-height: 1.15; }
+.qb-utility-heading p { margin: 0; line-height: 1.4; }
+.qb-template-row .qb-board-meta p { margin: 2px 0 0; color: #bba98b; font-size: 12px; }
+.qb-utility-window .qb-board-actions { flex-shrink: 0; }
+
+
+/* GM-only marker for unpublished quest flyers */
+.qb-note-open .qb-unpublished-eye {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: 22px;
+  display: block;
+  width: 51px;
+  height: 51px;
+  object-fit: contain;
+  transform: translateX(-50%);
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .75));
+}

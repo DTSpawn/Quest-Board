@@ -1,0 +1,41 @@
+<section class="qb-board-window">
+  {{#if board}}
+    <header class="qb-board-topline"><div><h2>{{board.name}}</h2>{{#if board.location}}<span>{{board.location}}</span>{{/if}}</div>{{#if isGM}}<div class="qb-board-header-actions"><button type="button" data-action="toggleArrange" class="qb-arrange-toggle {{#if arrangeMode}}is-active{{/if}}"><i class="fa-solid fa-up-down-left-right"></i> {{#if arrangeMode}}{{localize "QUEST-BOARD.ArrangeDone"}}{{else}}{{localize "QUEST-BOARD.ArrangeNotes"}}{{/if}}</button><button type="button" data-action="addQuest"><i class="fa-solid fa-plus"></i> {{localize "QUEST-BOARD.AddQuest"}}</button></div>{{/if}}</header>
+    <div class="qb-category-filter">
+      <label for="qb-category-filter">{{localize "QUEST-BOARD.CategoryFilterLabel"}}</label>
+      <select id="qb-category-filter" name="categoryFilter">
+        {{#each filterOptions as |option|}}
+          <option value="{{option.id}}" {{#if option.selected}}selected{{/if}}>{{option.label}}</option>
+        {{/each}}
+      </select>
+      {{#if filterDescription}}<p class="qb-category-description">{{filterDescription}}</p>{{/if}}
+    </div>
+    <div class="qb-board-stage">
+      <div class="qb-board-surface {{themeClass}} {{#if arrangeMode}}qb-arrange-mode{{/if}}">
+        <img class="qb-board-background" src="{{boardImage}}" alt="" aria-hidden="true" draggable="false">
+        <div class="qb-board-inner">
+          {{#each notes as |note|}}
+            <article class="qb-note {{note.themeClass}}" data-quest-id="{{note.id}}" data-x="{{note.x}}" data-y="{{note.y}}" data-rotation="{{note.rotation}}" data-scale="{{note.scale}}" style="left:{{note.x}}%;top:{{note.y}}%;--note-scale:{{note.scale}};--note-rotation:{{note.rotation}}deg;transform:rotate({{note.rotation}}deg) scale({{note.scale}})">
+              {{#if ../arrangeMode}}<div class="qb-note-arrange-controls"><button type="button" class="qb-note-grip" title="{{localize "QUEST-BOARD.DragFlyer"}}" aria-label="{{localize "QUEST-BOARD.DragFlyerAria"}}"><i class="fa-solid fa-grip"></i><span>{{localize "QUEST-BOARD.DragFlyerAria"}}</span></button><button type="button" class="qb-note-transform" title="{{localize "QUEST-BOARD.TransformFlyer"}}" aria-label="{{localize "QUEST-BOARD.TransformFlyerAria"}}"><i class="fa-solid fa-up-down-left-right"></i></button></div>{{/if}}
+              <button type="button" class="qb-note-open" data-quest-id="{{note.id}}">
+                <img class="qb-paper-bg qb-paper-bg-small" src="{{note.paperImage}}" alt="" aria-hidden="true" draggable="false">
+                {{#if note.unpublishedEyeImage}}<img class="qb-unpublished-eye" src="{{note.unpublishedEyeImage}}" alt="" aria-hidden="true" draggable="false">{{/if}}
+                {{#if note.addSeal}}<img class="qb-wax-seal qb-wax-seal-small" src="{{note.sealImage}}" alt="{{localize "QUEST-BOARD.SealAlt"}}" aria-hidden="true">{{/if}}
+                {{#if note.pinImage}}<img class="qb-custom-pin qb-custom-pin-small qb-custom-pin-left" src="{{note.pinImage}}" alt="" aria-hidden="true"><img class="qb-custom-pin qb-custom-pin-small qb-custom-pin-right" src="{{note.pinImage}}" alt="" aria-hidden="true">{{/if}}
+                <span class="qb-note-content">
+                  {{#if note.categoryIcon}}<span class="qb-category-icon-small qb-category-icon-{{note.category}}" title="{{note.categoryLabel}}" aria-label="{{note.categoryLabel}}"><img src="{{note.categoryIcon}}" alt="" aria-hidden="true"></span>{{/if}}
+                  {{#if note.title}}<span class="qb-note-title">{{note.title}}</span>{{/if}}
+                  {{#if note.summary}}<span class="qb-note-summary">{{note.summary}}</span>{{/if}}
+                </span>
+              </button>
+              {{#if ../isGM}}<div class="qb-note-tools"><button type="button" data-action="editQuest" data-quest-id="{{note.id}}" title="{{localize "QUEST-BOARD.EditQuest"}}"><i class="fa-solid fa-pen"></i></button><button type="button" data-action="deleteQuest" data-quest-id="{{note.id}}" title="{{localize "QUEST-BOARD.DeleteQuest"}}"><i class="fa-solid fa-xmark"></i></button></div>{{/if}}
+            </article>
+          {{else}}
+            <div class="qb-board-empty"><i class="fa-solid fa-scroll"></i><p>{{localize "QUEST-BOARD.NoQuests"}}</p>{{#if isGM}}<span>{{localize "QUEST-BOARD.AddFirstQuest"}}</span>{{/if}}</div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    <footer class="qb-board-footer">{{localize "QUEST-BOARD.BoardFooter"}} {{#if isGM}}{{#if arrangeMode}}{{localize "QUEST-BOARD.ArrangeInstructions"}}{{else}}{{localize "QUEST-BOARD.ArrangeHint"}}{{/if}}{{/if}}</footer>
+  {{else}}<p>{{localize "QUEST-BOARD.NoBoardFound"}}</p>{{/if}}
+</section>

@@ -1,0 +1,51 @@
+<form class="qb-form qb-quest-form">
+  <div class="form-group"><label>{{localize "QUEST-BOARD.QuestTitle"}}</label><input name="title" type="text" value="{{quest.title}}"></div>
+  <div class="form-group">
+    <label>{{localize "QUEST-BOARD.QuestCategory"}}</label>
+    <select name="category">
+      <option value="" {{#unless quest.category}}selected{{/unless}}>{{localize "QUEST-BOARD.CategoryUncategorized"}}</option>
+      {{#each categories as |category|}}
+        <option value="{{category.id}}" {{#if category.selected}}selected{{/if}}>{{category.label}}</option>
+      {{/each}}
+    </select>
+    {{#each categories as |category|}}
+      {{#if category.selected}}<p class="hint">{{category.description}}</p>{{/if}}
+    {{/each}}
+    {{#unless quest.category}}<p class="hint">{{localize "QUEST-BOARD.CategoryUncategorizedDescription"}}</p>{{/unless}}
+  </div>
+  <div class="form-group"><label>{{localize "QUEST-BOARD.QuestSummary"}}</label><textarea name="summary" rows="2">{{quest.summary}}</textarea></div>
+  <div class="form-group"><label>{{localize "QUEST-BOARD.QuestDescription"}}</label><textarea name="description" rows="9" placeholder="{{localize "QUEST-BOARD.QuestDescriptionPlaceholder"}}">{{quest.description}}</textarea></div>
+  <div class="form-group"><label>{{localize "QUEST-BOARD.QuestAuthor"}}</label><input name="author" type="text" value="{{quest.author}}" placeholder="{{localize "QUEST-BOARD.QuestAuthorPlaceholder"}}"></div>
+  <div class="form-group">
+    <label>{{localize "QUEST-BOARD.QuestImage"}}</label>
+    <div class="qb-file-picker-row">
+      <input name="customPaperImage" type="text" value="{{quest.customPaperImage}}" placeholder="{{localize "QUEST-BOARD.UseDefaultPaperImage"}}">
+      <button type="button" data-action="pickPaper" title="{{localize "QUEST-BOARD.ChooseImageFoundry"}}"><i class="fa-solid fa-folder-open"></i></button>
+    </div>
+    <p class="hint">{{localize "QUEST-BOARD.QuestImageHint"}}</p>
+  </div>
+  <div class="form-group"><label>{{localize "QUEST-BOARD.Link"}}</label><input name="link" type="url" value="{{quest.link}}" placeholder="https://..."></div>
+  <div class="form-group">
+    <label>{{localize "QUEST-BOARD.JournalPageUUID"}}</label>
+    <div class="qb-file-picker-row">
+      <input name="journalUuid" type="text" value="{{quest.journalUuid}}" placeholder="JournalEntry.XXXX.JournalEntryPage.YYYY">
+      <button type="button" data-action="pickJournal" title="{{localize "QUEST-BOARD.ChooseJournalPage"}}"><i class="fa-solid fa-book-open"></i></button>
+    </div>
+  </div>
+  <label class="qb-checkbox"><input name="addSeal" type="checkbox" {{#if quest.addSeal}}checked{{/if}}> {{localize "QUEST-BOARD.AddSeal"}}</label>
+  <div class="qb-seal-picker" {{#unless quest.addSeal}}hidden{{/unless}}>
+    <div class="form-group">
+      <label>{{localize "QUEST-BOARD.SealImage"}}</label>
+      <div class="qb-file-picker-row">
+        <input name="customSealImage" type="text" value="{{quest.customSealImage}}" placeholder="{{localize "QUEST-BOARD.SealImagePlaceholder"}}">
+        <button type="button" data-action="pickSeal" title="{{localize "QUEST-BOARD.ChooseImage"}}"><i class="fa-solid fa-folder-open"></i></button>
+      </div>
+      <p class="hint">{{localize "QUEST-BOARD.DefaultSealHint"}}</p>
+    </div>
+  </div>
+  <div class="form-group"><label>{{localize "QUEST-BOARD.TemplateSelect"}}</label><div class="qb-file-picker-row"><select name="templateId"><option value="">—</option>{{#each templates as |template|}}<option value="{{template.id}}">{{template.name}}</option>{{/each}}</select><button type="button" data-action="loadTemplate" title="{{localize "QUEST-BOARD.LoadTemplate"}}"><i class="fa-solid fa-file-import"></i></button></div></div>
+  <div class="form-group"><label>{{localize "QUEST-BOARD.ExpiryDays"}}</label><input name="expiryDays" type="number" min="0" step="1" value="{{expiryDays}}" placeholder="0"><p class="hint">{{localize "QUEST-BOARD.ExpiryDaysHint"}}</p></div>
+  <div class="form-group"><label>{{localize "QUEST-BOARD.QuestStatus"}}</label><select name="status">{{#each statuses as |status|}}<option value="{{status.id}}" {{#if status.selected}}selected{{/if}}>{{status.label}}</option>{{/each}}</select></div>
+  <label class="qb-checkbox"><input name="published" type="checkbox" {{#if quest.published}}checked{{else}}{{#unless fromTemplate}}{{#if isNew}}checked{{/if}}{{/unless}}{{/if}}> {{localize "QUEST-BOARD.Published"}}</label>
+  <footer class="form-footer"><button type="button" data-action="saveTemplate" class="secondary">{{localize "QUEST-BOARD.SaveAsTemplate"}}</button><button type="button" data-action="cancel" class="secondary">{{localize "QUEST-BOARD.Cancel"}}</button><button type="button" data-action="save">{{localize "QUEST-BOARD.SaveQuest"}}</button></footer>
+</form>

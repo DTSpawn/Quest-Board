@@ -1,0 +1,21 @@
+<section class="qb-viewer">
+  {{#if quest}}
+    <article class="qb-parchment-large {{themeClass}} {{#if (eq quest.questType "character")}}qb-scroll-character{{else}}qb-scroll-standard{{/if}}">
+      <div class="qb-scroll-paper">
+        <img class="qb-paper-bg qb-paper-bg-large" src="{{paperImage}}" alt="" aria-hidden="true">
+        {{#if quest.addSeal}}<img class="qb-wax-seal qb-wax-seal-large" src="{{sealImage}}" alt="{{localize "QUEST-BOARD.SealAlt"}}" aria-hidden="true">{{/if}}
+        {{#if pinImage}}<img class="qb-custom-pin qb-custom-pin-large qb-custom-pin-left" src="{{pinImage}}" alt="" aria-hidden="true"><img class="qb-custom-pin qb-custom-pin-large qb-custom-pin-right" src="{{pinImage}}" alt="" aria-hidden="true">{{/if}}
+        <div class="qb-paper-content">
+          <div class="qb-category-slot">
+            {{#if quest.categoryLabel}}<div class="qb-category-viewer {{quest.categoryTextClass}}">{{#if quest.categoryIcon}}<img src="{{quest.categoryIcon}}" alt="" aria-hidden="true">{{/if}}<span>{{quest.categoryLabel}}</span></div>{{/if}}
+          </div>
+          {{#if quest.title}}<h2>{{quest.title}}</h2>{{/if}}
+          {{#if enriched}}<div class="qb-quest-content">{{{enriched}}}</div>{{/if}}
+          {{#if quest.author}}<p class="qb-author">{{quest.author}}</p>{{/if}}
+          {{#if quest.link}}<p class="qb-external-link"><a href="{{quest.link}}" target="_blank" rel="noopener">{{localize "QUEST-BOARD.MoreInformation"}} <i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>{{/if}}
+          {{#if quest.journalUuid}}<button type="button" data-action="openJournal" class="qb-journal-link"><i class="fa-solid fa-book-open"></i > {{localize "QUEST-BOARD.OpenJournal" name=journalName}}</button>{{/if}}
+        </div>
+      </div>
+    </article>
+  {{else}}<p>{{localize "QUEST-BOARD.QuestNotFound"}}</p>{{/if}}
+</section>

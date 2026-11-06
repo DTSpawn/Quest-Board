@@ -1,0 +1,61 @@
+<form class="qb-form qb-settings-form">
+  <div class="form-group">
+    <label for="qb-theme">{{localize "QUEST-BOARD.Appearance"}}</label>
+    <select id="qb-theme" name="theme">
+      <option value="medieval" {{#if (eq appearance.theme "medieval")}}selected{{/if}}>{{localize "QUEST-BOARD.ThemeMedieval"}}</option>
+      <option value="dark-fantasy" {{#if (eq appearance.theme "dark-fantasy")}}selected{{/if}}>{{localize "QUEST-BOARD.ThemeDarkFantasy"}}</option>
+      <option value="high-fantasy" {{#if (eq appearance.theme "high-fantasy")}}selected{{/if}}>{{localize "QUEST-BOARD.ThemeHighFantasy"}}</option>
+      <option value="sci-fi" {{#if (eq appearance.theme "sci-fi")}}selected{{/if}}>{{localize "QUEST-BOARD.ThemeSciFi"}}</option>
+      <option value="cyberpunk" {{#if (eq appearance.theme "cyberpunk")}}selected{{/if}}>{{localize "QUEST-BOARD.ThemeCyberpunk"}}</option>
+      <option value="solarpunk" {{#if (eq appearance.theme "solarpunk")}}selected{{/if}}>{{localize "QUEST-BOARD.ThemeSolarpunk"}}</option>
+      <option value="steampunk" {{#if (eq appearance.theme "steampunk")}}selected{{/if}}>{{localize "QUEST-BOARD.ThemeSteampunk"}}</option>
+      <option value="modern" {{#if (eq appearance.theme "modern")}}selected{{/if}}>{{localize "QUEST-BOARD.ThemeModern"}}</option>
+      <option value="post-apocalyptic" {{#if (eq appearance.theme "post-apocalyptic")}}selected{{/if}}>{{localize "QUEST-BOARD.ThemePostApocalyptic"}}</option>
+      <option value="gothic-horror" {{#if (eq appearance.theme "gothic-horror")}}selected{{/if}}>{{localize "QUEST-BOARD.ThemeGothicHorror"}}</option>
+      <option value="wild-west" {{#if (eq appearance.theme "wild-west")}}selected{{/if}}>{{localize "QUEST-BOARD.ThemeWildWest"}}</option>
+    </select>
+    <p class="hint">{{localize "QUEST-BOARD.ThemeHint"}}</p>
+  </div>
+
+  <div class="form-group qb-fastener-toggle">
+    <label class="qb-checkbox" for="qb-hide-pin">
+      <input id="qb-hide-pin" type="checkbox" name="hidePin" {{#if appearance.hidePin}}checked{{/if}}>
+      <span>{{localize "QUEST-BOARD.HideFasteners"}}</span>
+    </label>
+    <p class="hint">{{localize "QUEST-BOARD.HideFastenersHint"}}</p>
+  </div>
+
+  <div class="form-group qb-fastener-toggle qb-category-icons-toggle">
+    <label class="qb-checkbox" for="qb-hide-category-icons">
+      <input id="qb-hide-category-icons" type="checkbox" name="hideCategoryIcons" {{#if appearance.hideCategoryIcons}}checked{{/if}}>
+      <span>{{localize "QUEST-BOARD.HideCategoryIcons"}}</span>
+    </label>
+    <p class="hint">{{localize "QUEST-BOARD.HideCategoryIconsHint"}}</p>
+  </div>
+
+  <div class="form-group qb-override-toggle">
+    <label class="qb-checkbox" for="qb-custom-images">
+      <input id="qb-custom-images" type="checkbox" name="customImages" {{#if appearance.customImages}}checked{{/if}}>
+      <span>{{localize "QUEST-BOARD.OverrideImages"}}</span>
+    </label>
+    <p class="hint">{{localize "QUEST-BOARD.OverrideImagesHint"}}</p>
+  </div>
+
+  <fieldset class="qb-custom-image-fields {{#unless appearance.customImages}}is-disabled{{/unless}}" {{#unless appearance.customImages}}hidden{{/unless}}>
+    <legend>{{localize "QUEST-BOARD.CustomImages"}}</legend>
+    {{#each fields as |field|}}
+      <div class="form-group qb-file-setting">
+        <label>{{field.label}}</label>
+        <div class="qb-input-with-button">
+          <input type="text" name="{{field.name}}" value="{{field.value}}" placeholder="{{localize "QUEST-BOARD.ImagePathPlaceholder"}}" {{#if field.disabled}}disabled{{/if}}>
+          <button type="button" class="qb-file-picker" data-action="pickFile" data-target="{{field.name}}" title="{{localize "QUEST-BOARD.ChooseImage"}}" {{#if field.disabled}}disabled{{/if}}><i class="fa-solid fa-folder-open"></i></button>
+        </div>
+      </div>
+    {{/each}}
+  </fieldset>
+
+  <footer class="form-footer">
+    <button type="button" data-action="resetCustom" class="secondary">{{localize "QUEST-BOARD.ResetCustomImages"}}</button>
+    <button type="button" data-action="save">{{localize "QUEST-BOARD.Save"}}</button>
+  </footer>
+</form>
