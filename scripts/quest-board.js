@@ -494,7 +494,8 @@ class QuestBoardManager extends HandlebarsApplicationMixin(ApplicationV2) {
       openBoard: this.openBoard,
       editBoard: this.editBoard,
       deleteBoard: this.deleteBoard,
-      placeTile: this.placeTile
+      placeTile: this.placeTile,
+      openSaved: this.openSaved
     }
   };
 
@@ -504,7 +505,8 @@ class QuestBoardManager extends HandlebarsApplicationMixin(ApplicationV2) {
     const boards = getBoards();
     return {
       boards: game.user.isGM ? boards : boards.filter(board => board.showToPlayers !== false),
-      isGM: game.user.isGM
+      isGM: game.user.isGM,
+      hasSavedAnnouncements: getSavedAnnouncements().length > 0
     };
   }
 
@@ -528,6 +530,7 @@ class QuestBoardManager extends HandlebarsApplicationMixin(ApplicationV2) {
   }
 
   static openArchive() { new QuestArchive().render({ force: true }); }
+  static openSaved() { new SavedAnnouncementsWindow().render({ force: true }); }
   static openTemplates() { new QuestTemplates().render({ force: true }); }
   static openBoard(_event, target) { openBoard(target.dataset.boardId); }
 
@@ -848,7 +851,8 @@ class QuestViewer extends HandlebarsApplicationMixin(ApplicationV2) {
     id: "quest-board-quest-viewer",
     classes: ["quest-board", "quest-board-viewer"],
     window: { title: "Quest Board", resizable: true },
-    position: { width: 650, height: 700 }
+    position: { width: 650, height: 700 },
+    actions: { saveQuest: this.saveQuest }
   };
   static PARTS = { main: { template: `modules/${MODULE_ID}/templates/quest-viewer.hbs` } };
   async _prepareContext() {
@@ -865,8 +869,12 @@ class QuestViewer extends HandlebarsApplicationMixin(ApplicationV2) {
       if (quest.reward && !quest.legacyRewardMigrated) quest.description = [quest.description, quest.reward].filter(Boolean).join("\n\n");
     }
     const journal = quest?.journalUuid ? await fromUuid(quest.journalUuid).catch(() => null) : null;
+    const savedEntries = getSavedAnnouncements();
+    const savedKey = this.boardId && this.questId ? `${this.boardId}:${this.questId}` : "";
     return {
       quest,
+      canSave: Boolean(quest && this.boardId && this.questId && !game.user.isGM),
+      alreadySaved: Boolean(savedKey && savedEntries.some(entry => entry.key === savedKey)),
       journalName: journal?.name ?? "",
       enriched: quest ? await TextEditor.enrichHTML(quest.description ?? "", { async: true, secrets: false }) : "",
       themeClass: themeClass(appearance.theme),
@@ -875,6 +883,33 @@ class QuestViewer extends HandlebarsApplicationMixin(ApplicationV2) {
       pinImage: resolveQuestAsset(appearance, quest, "pinImage")
     };
   }
+  static async saveQuest() {
+    if (game.user.isGM || !this.boardId || !this.questId) return;
+    const board = getBoard(this.boardId);
+    const quest = board?.notes.find(note => note.id === this.questId && note.published);
+    if (!quest) return ui.notifications.warn(qbLocalize("SaveAnnouncementUnavailable"));
+    const entries = getSavedAnnouncements();
+    const key = `${this.boardId}:${this.questId}`;
+    if (entries.some(entry => entry.key === key)) {
+      ui.notifications.info(qbLocalize("AnnouncementAlreadySaved"));
+      await this.render({ force: true });
+      return;
+    }
+    entries.push({
+      id: foundry.utils.randomID(),
+      key,
+      boardId: this.boardId,
+      boardName: board.name || "",
+      savedAt: Date.now(),
+      quest: foundry.utils.deepClone(quest)
+    });
+    try {
+      await game.user.setFlag(MODULE_ID, "savedAnnouncements", entries);
+      ui.notifications.info(qbLocalize("AnnouncementSaved"));
+      await this.render({ force: true });
+    } catch (error) { notifyError(error); }
+  }
+
   _onRender(context, options) {
     super._onRender(context, options);
     applyAutomaticTextContrast(this.element, ".qb-paper-bg-large", ".qb-scroll-paper");
@@ -886,6 +921,53 @@ class QuestViewer extends HandlebarsApplicationMixin(ApplicationV2) {
       document?.sheet?.render(true);
     });
   }
+}
+
+class SavedAnnouncementsWindow extends HandlebarsApplicationMixin(ApplicationV2) {
+  static DEFAULT_OPTIONS = {
+    id: "quest-board-saved-announcements",
+    classes: ["quest-board", "quest-board-saved-announcements"],
+    window: { title: "Quest Board", resizable: true },
+    position: { width: 680, height: 560 },
+    actions: { openSaved: this.openSaved, removeSaved: this.removeSaved }
+  };
+  static PARTS = { main: { template: `modules/${MODULE_ID}/templates/saved-announcements.hbs` } };
+  async _prepareContext() {
+    const entries = getSavedAnnouncements().map(entry => ({
+      ...entry,
+      title: entry.quest?.title || qbLocalize("Untitled"),
+      author: entry.quest?.author || "",
+      savedDate: entry.savedAt ? new Date(entry.savedAt).toLocaleDateString(game.i18n.lang) : ""
+    }));
+    return { entries };
+  }
+  static openSaved(_event, target) {
+    const entry = getSavedAnnouncements().find(item => item.id === target.dataset.savedId);
+    if (!entry?.quest) return;
+    new QuestViewer({ questData: entry.quest }).render({ force: true });
+  }
+  static async removeSaved(_event, target) {
+    const id = target.dataset.savedId;
+    const entries = getSavedAnnouncements();
+    if (!entries.some(entry => entry.id === id)) return;
+    const confirmed = await foundry.applications.api.DialogV2.confirm({
+      window: { title: qbLocalize("RemoveSavedTitle") },
+      content: qbFormat("RemoveSavedConfirm", { name: foundry.utils.escapeHTML(entries.find(entry => entry.id === id)?.quest?.title || qbLocalize("Untitled")) }),
+      yes: { label: qbLocalize("Remove"), icon: "fa-solid fa-trash" },
+      no: { label: qbLocalize("Cancel") }
+    });
+    if (!confirmed) return;
+    try {
+      await game.user.setFlag(MODULE_ID, "savedAnnouncements", entries.filter(entry => entry.id !== id));
+      await this.render({ force: true });
+      ui.notifications.info(qbLocalize("SavedAnnouncementRemoved"));
+    } catch (error) { notifyError(error); }
+  }
+}
+
+function getSavedAnnouncements() {
+  const entries = game.user.getFlag(MODULE_ID, "savedAnnouncements");
+  return Array.isArray(entries) ? foundry.utils.deepClone(entries) : [];
 }
 
 class QuestBoardWindow extends HandlebarsApplicationMixin(ApplicationV2) {
@@ -907,6 +989,7 @@ class QuestBoardWindow extends HandlebarsApplicationMixin(ApplicationV2) {
     window: { title: "Quest Board", resizable: true },
     position: { width: 980, height: 720 },
     actions: {
+      openSaved: this.openSaved,
       addQuest: this.addQuest,
       editQuest: this.editQuest,
       deleteQuest: this.deleteQuest,
@@ -1031,6 +1114,7 @@ class QuestBoardWindow extends HandlebarsApplicationMixin(ApplicationV2) {
       : selectedCategory ? qbLocalize(selectedCategory.description) : "";
     return { board, isGM: game.user.isGM, arrangeMode: this.arrangeMode, notes, filterOptions, filterDescription, themeClass: themeClass(theme), hidePin: appearance.hidePin, boardImage };
   }
+  static openSaved() { new SavedAnnouncementsWindow().render({ force: true }); }
   static addQuest() { new QuestEditor({ boardId: this.boardId }).render({ force: true }); }
   static editQuest(_event, target) { new QuestEditor({ boardId: this.boardId, questId: target.dataset.questId }).render({ force: true }); }
   static async deleteQuest(_event, target) {
@@ -1308,6 +1392,7 @@ Hooks.on("getSceneControlButtons", controls => {
     visible: true,
     onChange: () => new QuestBoardManager().render({ force: true })
   };
+
 });
 
 Hooks.on("getHeaderControlsApplicationV2", (app, controls) => {

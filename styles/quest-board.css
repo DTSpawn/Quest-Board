@@ -1663,3 +1663,57 @@
   user-select: none;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .75));
 }
+
+/* v1.3.7 — personal saved announcements */
+.qb-viewer-actions { display:flex; justify-content:flex-end; margin:0 0 10px; }
+.qb-viewer-actions button { display:inline-flex; align-items:center; gap:7px; }
+.qb-board-header-actions { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+.qb-saved-announcements .qb-board-row { align-items:center; }
+
+/* Player shortcut sits in the Quest Board manager header, not the scene controls. */
+.qb-manager-heading { flex-direction:row; align-items:center; justify-content:space-between; }
+.qb-manager-heading-copy { flex:1 1 auto; }
+.qb-manager-player-toolbar { flex:0 0 auto; display:flex; align-items:center; }
+.qb-manager-player-toolbar button { display:inline-flex; align-items:center; justify-content:center; gap:7px; white-space:nowrap; border:1px solid #b58a50; border-radius:4px; background:linear-gradient(#8a6338,#5d3e25); color:#fff1d5; padding:9px 12px; }
+@media (max-width:520px) { .qb-manager-heading { align-items:stretch; flex-direction:column; } .qb-manager-player-toolbar { width:100%; } .qb-manager-player-toolbar button { width:100%; } }
+
+
+/* v1.3.10 — keep the GM heading clear of the action toolbar. */
+.qb-manager-heading-gm {
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:flex-start;
+  gap:12px;
+  min-width:0;
+}
+.qb-manager-heading-gm .qb-manager-heading-copy {
+  flex:0 0 auto;
+  min-width:0;
+}
+.qb-manager-heading-gm .qb-manager-heading-copy h2 {
+  white-space:nowrap;
+  overflow-wrap:normal;
+  word-break:keep-all;
+}
+.qb-manager-heading-gm .qb-manager-toolbar {
+  display:flex;
+  flex-wrap:wrap;
+  width:100%;
+  min-width:0;
+}
+.qb-manager-heading-player {
+  display:flex;
+  flex-direction:row;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+.qb-manager-heading-player .qb-manager-heading-copy { flex:1 1 auto; min-width:0; }
+.qb-manager-heading-player .qb-manager-heading-copy h2 { white-space:nowrap; overflow-wrap:normal; word-break:keep-all; }
+.qb-manager-heading-player .qb-manager-player-toolbar { flex:0 0 auto; }
+@media (max-width:520px) {
+  .qb-manager-heading-player { align-items:flex-start; flex-direction:column; }
+  .qb-manager-heading-player .qb-manager-player-toolbar { width:100%; }
+  .qb-manager-heading-player .qb-manager-player-toolbar button { width:100%; }
+}

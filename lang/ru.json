@@ -169,6 +169,18 @@
     "ChooseBoardForTemplate": "Выбери доску, на которую нужно добавить объявление из шаблона «{template}».",
     "SelectBoard": "Выбери доску.",
     "CreateBoardFirstForTemplate": "Сначала создай хотя бы одну доску объявлений.",
-    "Preview": "Просмотреть"
+    "Preview": "Просмотреть",
+    "TakeAnnouncement": "Взять объявление",
+    "SavedAnnouncements": "Сохранённые квесты",
+    "SavedAnnouncementsHint": "Личный список объявлений. Удаление записи не влияет на общую доску.",
+    "SavedAnnouncementsEmpty": "Вы пока не сохранили ни одного объявления.",
+    "AnnouncementAlreadySaved": "Уже сохранено",
+    "AnnouncementSaved": "Объявление добавлено в сохранённые.",
+    "SaveAnnouncementUnavailable": "Это объявление больше недоступно для сохранения.",
+    "Remove": "Убрать",
+    "RemoveSavedTitle": "Удалить сохранённое объявление?",
+    "RemoveSavedConfirm": "<p>Убрать объявление «{name}» из сохранённых?</p><p>Оригинал на общей доске не изменится.</p>",
+    "SavedAnnouncementRemoved": "Объявление удалено из сохранённых.",
+    "SavedAnnouncementsToolTitle": "Сохранённые квесты"
   }
 }

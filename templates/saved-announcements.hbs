@@ -1,0 +1,21 @@
+<section class="qb-saved-announcements qb-utility-window">
+  <header class="qb-utility-heading">
+    <h2>{{localize "QUEST-BOARD.SavedAnnouncements"}}</h2>
+    <p>{{localize "QUEST-BOARD.SavedAnnouncementsHint"}}</p>
+  </header>
+  <div class="qb-archive-list">
+    {{#each entries as |entry|}}
+      <article class="qb-board-row">
+        <div class="qb-board-emblem"><i class="fa-solid fa-bookmark"></i></div>
+        <div class="qb-board-meta">
+          <strong>{{entry.title}}</strong>
+          <span>{{entry.boardName}}{{#if entry.author}} · {{entry.author}}{{/if}}{{#if entry.savedDate}} · {{entry.savedDate}}{{/if}}</span>
+        </div>
+        <div class="qb-board-actions">
+          <button type="button" data-action="openSaved" data-saved-id="{{entry.id}}" title="{{localize "QUEST-BOARD.Open"}}"><i class="fa-solid fa-eye"></i></button>
+          <button type="button" data-action="removeSaved" data-saved-id="{{entry.id}}" title="{{localize "QUEST-BOARD.Remove"}}"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </article>
+    {{else}}<p class="qb-empty">{{localize "QUEST-BOARD.SavedAnnouncementsEmpty"}}</p>{{/each}}
+  </div>
+</section>

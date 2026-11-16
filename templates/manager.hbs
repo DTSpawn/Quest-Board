@@ -1,6 +1,14 @@
 <section class="qb-manager">
-  <header class="qb-manager-heading">
-    <div class="qb-manager-heading-copy"><h2>{{localize "QUEST-BOARD.ManagerHeading"}}</h2><p>{{localize "QUEST-BOARD.ManagerDescription"}}</p></div>
+  <header class="qb-manager-heading {{#if isGM}}qb-manager-heading-gm{{else}}qb-manager-heading-player{{/if}}">
+    <div class="qb-manager-heading-copy">
+      <h2>{{localize "QUEST-BOARD.ManagerHeading"}}</h2>
+      {{#if isGM}}<p>{{localize "QUEST-BOARD.ManagerDescription"}}</p>{{/if}}
+    </div>
+    {{#unless isGM}}
+      <nav class="qb-manager-player-toolbar" aria-label="Quest Board actions">
+        <button type="button" data-action="openSaved"><i class="fa-solid fa-bookmark"></i> {{localize "QUEST-BOARD.SavedAnnouncements"}}</button>
+      </nav>
+    {{/unless}}
     {{#if isGM}}
       <nav class="qb-manager-toolbar" aria-label="Quest Board actions">
         <button type="button" data-action="openTemplates"><i class="fa-solid fa-copy"></i> {{localize "QUEST-BOARD.TemplatesButton"}}</button>

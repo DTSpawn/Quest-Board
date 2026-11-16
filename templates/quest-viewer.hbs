@@ -1,5 +1,6 @@
 <section class="qb-viewer">
   {{#if quest}}
+    {{#if canSave}}<div class="qb-viewer-actions"><button type="button" data-action="saveQuest" {{#if alreadySaved}}disabled{{/if}}><i class="fa-solid fa-bookmark"></i> {{#if alreadySaved}}{{localize "QUEST-BOARD.AnnouncementAlreadySaved"}}{{else}}{{localize "QUEST-BOARD.TakeAnnouncement"}}{{/if}}</button></div>{{/if}}
     <article class="qb-parchment-large {{themeClass}} {{#if (eq quest.questType "character")}}qb-scroll-character{{else}}qb-scroll-standard{{/if}}">
       <div class="qb-scroll-paper">
         <img class="qb-paper-bg qb-paper-bg-large" src="{{paperImage}}" alt="" aria-hidden="true">

@@ -169,6 +169,18 @@
     "ChooseBoardForTemplate": "Choose the board for the quest created from template “{template}”.",
     "SelectBoard": "Select a board.",
     "CreateBoardFirstForTemplate": "Create a quest board first.",
-    "Preview": "Preview"
+    "Preview": "Preview",
+    "TakeAnnouncement": "Save Announcement",
+    "SavedAnnouncements": "Saved Quests",
+    "SavedAnnouncementsHint": "Your personal list. Removing an entry does not affect the shared board.",
+    "SavedAnnouncementsEmpty": "You have not saved any announcements yet.",
+    "AnnouncementAlreadySaved": "Already Saved",
+    "AnnouncementSaved": "Announcement added to your saved list.",
+    "SaveAnnouncementUnavailable": "This announcement is no longer available to save.",
+    "Remove": "Remove",
+    "RemoveSavedTitle": "Remove Saved Announcement?",
+    "RemoveSavedConfirm": "<p>Remove “{name}” from your saved announcements?</p><p>The original on the shared board will not be changed.</p>",
+    "SavedAnnouncementRemoved": "Announcement removed from your saved list.",
+    "SavedAnnouncementsToolTitle": "Saved Quests"
   }
 }
