@@ -114,7 +114,7 @@
     "JournalChooseHint": "Выбери нужную страницу. В поле объявления будет записан её UUID.",
     "NoJournalPages": "В журналах пока нет страниц.",
     "CreateJournalPageHint": "Создай страницу в разделе «Журнал» и попробуй снова.",
-    "ManagerFooterVersion": "v1.6.1 · Foundry VTT v14",
+    "ManagerFooterVersion": "v1.6.2 · Foundry VTT v14",
     "SceneToolTitle": "Quest Board — Открыть менеджер досок",
     "QuestCategory": "Категория квеста",
     "CategoryFilterLabel": "Фильтр категорий",

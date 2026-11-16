@@ -22,8 +22,8 @@
                 {{#if note.unpublishedEyeImage}}<img class="qb-unpublished-eye" src="{{note.unpublishedEyeImage}}" alt="" aria-hidden="true" draggable="false">{{/if}}
                 {{#if note.addSeal}}<img class="qb-wax-seal qb-wax-seal-small" src="{{note.sealImage}}" alt="{{localize "QUEST-BOARD.SealAlt"}}" aria-hidden="true">{{/if}}
                 {{#if note.pinImage}}<img class="qb-custom-pin qb-custom-pin-small qb-custom-pin-left" src="{{note.pinImage}}" alt="" aria-hidden="true"><img class="qb-custom-pin qb-custom-pin-small qb-custom-pin-right" src="{{note.pinImage}}" alt="" aria-hidden="true">{{/if}}
+                {{#if note.categoryIcon}}<span class="qb-category-icon-small qb-category-icon-{{note.category}} qb-category-icon-flyer" title="{{note.categoryLabel}}" aria-label="{{note.categoryLabel}}"><img src="{{note.categoryIcon}}" alt="" aria-hidden="true"></span>{{/if}}
                 <span class="qb-note-content">
-                  {{#if note.categoryIcon}}<span class="qb-category-icon-small qb-category-icon-{{note.category}}" title="{{note.categoryLabel}}" aria-label="{{note.categoryLabel}}"><img src="{{note.categoryIcon}}" alt="" aria-hidden="true"></span>{{/if}}
                   {{#if note.title}}<span class="qb-note-title">{{note.title}}</span>{{/if}}
                   {{#if note.summary}}<span class="qb-note-summary">{{note.summary}}</span>{{/if}}
                 </span>

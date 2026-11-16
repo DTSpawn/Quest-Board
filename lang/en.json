@@ -114,7 +114,7 @@
     "JournalChooseHint": "Select a page. Its UUID will be added to the quest.",
     "NoJournalPages": "There are no journal pages yet.",
     "CreateJournalPageHint": "Create a page in the Journal directory and try again.",
-    "ManagerFooterVersion": "v1.6.1 · Foundry VTT v14",
+    "ManagerFooterVersion": "v1.6.2 · Foundry VTT v14",
     "SceneToolTitle": "Quest Board — Open Board Manager",
     "QuestCategory": "Quest Category",
     "CategoryFilterLabel": "Category Filter",

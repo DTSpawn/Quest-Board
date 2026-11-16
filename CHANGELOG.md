@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.6.2] — 2026-11-16
+
+### Fixed
+- Fixed category icons being clipped by the flyer text container.
+- Moved category icons into a separate layer so their position no longer affects the notice title.
+- Reduced the displayed icon area and kept icons within the flyer boundaries.
+
+### Исправлено
+- Исправлено обрезание иконок категорий.
+- Иконки вынесены в отдельный слой, поэтому они больше не влияют на расположение заголовка.
+- Уменьшен размер области иконки; она остаётся внутри границ листовки.
+
 ## [1.6.1] — 2026-11-16
 
 - Expanded the English notice library with 15 additional original notices for each of the 11 visual styles.

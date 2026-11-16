@@ -1860,3 +1860,32 @@
   overflow-wrap: anywhere;
   line-height: 1.16;
 }
+
+/* v1.6.2: keep category icons compact and fully inside the flyer. */
+.qb-note-open {
+  overflow: hidden !important;
+}
+.qb-note-open > .qb-category-icon-flyer {
+  position: absolute !important;
+  z-index: 4 !important;
+  top: 1% !important;
+  right: 10% !important;
+  left: auto !important;
+  width: 15% !important;
+  height: 17% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+}
+.qb-note-open > .qb-category-icon-flyer img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  background: transparent !important;
+}

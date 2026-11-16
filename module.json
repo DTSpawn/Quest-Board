@@ -2,7 +2,7 @@
   "id": "quest-board",
   "title": "Quest Board | Доска объявлений",
   "description": "Интерактивные доски объявлений, квесты и библиотека готовых городских объявлений для Foundry Virtual Tabletop.",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "authors": [
     {
       "name": "Quest Board Team"
