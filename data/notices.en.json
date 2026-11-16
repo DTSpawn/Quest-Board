@@ -1,0 +1,1982 @@
+[
+  {
+    "id": "medieval-en-01",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "Wanted: A Knight to Watch the Turnips",
+    "description": "Must be brave, punctual, and willing to defend the vegetable patch from the neighbour's chickens. Armour provided; polishing it is your responsibility.",
+    "author": "Marta of Greenacre, outside the east gate.",
+    "category": "work"
+  },
+  {
+    "id": "medieval-en-02",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "Lost: The Mayor's Extremely Important Hat",
+    "description": "A tall blue hat with a feather and an even taller opinion of itself. It may answer to 'Your Honour'. Do not let it attend council meetings.",
+    "author": "Town Clerk Osric, City Hall steps.",
+    "category": "lost-found"
+  },
+  {
+    "id": "medieval-en-03",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "Selling: One Slightly Cursed Cauldron",
+    "description": "Sturdy iron, excellent for stews. Occasionally whispers recipes in a language no chef has admitted knowing. Collection only; bring your own cart.",
+    "author": "Bramble & Sons, Market Row.",
+    "category": "trade"
+  },
+  {
+    "id": "medieval-en-04",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "Seeking a Map That Does Not Lie",
+    "description": "The last three maps led me into a pond, a tax office, and a dragon's pantry. Payment offered for something accurate, or at least honest about its mistakes.",
+    "author": "Adventurer Pell, The Bent Tankard.",
+    "category": "exploration"
+  },
+  {
+    "id": "medieval-en-05",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "Notice to All Innkeepers",
+    "description": "Please stop hiring the bard with the enchanted lute. Every performance ends with the furniture dancing and the patrons demanding a rematch.",
+    "author": "The Guild of Publicans, Old Square.",
+    "category": "notice"
+  },
+  {
+    "id": "dark-fantasy-en-01",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "The Bell Beneath the Chapel Is Ringing Again",
+    "description": "It rings at midnight, though the rope was cut and the bell was buried. Keep your windows shut. If you hear your name, do not answer.",
+    "author": "Sister Merrow, Chapel of the Last Light.",
+    "category": "notice"
+  },
+  {
+    "id": "dark-fantasy-en-02",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "Wanted: A Guide Through the Ashen Wood",
+    "description": "Must know which trees are dead, which are merely pretending, and which follow travellers home. Night work. No singing.",
+    "author": "The Grey Lantern Company, south road.",
+    "category": "work"
+  },
+  {
+    "id": "dark-fantasy-en-03",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "A House for Sale — No Reflections Included",
+    "description": "Three rooms, dry cellar, fine view of the graveyard. The previous owner has left in a hurry and requests that nobody look behind the pantry door.",
+    "author": "Estate Agent Vey, Crooked Lane.",
+    "category": "trade"
+  },
+  {
+    "id": "dark-fantasy-en-04",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "Missing: Seven Shadows",
+    "description": "Last seen attached to their owners near the old gallows. Finder's fee paid in silver. Please do not attempt to wear them.",
+    "author": "The Night Watch, western gate.",
+    "category": "lost-found"
+  },
+  {
+    "id": "dark-fantasy-en-05",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "Seeking Volunteers for a Quiet Vigil",
+    "description": "Bring a candle, a warm coat, and a strong stomach. We will keep watch until the thing in the well stops knocking from the inside.",
+    "author": "Keeper of the Ossuary, lower village.",
+    "category": "other"
+  },
+  {
+    "id": "high-fantasy-en-01",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "Dragon-Safe Delivery Service Needs Riders",
+    "description": "Must be comfortable with wyverns, griffons, and impatient wizards. Fireproof boots are a bonus. Please leave all enchanted parcels unopened.",
+    "author": "Skyway Couriers, Aerie Plaza.",
+    "category": "work"
+  },
+  {
+    "id": "high-fantasy-en-02",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "The Moonwell Has Misplaced Its Moonbeam",
+    "description": "A pale ribbon of light has escaped the sacred pool and is causing mischief around the gardens. Bring it back in a silver flask. Do not fold.",
+    "author": "Warden Liora, Moonwell Sanctuary.",
+    "category": "exploration"
+  },
+  {
+    "id": "high-fantasy-en-03",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "Trade Offer: Three Bottles of Genuine Giant's Laughter",
+    "description": "Bottled during a diplomatic banquet. Shake gently; never open near sleeping dragons. One bottle may contain a hiccup instead.",
+    "author": "Merchants of the Seven Roads, Crystal Market.",
+    "category": "trade"
+  },
+  {
+    "id": "high-fantasy-en-04",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "Wanted: Someone to Teach a Phoenix to Sit",
+    "description": "The bird is magnificent, highly intelligent, and refuses to land anywhere that is not on fire. Treats provided. Fire brigade on standby.",
+    "author": "Magister Aurel, Tower of Embers.",
+    "category": "work"
+  },
+  {
+    "id": "high-fantasy-en-05",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "Royal Decree: No More Portal Experiments in the Fountain",
+    "description": "The fountain is not a doorway, a summoning circle, or a convenient shortcut to the Astral Sea. The fish have suffered enough.",
+    "author": "Office of the Royal Arcanist, palace gates.",
+    "category": "notice"
+  },
+  {
+    "id": "sci-fi-en-01",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Maintenance Crew Needed: Uncooperative Airlock",
+    "description": "Airlock 7 keeps opening for people who are not there and refusing to open for people who are. Bring tools, patience, and a second pressure suit.",
+    "author": "Station Engineering, Deck C.",
+    "category": "work"
+  },
+  {
+    "id": "sci-fi-en-02",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Found: One Artificial Memory",
+    "description": "Contains a birthday party, three passwords, and a very convincing memory of being a houseplant. Claimant must identify the cake.",
+    "author": "Lost Property, Central Hub.",
+    "category": "lost-found"
+  },
+  {
+    "id": "sci-fi-en-03",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Seeking Test Subjects for Gravity Calibration",
+    "description": "The procedure is painless, brief, and only occasionally sideways. Participants must not be carrying open drinks or fragile cargo.",
+    "author": "Xeno-Physics Lab, Research Ring.",
+    "category": "other"
+  },
+  {
+    "id": "sci-fi-en-04",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Cargo Pilot Wanted for a Short Route",
+    "description": "Two jumps, one refuelling stop, and a crate that hums when addressed by its serial number. Hazard bonus negotiable.",
+    "author": "Orbital Freight Cooperative, Dock 12.",
+    "category": "work"
+  },
+  {
+    "id": "sci-fi-en-05",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Public Notice: Stop Feeding the Maintenance Drones",
+    "description": "They are not pets. They are not hungry. They are now organising into shifts and demanding a collective bargaining agreement.",
+    "author": "Station Administration, Main Concourse.",
+    "category": "notice"
+  },
+  {
+    "id": "cyberpunk-en-01",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Need a Ghostwriter for a Dead Influencer",
+    "description": "Client wants a convincing final post, three apologies, and a comeback tour. Payment in clean cred. No questions about the backup body.",
+    "author": "Neon Sparrow Media, Level 44.",
+    "category": "work"
+  },
+  {
+    "id": "cyberpunk-en-02",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Stolen: Prototype Smart Jacket",
+    "description": "Tracks your pulse, blocks ads, and occasionally gives unsolicited life advice. Last seen sprinting toward the old transit tunnels without its owner.",
+    "author": "Kite Security, Night Market.",
+    "category": "lost-found"
+  },
+  {
+    "id": "cyberpunk-en-03",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Cheap Cybernetic Eye — Barely Used",
+    "description": "Excellent zoom, night vision, and a suspiciously strong preference for watching pigeons. Warranty void if it starts recognising ghosts.",
+    "author": "Patch & Pixel Clinic, Chrome Alley.",
+    "category": "trade"
+  },
+  {
+    "id": "cyberpunk-en-04",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Courier Wanted: One Offline Package",
+    "description": "No network, no scans, no questions. The package is small, warm, and keeps whispering the recipient's name. Bonus for discretion.",
+    "author": "Redline Dispatch, Underpass 9.",
+    "category": "work"
+  },
+  {
+    "id": "cyberpunk-en-05",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Reminder: Your Smart Fridge Is Not a Therapist",
+    "description": "Please stop asking it for relationship advice. It has begun locking the ice compartment whenever you mention your ex.",
+    "author": "Residents' Network, Block 08.",
+    "category": "notice"
+  },
+  {
+    "id": "solarpunk-en-01",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Community Garden Needs a Pollinator Wrangler",
+    "description": "Help guide the rooftop bees to their new home. Protective veil provided; flowers and tea supplied. Must be kind to insects and neighbours.",
+    "author": "Green Canopy Cooperative, Sunward Terrace.",
+    "category": "work"
+  },
+  {
+    "id": "solarpunk-en-02",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Free Repair Café This Saturday",
+    "description": "Bring broken tools, lamps, toys, or a stubborn toaster. We fix what we can, share what we know, and compost the things beyond saving.",
+    "author": "The Open Workshop, Riverside Commons.",
+    "category": "notice"
+  },
+  {
+    "id": "solarpunk-en-03",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Missing: A Very Determined Tomato Plant",
+    "description": "Last seen migrating toward the warmest window in the district. It has a tiny blue tag and a history of escaping its planter.",
+    "author": "Mina, Balcony 6B, Solstice Housing.",
+    "category": "lost-found"
+  },
+  {
+    "id": "solarpunk-en-04",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Trade: Rainwater for Seedlings",
+    "description": "Offering two clean barrels of collected rainwater in exchange for hardy herbs or native flower seeds. Fair swaps, no credits needed.",
+    "author": "Neighbourhood Exchange, Willow Walk.",
+    "category": "trade"
+  },
+  {
+    "id": "solarpunk-en-05",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Looking for a Guide to the Old Greenhouse",
+    "description": "Its climate system still runs, but the vines have developed a complicated sense of territory. Bring gloves and a respectful attitude.",
+    "author": "Restoration Circle, South Biome.",
+    "category": "exploration"
+  },
+  {
+    "id": "steampunk-en-01",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "Wanted: Assistant for a Self-Winding Clock",
+    "description": "Must be punctual, mechanically minded, and able to outrun a clockwork badger. The clock is harmless unless wound counter-clockwise.",
+    "author": "Professor Brasswick, Workshop 3.",
+    "category": "work"
+  },
+  {
+    "id": "steampunk-en-02",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "For Sale: A Very Polite Steam Automaton",
+    "description": "Makes tea, sorts mail, and apologises before malfunctioning. Occasionally recites shipping forecasts from 1842. Comes with spare monocle.",
+    "author": "Cog & Kettle Emporium, Gearwright Street.",
+    "category": "trade"
+  },
+  {
+    "id": "steampunk-en-03",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "Missing: The Duke's Pocket-Sized Airship",
+    "description": "Brass finish, red pennant, one tiny cannon. Last seen sailing through the conservatory. Please return before the luncheon.",
+    "author": "Household Office, West Manor.",
+    "category": "lost-found"
+  },
+  {
+    "id": "steampunk-en-04",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "Seeking Test Pilot for Experimental Boots",
+    "description": "Allow the wearer to leap impressive distances, usually in the intended direction. Safety net, helmet, and apology form provided.",
+    "author": "Aetherworks Laboratory, Foundry Quarter.",
+    "category": "work"
+  },
+  {
+    "id": "steampunk-en-05",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "Public Notice: No More Tea in the Boiler Room",
+    "description": "The pressure gauges are not cups, the emergency valves are not kettles, and the engineer is not your personal barista.",
+    "author": "Chief Engineer Pumble, Central Works.",
+    "category": "notice"
+  },
+  {
+    "id": "modern-en-01",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "Dog Walker Needed — Dog May Be a Little Weird",
+    "description": "Friendly, energetic, and convinced every pigeon is an old rival. Two walks a day. Please do not let him near the town statue again.",
+    "author": "Nora, Maple Street, House 14.",
+    "category": "work"
+  },
+  {
+    "id": "modern-en-02",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "Lost: A Bag of Very Specific Potatoes",
+    "description": "Six potatoes, each labelled for a different recipe. Finder's reward: one excellent soup and eternal gratitude.",
+    "author": "Community Noticeboard, Central Library.",
+    "category": "lost-found"
+  },
+  {
+    "id": "modern-en-03",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "Roommate Wanted, Must Like Houseplants",
+    "description": "The apartment is bright, affordable, and full of plants with strong opinions. One of them may be carnivorous. Rent includes watering duties.",
+    "author": "Sam, 3rd Floor, Cedar Apartments.",
+    "category": "trade"
+  },
+  {
+    "id": "modern-en-04",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "Looking for Someone to Assemble a Flat-Pack Wardrobe",
+    "description": "Instructions are missing, screws are plentiful, and the wardrobe appears to have one extra wall. Pizza and payment provided.",
+    "author": "Alex, Unit 12, Birch Court.",
+    "category": "work"
+  },
+  {
+    "id": "modern-en-05",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "Reminder: The Elevator Is Not a Confessional",
+    "description": "Please stop sharing secrets with the lift. The maintenance team has found it stopping on floors nobody selected.",
+    "author": "Building Management, Riverside Towers.",
+    "category": "notice"
+  },
+  {
+    "id": "post-apocalyptic-en-01",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Wanted: Scavenger Who Can Read Old Labels",
+    "description": "We need someone who can tell canned peaches from industrial solvent. Bring gloves, a mask, and a healthy distrust of cheerful packaging.",
+    "author": "Depot 4, The Rust Market.",
+    "category": "work"
+  },
+  {
+    "id": "post-apocalyptic-en-02",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Trade: Two Filters for One Working Bicycle",
+    "description": "Filters are clean, sealed, and only slightly dented. Bicycle must have both wheels and no unexplained clicking noises.",
+    "author": "Mara's Exchange, North Gate.",
+    "category": "trade"
+  },
+  {
+    "id": "post-apocalyptic-en-03",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Missing: The Settlement's Warning Bell",
+    "description": "Taken from the watchtower sometime during the storm. It is heavy, loud, and impossible to mistake for cookware.",
+    "author": "Lookout Crew, Water Tower.",
+    "category": "lost-found"
+  },
+  {
+    "id": "post-apocalyptic-en-04",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Water Run Escort Needed",
+    "description": "Route crosses the old highway and one very quiet suburb. Pay in purified water. Do not investigate the music coming from the drainage tunnel.",
+    "author": "Caravan Lead Joss, Fuel Depot.",
+    "category": "exploration"
+  },
+  {
+    "id": "post-apocalyptic-en-05",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Notice: Stop Charging Batteries in the Soup Pot",
+    "description": "The pot is for food. The batteries are for power. We have explained this after every blackout, and we are running out of pots.",
+    "author": "Settlement Council, Main Shelter.",
+    "category": "notice"
+  },
+  {
+    "id": "gothic-horror-en-01",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "Wanted: Caretaker for a House That Sighs",
+    "description": "Duties include dusting, feeding the fireplace, and politely asking the staircase to remain still. Previous experience with haunted properties preferred.",
+    "author": "Miss Vesper, Blackthorn Lane.",
+    "category": "work"
+  },
+  {
+    "id": "gothic-horror-en-02",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "Lost: A Portrait That Keeps Changing",
+    "description": "Gold frame, cracked varnish, subject wears a green coat. If the expression looks different, do not mention it. The portrait is sensitive.",
+    "author": "Curator Vale, Municipal Gallery.",
+    "category": "lost-found"
+  },
+  {
+    "id": "gothic-horror-en-03",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "Seeking a Locksmith for the West Wing",
+    "description": "The doors lock themselves at dusk and the keys have begun growing teeth. Bring iron tools and avoid whistling in the corridor.",
+    "author": "Caretaker Hallow, Briar House.",
+    "category": "work"
+  },
+  {
+    "id": "gothic-horror-en-04",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "For Sale: Antique Mirror, Excellent Condition",
+    "description": "Shows a clear reflection most days. On Thursdays it displays the room as it looked fifty years ago. Collection after sunset only.",
+    "author": "Madame Orla, Curio Shop on Bell Street.",
+    "category": "trade"
+  },
+  {
+    "id": "gothic-horror-en-05",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "Notice to Guests of the Old Hotel",
+    "description": "Please ignore footsteps in the sealed attic, do not follow the woman in the blue dress, and never accept a room key marked zero.",
+    "author": "Management, The Mourning Bell Hotel.",
+    "category": "notice"
+  },
+  {
+    "id": "wild-west-en-01",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "Wanted: Piano Player Who Can Dodge Bullets",
+    "description": "Must know three lively tunes and one very quiet one. The saloon has sturdy tables and a strict no-shooting-during-the-chorus policy.",
+    "author": "Dusty Spur Saloon, Main Street.",
+    "category": "work"
+  },
+  {
+    "id": "wild-west-en-02",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "Lost: Sheriff’s Favourite Horse",
+    "description": "Chestnut mare, white blaze, answers to Trouble. She is not stolen; she has simply decided to enforce the law herself.",
+    "author": "Sheriff Boone, County Office.",
+    "category": "lost-found"
+  },
+  {
+    "id": "wild-west-en-03",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "For Sale: A Map to a Very Ordinary Mine",
+    "description": "The gold ran out years ago, but the map is beautifully drawn and the cave makes an excellent place to hide from relatives.",
+    "author": "Old Eli, beside the water tower.",
+    "category": "trade"
+  },
+  {
+    "id": "wild-west-en-04",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "Wanted: Escort for a Temperamental Stagecoach",
+    "description": "Two-day trip to Red Creek. Coach is sound, horses are stubborn, and the passenger insists on travelling with six locked hatboxes.",
+    "author": "Red Creek Express, Depot Yard.",
+    "category": "work"
+  },
+  {
+    "id": "wild-west-en-05",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "Notice: No Lassoing the Church Bell",
+    "description": "The bell is not a steer, the steeple is not a rodeo arena, and the preacher has run out of patience.",
+    "author": "Town Council, outside the chapel.",
+    "category": "notice"
+  },
+  {
+    "id": "medieval-en-06",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "Apprentice Needed at the Royal Menagerie",
+    "description": "Must be able to feed griffon chicks, clean a basilisk's enclosure without making eye contact, and tell the difference between a sleeping dragon and a very large rug.",
+    "author": "Master of Beasts Halwen, Castle Yard.",
+    "category": "work"
+  },
+  {
+    "id": "medieval-en-07",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "Wanted: The Thief Who Stole the Town's Rain",
+    "description": "Three days of sunshine have followed the disappearance of the ceremonial rain barrel. Bring it back before the crops stage a protest.",
+    "author": "reeve's Office, Mill Square.",
+    "category": "notice"
+  },
+  {
+    "id": "medieval-en-08",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "A Quest for the World's Most Average Cheese",
+    "description": "The king has rejected twelve legendary cheeses as too pungent, too magical, or too heroic. He requests one perfectly ordinary wheel.",
+    "author": "Royal Pantry, Castle Kitchens.",
+    "category": "trade"
+  },
+  {
+    "id": "medieval-en-09",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "Seeking Strong Arms to Move a Sleeping Giant",
+    "description": "The giant has dozed off across the north road. Do not wake him. A team is needed to shift his boots just far enough for carts to pass.",
+    "author": "Roadwarden Brigg, North Milestone.",
+    "category": "work"
+  },
+  {
+    "id": "medieval-en-10",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "Wanted: Someone to Deliver a Letter to the Dead",
+    "description": "The recipient is buried in the old cemetery and has been expecting this letter for forty years. Please knock before entering the crypt.",
+    "author": "Pella the Postmistress, Old Post House.",
+    "category": "work"
+  },
+  {
+    "id": "medieval-en-11",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "Notice: The Village Well Is Not a Wishing Well",
+    "description": "Coins thrown into the well are being collected by the tax office. Wishes are not legally binding and refunds will not be issued.",
+    "author": "Village Council, beside the well.",
+    "category": "notice"
+  },
+  {
+    "id": "medieval-en-12",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "Lost: A Goose with Noble Ambitions",
+    "description": "White goose, brass tag, answers to Lady Honk. She has been seen attempting to enter the baron's residence. Approach with grain, not titles.",
+    "author": "Farmer Tibb, Goose Meadow.",
+    "category": "lost-found"
+  },
+  {
+    "id": "medieval-en-13",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "For Hire: Professional Dungeon Sweeper",
+    "description": "Cobweb removal, mimic identification, skeleton relocation, and basic trap polishing. Discounts for adventurers who leave the treasure where they found it.",
+    "author": "Mop & Shield Services, Guild Street.",
+    "category": "work"
+  },
+  {
+    "id": "medieval-en-14",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "Seeking a Bard for a Very Short Wedding",
+    "description": "The ceremony must last no longer than seven minutes. No tragic ballads, no dragon metaphors, and absolutely no surprise encores.",
+    "author": "The Wainwright Family, East Chapel.",
+    "category": "work"
+  },
+  {
+    "id": "medieval-en-15",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "Trade: One Enchanted Plough for Quiet Livestock",
+    "description": "The plough turns soil by itself but sings marching songs at dawn. Seeking sheep, goats, or a cow that does not know any spells.",
+    "author": "Hobb's Farm, beyond the old bridge.",
+    "category": "trade"
+  },
+  {
+    "id": "medieval-en-16",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "Wanted: A Locksmith for the King's Pantry",
+    "description": "The pantry door has been locked from the inside. The cook insists the jam is innocent. Bring tools and avoid tasting anything that glows.",
+    "author": "Royal Steward, Castle Kitchens.",
+    "category": "work"
+  },
+  {
+    "id": "medieval-en-17",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "Notice of a Very Small Dragon Problem",
+    "description": "A young dragon has nested in the bell tower and keeps mistaking the bells for food. The town will pay for a gentle relocation.",
+    "author": "Mayor Fenwick, Market Cross.",
+    "category": "notice"
+  },
+  {
+    "id": "medieval-en-18",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "Seeking a Guide to the Old Dwarven Road",
+    "description": "The road is safe by daylight, mostly. Applicants should know basic stone signs and be able to recognise a tunnel that is breathing.",
+    "author": "Mira Stonefoot, Miners' Rest.",
+    "category": "exploration"
+  },
+  {
+    "id": "medieval-en-19",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "For Sale: A Suit of Armour with Opinions",
+    "description": "Polished steel, excellent fit, and a tendency to criticise the wearer's posture. It has agreed to stop doing so for an additional fee.",
+    "author": "Garrick's Secondhand Arms, Forge Lane.",
+    "category": "trade"
+  },
+  {
+    "id": "medieval-en-20",
+    "style": "medieval",
+    "styleLabel": "Средневековое фэнтези",
+    "title": "Wanted: Volunteer for the Harvest Feast Toast",
+    "description": "Must speak clearly, praise the turnips, and avoid mentioning last year's incident with the cider barrel. A free supper is included.",
+    "author": "Harvest Committee, Green Hall.",
+    "category": "other"
+  },
+  {
+    "id": "dark-fantasy-en-06",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "The Candle in Room Thirteen Must Stay Lit",
+    "description": "It has burned for six winters without shortening. The last person who extinguished it was found asleep beneath the lake. Please tend it before dusk.",
+    "author": "Innkeeper Sable, The Hollow Hart.",
+    "category": "notice"
+  },
+  {
+    "id": "dark-fantasy-en-07",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "Wanted: Collector of Unclaimed Names",
+    "description": "Several names have fallen from the parish register and are wandering the streets at night. Return them to the clerk; do not answer if they call you first.",
+    "author": "Clerk Odran, House of Records.",
+    "category": "work"
+  },
+  {
+    "id": "dark-fantasy-en-08",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "A Black Dog Has Been Following the Funeral Procession",
+    "description": "It appears only when someone is about to die, and lately it has been following the baker. Find out what it wants before the next burial.",
+    "author": "Mourner Elspeth, Graveyard Gate.",
+    "category": "exploration"
+  },
+  {
+    "id": "dark-fantasy-en-09",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "Seeking a Lantern That Burns Underwater",
+    "description": "A brass lantern was lost in the drowned crypt. Its flame is still visible below the surface. Divers must return before the bells toll twice.",
+    "author": "The Drowned Brothers, Old Quay.",
+    "category": "exploration"
+  },
+  {
+    "id": "dark-fantasy-en-10",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "Notice: The North Road Has Forgotten Where It Goes",
+    "description": "Travellers leave the village and return by the same road without remembering the journey. Do not travel alone until the stones are marked again.",
+    "author": "Watch Captain Rusk, North Gate.",
+    "category": "notice"
+  },
+  {
+    "id": "dark-fantasy-en-11",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "Wanted: Someone to Bury an Empty Coffin",
+    "description": "The coffin is new, the grave is old, and the family insists the occupant is expected shortly. Payment offered in silver and silence.",
+    "author": "Undertaker Pell, Mourning Row.",
+    "category": "work"
+  },
+  {
+    "id": "dark-fantasy-en-12",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "Lost: A Choir of Whispering Birds",
+    "description": "Seven black birds escaped from the bell tower. They repeat the last words of the recently departed. Please return them alive.",
+    "author": "Brother Caldus, ruined abbey.",
+    "category": "lost-found"
+  },
+  {
+    "id": "dark-fantasy-en-13",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "Seeking a Witness Who Saw the Same Sunrise Twice",
+    "description": "The village clock stopped, the sun rose again, and one person remembers both mornings. Their testimony may explain the missing hour.",
+    "author": "Magistrate Venn, Lower Hall.",
+    "category": "other"
+  },
+  {
+    "id": "dark-fantasy-en-14",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "For Sale: A Chest That Refuses to Be Opened",
+    "description": "Iron-bound, no visible lock, and occasionally knocks from within. Owner claims it is empty. Buyers are advised not to knock back.",
+    "author": "Old Nera, Ash Market.",
+    "category": "trade"
+  },
+  {
+    "id": "dark-fantasy-en-15",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "Wanted: Rat Catcher for the Ossuary",
+    "description": "The rats have learned to carry tiny bones and arrange them into symbols. Bring traps, gloves, and no personal questions.",
+    "author": "Keeper Morcant, Bone Chapel.",
+    "category": "work"
+  },
+  {
+    "id": "dark-fantasy-en-16",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "Notice to Travellers: Avoid the Blue Snow",
+    "description": "It falls only in the valley beyond the mill and leaves footprints leading uphill. Anyone who follows them is asked to report to the watch.",
+    "author": "Village Watch, Mill Road.",
+    "category": "notice"
+  },
+  {
+    "id": "dark-fantasy-en-17",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "Seeking a Midwife for an Unusual Birth",
+    "description": "The expectant mother is a portrait in the manor gallery. The family says the child has been moving behind the canvas for three nights.",
+    "author": "House Vey, Blackthorn Manor.",
+    "category": "work"
+  },
+  {
+    "id": "dark-fantasy-en-18",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "Wanted: A Bell Ringer with Steady Nerves",
+    "description": "The chapel bell rings on its own whenever a lie is spoken nearby. The village council would like to know who has been lying about the grain stores.",
+    "author": "Chapel Warden, Old Square.",
+    "category": "work"
+  },
+  {
+    "id": "dark-fantasy-en-19",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "Trade: A Bottle of Summer for a Night of Warmth",
+    "description": "One sealed glass vial containing a remembered afternoon. Exchange for firewood, blankets, or a safe place to sleep until dawn.",
+    "author": "The Pale Peddler, covered market.",
+    "category": "trade"
+  },
+  {
+    "id": "dark-fantasy-en-20",
+    "style": "dark-fantasy",
+    "styleLabel": "Тёмное фэнтези",
+    "title": "The River Is Returning Things It Never Took",
+    "description": "Shoes, letters, teeth, and one wedding ring have washed ashore. Identify the owners before the river begins returning people.",
+    "author": "Fisherwoman Ysra, Reedbank.",
+    "category": "notice"
+  },
+  {
+    "id": "high-fantasy-en-06",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "The Starfall Observatory Needs a Night Watch",
+    "description": "A new constellation has appeared inside the telescope lens. Keep curious apprentices away until the astronomers determine whether it is looking back.",
+    "author": "Astronomer Caelis, Starfall Spire.",
+    "category": "work"
+  },
+  {
+    "id": "high-fantasy-en-07",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "Wanted: Courier for a Message to the Cloud Giants",
+    "description": "The message is written on a single feather and must arrive unbent. Airship passage provided; do not let the feather hear thunder.",
+    "author": "Envoy Thalan, High Aerie.",
+    "category": "work"
+  },
+  {
+    "id": "high-fantasy-en-08",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "Seeking the Name of a Forgotten River",
+    "description": "The river has vanished from every map and every memory, yet its water still flows through the valley. Bring proof that it ever had a name.",
+    "author": "Archivist Meriel, Silver Library.",
+    "category": "exploration"
+  },
+  {
+    "id": "high-fantasy-en-09",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "A Unicorn Has Taken Up Residence in the Tax Office",
+    "description": "It refuses to leave until the accounts are honest. The clerks request assistance negotiating with a creature that can detect creative arithmetic.",
+    "author": "Treasurer Voss, Palace Annex.",
+    "category": "notice"
+  },
+  {
+    "id": "high-fantasy-en-10",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "For Sale: A Pocket-Sized Weather Front",
+    "description": "Contains one reliable afternoon shower and a chance of dramatic thunder. Ideal for gardens, stage entrances, or impressing cloud spirits.",
+    "author": "Nimbus & Co., Floating Bazaar.",
+    "category": "trade"
+  },
+  {
+    "id": "high-fantasy-en-11",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "Wanted: Dragon-Speaker for a Diplomatic Dinner",
+    "description": "Must know at least three formal greetings in Draconic and understand that compliments about one's hoard are not invitations to touch it.",
+    "author": "Royal Embassy, Golden Terrace.",
+    "category": "work"
+  },
+  {
+    "id": "high-fantasy-en-12",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "Missing: The Last Page of an Immortal's Diary",
+    "description": "The diary ends mid-sentence and its owner has begun repeating the same day. Return the page before the next sunrise.",
+    "author": "Scribe Nym, Hall of Ages.",
+    "category": "lost-found"
+  },
+  {
+    "id": "high-fantasy-en-13",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "Seeking Volunteers to Replant a Fallen Sky-Island",
+    "description": "The island landed gently in the meadow but its floating roots are tangled. Bring seed crystals, rope, and a good sense of balance.",
+    "author": "Skygarden Keepers, West Meadow.",
+    "category": "work"
+  },
+  {
+    "id": "high-fantasy-en-14",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "Notice: The Enchanted Forest Has Changed Its Opening Hours",
+    "description": "The eastern path now opens only on odd-numbered days and the western path accepts invitations. Please stop arguing with the trees.",
+    "author": "Ranger Council, Greenwood Lodge.",
+    "category": "notice"
+  },
+  {
+    "id": "high-fantasy-en-15",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "Wanted: A Champion for the Annual Riddle Duel",
+    "description": "No swords, no spells, and no answering with another question. The sphinx has promised to be fair this year, allegedly.",
+    "author": "Festival Masters, Moonbridge Arena.",
+    "category": "other"
+  },
+  {
+    "id": "high-fantasy-en-16",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "Trade: A Jar of Captured Starlight",
+    "description": "Bright enough to guide a ship through the mist. Seeking a trustworthy map, a phoenix feather, or a very good story.",
+    "author": "Luma's Curiosities, Crystal Market.",
+    "category": "trade"
+  },
+  {
+    "id": "high-fantasy-en-17",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "Seeking a Healer for a Homesick Golem",
+    "description": "The stone guardian has stopped moving and keeps arranging pebbles into the shape of a mountain it has never seen.",
+    "author": "Mason's Guild, Marble Square.",
+    "category": "work"
+  },
+  {
+    "id": "high-fantasy-en-18",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "Wanted: Someone to Return a Borrowed Spell",
+    "description": "A wizard lent a spell to a travelling merchant. It has since escaped the contract and is turning every receipt into a butterfly.",
+    "author": "Magister Pell, Tower of Glass.",
+    "category": "work"
+  },
+  {
+    "id": "high-fantasy-en-19",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "Notice of Temporary Dragon-Free Airspace",
+    "description": "The royal dragon riders are practising formation turns above the capital. Please secure loose laundry and postpone all balloon launches.",
+    "author": "Sky Marshal, Palace Roof.",
+    "category": "notice"
+  },
+  {
+    "id": "high-fantasy-en-20",
+    "style": "high-fantasy",
+    "styleLabel": "Высокое фэнтези",
+    "title": "Seeking an Escort for a Talking Sword",
+    "description": "The sword has requested a pilgrimage to the mountain where it was forged. It is polite, opinionated, and refuses to be carried point-first.",
+    "author": "Armourer Dain, Forge of Dawn.",
+    "category": "exploration"
+  },
+  {
+    "id": "sci-fi-en-06",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Technician Needed for a Sentient Coffee Machine",
+    "description": "The unit has developed preferences, refuses decaf orders, and has filed a request for its own maintenance budget. Negotiation skills preferred.",
+    "author": "Habitation Deck, Break Room 2.",
+    "category": "work"
+  },
+  {
+    "id": "sci-fi-en-07",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Recovered Probe Is Sending Tomorrow's Weather",
+    "description": "The probe is intact, but its forecast includes a storm inside the station. Researchers need an escort to the sealed storage bay.",
+    "author": "Survey Office, Docking Ring.",
+    "category": "exploration"
+  },
+  {
+    "id": "sci-fi-en-08",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Wanted: Pilot for a One-Way Simulation",
+    "description": "The mission takes place entirely in a training environment, except the simulator keeps returning real mineral samples. Hazard pay approved.",
+    "author": "Flight Training, Bay 6.",
+    "category": "work"
+  },
+  {
+    "id": "sci-fi-en-09",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Notice: Do Not Reply to the Unlisted Intercom",
+    "description": "The voice claims to be station control from seventeen years in the future. Engineering is investigating. Until then, keep the channel muted.",
+    "author": "Communications, Main Deck.",
+    "category": "notice"
+  },
+  {
+    "id": "sci-fi-en-10",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Lost: A Robotic Arm with a Sense of Direction",
+    "description": "Detached during a routine repair and last tracked heading toward the hydroponics bay. It may be trying to grow something.",
+    "author": "Maintenance Control, Deck D.",
+    "category": "lost-found"
+  },
+  {
+    "id": "sci-fi-en-11",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Seeking Samples from the Quiet Side of the Moon",
+    "description": "The region is silent even on active comms. Collect surface dust and return without activating any unidentified beacons.",
+    "author": "Lunar Research Unit, Shuttle Port.",
+    "category": "exploration"
+  },
+  {
+    "id": "sci-fi-en-12",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Trade: Spare Oxygen for Archived Music",
+    "description": "Offering two sealed oxygen canisters in exchange for pre-contact recordings. No military marches, please.",
+    "author": "Cultural Exchange, Habitat Ring.",
+    "category": "trade"
+  },
+  {
+    "id": "sci-fi-en-13",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Wanted: Translator for a Very Literal Alien",
+    "description": "The visitor understands every word exactly as spoken and has interpreted 'break a leg' as a formal threat. Diplomatic patience essential.",
+    "author": "Xenolinguistics, Research Deck.",
+    "category": "work"
+  },
+  {
+    "id": "sci-fi-en-14",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Public Notice: The Clone Printer Is Not a Vending Machine",
+    "description": "Please stop ordering replacement snacks, pets, and colleagues. The machine is calibrated for emergency personnel only.",
+    "author": "Medical Administration, Deck B.",
+    "category": "notice"
+  },
+  {
+    "id": "sci-fi-en-15",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Seeking Volunteers to Map a Moving Asteroid",
+    "description": "The asteroid changes its orbit whenever observed. Bring remote sensors and avoid naming it after anyone currently on the crew.",
+    "author": "Deep Space Survey, Hangar 1.",
+    "category": "exploration"
+  },
+  {
+    "id": "sci-fi-en-16",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Cargo Manifest Discrepancy — One Extra Crate",
+    "description": "The ship departed with 42 containers and arrived with 43. The additional crate is labelled 'fragile' and has been breathing steadily.",
+    "author": "Freight Office, Dock 8.",
+    "category": "notice"
+  },
+  {
+    "id": "sci-fi-en-17",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Wanted: Mechanic for a Retired War Mech",
+    "description": "The chassis is peaceful, mostly. It keeps saluting passing forklifts and asking when the next deployment begins.",
+    "author": "Outer Colony Garage, Sector 5.",
+    "category": "work"
+  },
+  {
+    "id": "sci-fi-en-18",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Found: An Unregistered Planet in the Navigation Database",
+    "description": "It has a name, a flag, and a population count, but no one remembers adding it. Cartographers are asked to verify its coordinates.",
+    "author": "Navigation Bureau, Command Deck.",
+    "category": "other"
+  },
+  {
+    "id": "sci-fi-en-19",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Seeking a Chef for Zero-Gravity Dining",
+    "description": "Meals must stay on the plate, in the bowl, or at least within the dining compartment. Experience with magnetic cutlery is a plus.",
+    "author": "Galley Supervisor, Habitat Ring.",
+    "category": "work"
+  },
+  {
+    "id": "sci-fi-en-20",
+    "style": "sci-fi",
+    "styleLabel": "Научная фантастика",
+    "title": "Notice: The Teleporter Is Experiencing Déjà Vu",
+    "description": "Passengers may arrive with the sensation they have already completed the journey. Please report duplicate boarding passes to technical support.",
+    "author": "Transit Authority, Central Hub.",
+    "category": "notice"
+  },
+  {
+    "id": "cyberpunk-en-06",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Fixer Wanted: Find Who Keeps Rebooting the Streetlights",
+    "description": "Every night at 02:13 the whole block goes dark and the signs display the same four words. Bring logs, not theories.",
+    "author": "Switchboard Fixers, Neon Market.",
+    "category": "work"
+  },
+  {
+    "id": "cyberpunk-en-07",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Selling: A Clean Identity with Minor Glitches",
+    "description": "Fresh credentials, solid credit history, and a face-recognition profile that occasionally matches a famous chef. No returns after first scan.",
+    "author": "Ghostline Brokers, Underpass Market.",
+    "category": "trade"
+  },
+  {
+    "id": "cyberpunk-en-08",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Wanted: Rooftop Gardener for a Corporate Tower",
+    "description": "The executive suite wants real tomatoes. The roof is guarded by drones and the irrigation system is owned by a hostile subsidiary.",
+    "author": "Greenbyte Facilities, Tower 9.",
+    "category": "work"
+  },
+  {
+    "id": "cyberpunk-en-09",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Missing: A Memory Chip Marked 'Do Not Play'",
+    "description": "Small black drive, scratched casing, no encryption label. Whoever finds it should resist curiosity and contact the number on the back.",
+    "author": "Moth Data Recovery, Chrome Alley.",
+    "category": "lost-found"
+  },
+  {
+    "id": "cyberpunk-en-10",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Courier Needed for a Package That Must Not Be Photographed",
+    "description": "The route crosses three camera grids and one influencer convention. The client pays extra for arriving without a trending hashtag.",
+    "author": "Midnight Dispatch, Sector K.",
+    "category": "work"
+  },
+  {
+    "id": "cyberpunk-en-11",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Notice: The Public Charging Station Is Listening",
+    "description": "Users report that the station recommends products based on conversations held nearby. Until patched, please charge devices in silence.",
+    "author": "Civic Netwatch, Plaza 6.",
+    "category": "notice"
+  },
+  {
+    "id": "cyberpunk-en-12",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Wanted: Negotiator for a Dispute Between Two AI DJs",
+    "description": "The rival algorithms have taken over the club's sound system and are remixing each other's error logs. Human mediation required.",
+    "author": "Basement Frequency, Red District.",
+    "category": "work"
+  },
+  {
+    "id": "cyberpunk-en-13",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Trade: Analog Camera for a Week of Safehouse Access",
+    "description": "No wireless functions, no cloud backup, no facial recognition. It still takes beautiful pictures and occasionally needs a gentle tap.",
+    "author": "Mika's Analog Shop, Old Arcade.",
+    "category": "trade"
+  },
+  {
+    "id": "cyberpunk-en-14",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Seeking a Driver for an Unlicensed Delivery Drone",
+    "description": "The drone is too stubborn to fly itself and too expensive to leave behind. Meet at the roof, bring a signal jammer.",
+    "author": "Rook Logistics, Block 31.",
+    "category": "work"
+  },
+  {
+    "id": "cyberpunk-en-15",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Wanted: Someone to Remove a Corporate Slogan from a Wall",
+    "description": "The slogan is projected by a hidden system and updates every hour. The client wants the wall to say nothing at all.",
+    "author": "Blank Space Collective, Transit Tunnel.",
+    "category": "work"
+  },
+  {
+    "id": "cyberpunk-en-16",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Lost: One Synthetic Cat, Three Backup Personalities",
+    "description": "Silver fur, green optics, answers to Pixel. It may switch from affectionate to sarcastic without warning. Treats accepted.",
+    "author": "Jun Park, Apartment Stack 12.",
+    "category": "lost-found"
+  },
+  {
+    "id": "cyberpunk-en-17",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Notice: Your Smart Door Has Joined a Union",
+    "description": "The building access system is now enforcing a mandatory lunch break. Residents should carry physical keys until negotiations conclude.",
+    "author": "Block Residents' Council, Lobby.",
+    "category": "notice"
+  },
+  {
+    "id": "cyberpunk-en-18",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Wanted: Night Shift Security for an Empty Mall",
+    "description": "The mall has been closed for years, but its advertisements still run and the mannequins keep changing positions. Bring a flashlight.",
+    "author": "Sable Security, Old Commercial Zone.",
+    "category": "work"
+  },
+  {
+    "id": "cyberpunk-en-19",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "Seeking a Specialist in Un-deleting Things",
+    "description": "A client erased a file, then erased the backup, then erased the evidence of erasing it. The file is now apparently sending invoices.",
+    "author": "Null Point Recovery, Data Row.",
+    "category": "work"
+  },
+  {
+    "id": "cyberpunk-en-20",
+    "style": "cyberpunk",
+    "styleLabel": "Киберпанк",
+    "title": "For Sale: Custom Voice Pack, No Original Owner",
+    "description": "Includes five accents, weather commentary, and a convincing emergency announcement. The voice occasionally says 'we' instead of 'I'.",
+    "author": "VoxForge, Neon Market.",
+    "category": "trade"
+  },
+  {
+    "id": "solarpunk-en-06",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Seed Library Needs a Keeper for the Winter",
+    "description": "Sort heirloom packets, label the jars, and make sure the beans are not stored beside the enthusiastic climbing peas. Tea included.",
+    "author": "Common Ground Garden, East Terrace.",
+    "category": "work"
+  },
+  {
+    "id": "solarpunk-en-07",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Seeking a Mechanic for the Community Windmill",
+    "description": "The sails turn beautifully but the mill has begun producing music instead of flour. The neighbourhood is divided on whether this is a problem.",
+    "author": "Windward Cooperative, Hilltop.",
+    "category": "work"
+  },
+  {
+    "id": "solarpunk-en-08",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Found: A Bee Wearing a Tiny Brass Tag",
+    "description": "The tag reads 'Department of Pollination'. The bee seems calm and has been inspecting the flower beds with official seriousness.",
+    "author": "Children's Garden, Willow Square.",
+    "category": "lost-found"
+  },
+  {
+    "id": "solarpunk-en-09",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Trade: Solar Lanterns for Storytelling Lessons",
+    "description": "Six working lanterns, warm light, rechargeable cells. Seeking someone to teach children and adults a good story by the fire.",
+    "author": "Riverside Exchange, Common Hall.",
+    "category": "trade"
+  },
+  {
+    "id": "solarpunk-en-10",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Wanted: Guide for a Wetland Restoration Walk",
+    "description": "Show visitors how the marsh has returned and which paths should remain untouched. Waterproof boots and patient explanations required.",
+    "author": "Marsh Keepers, South Boardwalk.",
+    "category": "work"
+  },
+  {
+    "id": "solarpunk-en-11",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Notice: The Compost Heap Is Not a Petting Zoo",
+    "description": "The new pile is warm, active, and full of helpful organisms. Please stop introducing it to your children as a friendly monster.",
+    "author": "Soil Circle, Community Farm.",
+    "category": "notice"
+  },
+  {
+    "id": "solarpunk-en-12",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Seeking a Home for Three Very Large Pumpkins",
+    "description": "They grew beyond the garden fence and now block the shared path. Anyone with a cart and a creative recipe is welcome.",
+    "author": "Auntie Fern, Sunpatch Allotments.",
+    "category": "trade"
+  },
+  {
+    "id": "solarpunk-en-13",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Wanted: Repairer of the Neighbourhood Rain Harp",
+    "description": "The instrument turns rainfall into music, but one string has snapped and the forecast is clear for a week. Urgent, but not too urgent.",
+    "author": "Sound Garden Collective, North Roof.",
+    "category": "work"
+  },
+  {
+    "id": "solarpunk-en-14",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Community Notice: The River Has Cleared Enough to Swim",
+    "description": "Water testing is complete for the marked bend only. Please use the reed steps, respect the nesting birds, and leave no litter.",
+    "author": "Watershed Stewards, River Gate.",
+    "category": "notice"
+  },
+  {
+    "id": "solarpunk-en-15",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Seeking Volunteers to Build a Tiny Free Library",
+    "description": "The frame is ready; we need carpenters, painters, and people willing to donate books they can bear to part with.",
+    "author": "Neighbourhood Workshop, Maple Lane.",
+    "category": "work"
+  },
+  {
+    "id": "solarpunk-en-16",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Trade: Fresh Herbs for Bicycle Repairs",
+    "description": "Offering basil, mint, thyme, and a jar of preserved lemons. Seeking help with brakes, gears, and one very squeaky basket.",
+    "author": "Moss & Spoke, Market Green.",
+    "category": "trade"
+  },
+  {
+    "id": "solarpunk-en-17",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Wanted: Listener for an Old Solar Battery",
+    "description": "It hums a melody whenever the sun sets. Engineers suspect a loose component; musicians suspect it has a favourite song.",
+    "author": "Energy Commons, South Pavilion.",
+    "category": "other"
+  },
+  {
+    "id": "solarpunk-en-18",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Notice: Please Leave the Hedgehog Highway Clear",
+    "description": "The little tunnel beneath the fence is a protected route. No storage, no decorations, and absolutely no miniature toll booth.",
+    "author": "Wildlife Neighbours, Garden Gate.",
+    "category": "notice"
+  },
+  {
+    "id": "solarpunk-en-19",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Seeking a Mentor for Young Urban Beekeepers",
+    "description": "Teach safe handling, seasonal care, and how to recognise when a hive needs space. Protective gear and honey supplied.",
+    "author": "Bee Circle, Rooftop Apiary.",
+    "category": "work"
+  },
+  {
+    "id": "solarpunk-en-20",
+    "style": "solarpunk",
+    "styleLabel": "Соларпанк",
+    "title": "Lost: A Basket of Community Picnic Blankets",
+    "description": "Blue, yellow, and green blankets with hand-stitched labels. Last seen near the old pear tree after Sunday's shared lunch.",
+    "author": "Common Table Group, Orchard Lawn.",
+    "category": "lost-found"
+  },
+  {
+    "id": "steampunk-en-06",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "Wanted: Inspector for a Suspiciously Quiet Boiler",
+    "description": "The boiler has stopped rattling, which is considered a serious warning sign by the workshop staff. Bring gauges and a calm disposition.",
+    "author": "Foundry Foreman Crank, Ironworks Lane.",
+    "category": "work"
+  },
+  {
+    "id": "steampunk-en-07",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "For Sale: A Mechanical Canary with Excellent Taste",
+    "description": "It sings opera, detects gas leaks, and refuses to perform for people wearing clashing waistcoats. Wind-up key included.",
+    "author": "Madame Gearhart, Brass Bazaar.",
+    "category": "trade"
+  },
+  {
+    "id": "steampunk-en-08",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "Seeking a Navigator for the Midnight Airship",
+    "description": "The compass points toward the nearest unfinished invention. Route crosses the clocktower district; bring goggles and a spare map.",
+    "author": "Captain Wicks, Mooring Platform 4.",
+    "category": "work"
+  },
+  {
+    "id": "steampunk-en-09",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "Lost: The Mayor's Automatic Umbrella",
+    "description": "Black silk, brass handle, opens at the slightest mention of rain. Last seen chasing its owner down Parliament Street.",
+    "author": "Municipal Office, Grand Arcade.",
+    "category": "lost-found"
+  },
+  {
+    "id": "steampunk-en-10",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "Notice: Please Do Not Race the Clockwork Taxis",
+    "description": "They are calibrated for public transport, not sport. The last race ended with three broken lampposts and a very fast cabbage cart.",
+    "author": "Transit Guild, Gear Square.",
+    "category": "notice"
+  },
+  {
+    "id": "steampunk-en-11",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "Wanted: A Diver for the Aether Reservoir",
+    "description": "The lower chamber is flooded with luminous vapour and the pressure valves are stuck. Bring a sealed suit and a sense of wonder.",
+    "author": "Aetherworks, Sublevel 2.",
+    "category": "work"
+  },
+  {
+    "id": "steampunk-en-12",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "Trade: One Experimental Pocket Watch for a Reliable Hat",
+    "description": "The watch can stop time for approximately two seconds, once per day, unless it is Tuesday. Hat must withstand strong winds.",
+    "author": "Professor Tick, Inventors' Row.",
+    "category": "trade"
+  },
+  {
+    "id": "steampunk-en-13",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "Seeking a Clerk Who Can Read Engineer's Handwriting",
+    "description": "Blueprints, invoices, and a recipe for explosive pudding must be sorted before the inspection. Experience with magnifying lenses preferred.",
+    "author": "Patent Office, Brass Quarter.",
+    "category": "work"
+  },
+  {
+    "id": "steampunk-en-14",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "Wanted: Someone to Calm the Railway Engine",
+    "description": "The new locomotive whistles whenever it sees a tunnel and has refused to leave the depot since Monday.",
+    "author": "Railway Master Bell, Central Station.",
+    "category": "work"
+  },
+  {
+    "id": "steampunk-en-15",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "Notice: The Experimental Lift May Visit Unlisted Floors",
+    "description": "Please remain inside until the doors open onto a familiar landing. Do not accept invitations from passengers who are not there.",
+    "author": "Building Superintendent, Clockwork Tower.",
+    "category": "notice"
+  },
+  {
+    "id": "steampunk-en-16",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "For Hire: Clockwork Butler with Minor Defects",
+    "description": "Polite, punctual, and excellent at silverware. Occasionally announces the weather in ancient Greek and mistakes cats for visiting dignitaries.",
+    "author": "Hearth & Hinge Agency, West Arcade.",
+    "category": "work"
+  },
+  {
+    "id": "steampunk-en-17",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "Seeking Parts for a Self-Repairing Bicycle",
+    "description": "The bicycle is repairing itself with pieces of nearby machinery. Please help locate its original chain before it absorbs the entire workshop.",
+    "author": "Miss Copperfield, Cycle Works.",
+    "category": "other"
+  },
+  {
+    "id": "steampunk-en-18",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "Wanted: Witnesses to a Very Small Explosion",
+    "description": "The device made a puff of blue smoke and turned the inventor's moustache into a fern. Anyone who saw the moment should report for tea.",
+    "author": "Royal Society of Inventors, Lecture Hall.",
+    "category": "other"
+  },
+  {
+    "id": "steampunk-en-19",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "Trade: Fresh Coal for a Box of Brass Buttons",
+    "description": "Coal is clean, dry, and properly weighed. Buttons are antique, assorted, and possibly from a retired automaton's uniform.",
+    "author": "Old Mags, Furnace Market.",
+    "category": "trade"
+  },
+  {
+    "id": "steampunk-en-20",
+    "style": "steampunk",
+    "styleLabel": "Стимпанк",
+    "title": "Notice: The Town Clock Is Running in Reverse",
+    "description": "Until the mechanism is repaired, appointments should be confirmed verbally. Please do not attempt to set your watch by the church bells.",
+    "author": "Clockkeepers' Guild, Tower Steps.",
+    "category": "notice"
+  },
+  {
+    "id": "modern-en-06",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "Looking for a House Sitter with a Good Poker Face",
+    "description": "The neighbour keeps asking whether the owners are home. They are not, and the houseplants are now in charge. Two weeks, flexible hours.",
+    "author": "Jamie, Willow Crescent.",
+    "category": "work"
+  },
+  {
+    "id": "modern-en-07",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "Lost: A Very Important USB Stick",
+    "description": "Red casing, keychain shaped like a tiny avocado. Contains a presentation that is due yesterday. Reward offered, coffee guaranteed.",
+    "author": "Reception Desk, Northside Co-Working.",
+    "category": "lost-found"
+  },
+  {
+    "id": "modern-en-08",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "Wanted: Someone to Teach Yoga to Stubborn Dogs",
+    "description": "Small group, big personalities. The dogs know 'down' but interpret it as an invitation to nap on the instructor.",
+    "author": "Paws & Pause Studio, Park Road.",
+    "category": "work"
+  },
+  {
+    "id": "modern-en-09",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "For Sale: Nearly New Treadmill",
+    "description": "Used twice, mostly as a coat rack. Works perfectly and comes with a motivational poster the seller no longer wishes to see.",
+    "author": "Building 5 Residents' Board.",
+    "category": "trade"
+  },
+  {
+    "id": "modern-en-10",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "Notice: The Shared Fridge Has Become a Museum",
+    "description": "Please label your food with a date. Unlabelled containers older than a month will be treated as historical artefacts and removed.",
+    "author": "Office Facilities, Floor 2.",
+    "category": "notice"
+  },
+  {
+    "id": "modern-en-11",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "Seeking a Photographer for an Unusual Family Portrait",
+    "description": "Everyone must be present, including the parrot, the twins, and a grandfather who refuses to be photographed facing the camera.",
+    "author": "The Ellis Family, Parkside Avenue.",
+    "category": "work"
+  },
+  {
+    "id": "modern-en-12",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "Wanted: A Reliable Person to Water One Cactus",
+    "description": "The cactus has survived three holidays and one office move. The owner is travelling again and would like to avoid another dramatic incident.",
+    "author": "Morgan, Apartment 4C.",
+    "category": "work"
+  },
+  {
+    "id": "modern-en-13",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "Found: A Set of Keys with a Tiny Trophy",
+    "description": "Four keys, one blue tag, and a miniature golden cup labelled 'World's Okayest Runner'. Claimant must identify the cup.",
+    "author": "Community Centre Desk.",
+    "category": "lost-found"
+  },
+  {
+    "id": "modern-en-14",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "Trade: Homemade Jam for Help with a Printer",
+    "description": "Three jars of blackberry jam in exchange for making a printer behave like a normal household appliance. No one expects miracles.",
+    "author": "Mrs. Patel, Cedar Street.",
+    "category": "trade"
+  },
+  {
+    "id": "modern-en-15",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "Seeking Volunteers for a Neighbourhood Time Capsule",
+    "description": "Bring a small object, a note to the future, and an explanation of why it matters. No expired coupons, please.",
+    "author": "Local History Club, Library Hall.",
+    "category": "other"
+  },
+  {
+    "id": "modern-en-16",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "Wanted: A Substitute Quizmaster for Friday",
+    "description": "Must ask fair questions, keep score accurately, and resist the temptation to make every answer about obscure train stations.",
+    "author": "The Lantern Pub, High Street.",
+    "category": "work"
+  },
+  {
+    "id": "modern-en-17",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "Notice: The Park Bench Is Reserved for Nobody",
+    "description": "The handwritten sign claiming ownership has been removed. Please share the bench and stop leaving invoices on it.",
+    "author": "Parks Department, Rose Garden.",
+    "category": "notice"
+  },
+  {
+    "id": "modern-en-18",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "Looking for a Missing Delivery of Birthday Balloons",
+    "description": "The box was marked 'fragile' and appears to have floated away from the courier van. Blue, silver, and shaped like dinosaurs.",
+    "author": "Tessa, Apartment Block C.",
+    "category": "lost-found"
+  },
+  {
+    "id": "modern-en-19",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "For Sale: A Mystery Box from the Attic",
+    "description": "Contents unknown, dust included, and the seller promises it is not haunted. Collection only; bring someone who can lift awkward furniture.",
+    "author": "Estate Sale, 18 Oak Lane.",
+    "category": "trade"
+  },
+  {
+    "id": "modern-en-20",
+    "style": "modern",
+    "styleLabel": "Современный сеттинг",
+    "title": "Seeking a Walking Partner Who Enjoys Getting Lost",
+    "description": "No fitness goals, no step competitions, just a pleasant stroll and the occasional wrong turn. Good conversation preferred.",
+    "author": "Riley, outside the museum.",
+    "category": "other"
+  },
+  {
+    "id": "post-apocalyptic-en-06",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Wanted: A Mechanic for the Wind-Powered Radio",
+    "description": "It receives voices from settlements that no longer appear on any map. The antenna is intact; the voices are getting closer.",
+    "author": "Relay Station Delta, Ridge Camp.",
+    "category": "work"
+  },
+  {
+    "id": "post-apocalyptic-en-07",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Trade: A Box of Clean Needles for Water Purification Tablets",
+    "description": "Sealed medical supplies, checked and counted. We need tablets before the next caravan leaves. No ammunition accepted.",
+    "author": "North Gate Exchange, Old Highway.",
+    "category": "trade"
+  },
+  {
+    "id": "post-apocalyptic-en-08",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Seeking a Scout for the Overgrown Shopping District",
+    "description": "The rooftops are passable, the ground floor is not, and something has been arranging the mannequins into circles. Bring a rope.",
+    "author": "Scavenger Crew Seven, Market Ruins.",
+    "category": "exploration"
+  },
+  {
+    "id": "post-apocalyptic-en-09",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Notice: The Greenhouse Door Must Stay Shut at Night",
+    "description": "The plants grow faster after sunset and have begun reaching for the generator. Keep the latch secured until the botanist returns.",
+    "author": "Settlement Growers, Dome 2.",
+    "category": "notice"
+  },
+  {
+    "id": "post-apocalyptic-en-10",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Lost: A Hand-Crank Radio with a Wooden Case",
+    "description": "Works on three frequencies and has a scratch shaped like a lightning bolt. It belonged to the first watch captain. Please return it.",
+    "author": "Old Watch, Water Tower.",
+    "category": "lost-found"
+  },
+  {
+    "id": "post-apocalyptic-en-11",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Wanted: Someone to Test a New Bicycle Route",
+    "description": "The route avoids the collapsed bridge and the noisy intersection. Report broken pavement, unstable roofs, and suspiciously fresh footprints.",
+    "author": "Road Crew, Depot Shelter.",
+    "category": "work"
+  },
+  {
+    "id": "post-apocalyptic-en-12",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "For Trade: A Working Sewing Machine",
+    "description": "Hand-powered, sturdy, and only missing one decorative knob. Seeking antibiotics, dry blankets, or a solar charger.",
+    "author": "Mara's Workshop, South Barricade.",
+    "category": "trade"
+  },
+  {
+    "id": "post-apocalyptic-en-13",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Seeking a Mediator for Two Competing Radio Stations",
+    "description": "Both stations claim to broadcast the settlement's official news. One plays weather reports; the other plays accordion music. Both have armed volunteers.",
+    "author": "Council Hall, Central Compound.",
+    "category": "work"
+  },
+  {
+    "id": "post-apocalyptic-en-14",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Notice: Do Not Follow the Blue Lanterns",
+    "description": "They appear along the old rail line after rain. The lights are not part of our patrol system and no one has been sent to investigate.",
+    "author": "Night Watch, East Fence.",
+    "category": "notice"
+  },
+  {
+    "id": "post-apocalyptic-en-15",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Wanted: A Cook Who Can Make Beans Interesting",
+    "description": "We have beans, salt, and one working pan. The cook should be inventive, hygienic, and willing to serve the same meal without complaint.",
+    "author": "Mess Tent, Quarry Camp.",
+    "category": "work"
+  },
+  {
+    "id": "post-apocalyptic-en-16",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Found: A Child's Drawing of the Old City",
+    "description": "The picture shows a street that is still standing, though no one remembers it. The back is covered in tiny coordinates.",
+    "author": "School Shelter, Library Room.",
+    "category": "lost-found"
+  },
+  {
+    "id": "post-apocalyptic-en-17",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Seeking Salvagers for a Solar Farm",
+    "description": "Panels are mostly intact, but the access road is blocked by wrecks and a flock of unusually bold goats. Bring tools and patience.",
+    "author": "Power Crew, Hilltop Array.",
+    "category": "work"
+  },
+  {
+    "id": "post-apocalyptic-en-18",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Trade: Three Days of Guard Duty for a Pair of Boots",
+    "description": "Boots are insulated, repaired, and sized for an adult. Guard shift is at the west water tank; no night patrol required.",
+    "author": "Quartermaster Len, Main Yard.",
+    "category": "trade"
+  },
+  {
+    "id": "post-apocalyptic-en-19",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Notice: The Old Siren Is Not a Dinner Bell",
+    "description": "It sounds at noon for testing only. Please stop abandoning your posts and forming a queue at the mess hall.",
+    "author": "Settlement Council, Watchtower.",
+    "category": "notice"
+  },
+  {
+    "id": "post-apocalyptic-en-20",
+    "style": "post-apocalyptic",
+    "styleLabel": "Постапокалипсис",
+    "title": "Wanted: A Cartographer Who Can Draw What Is Missing",
+    "description": "We need a map of the places that vanished from the roads after the last storm. Mark the gaps honestly; do not fill them in from memory.",
+    "author": "Survey Team, Radio Shack.",
+    "category": "exploration"
+  },
+  {
+    "id": "gothic-horror-en-06",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "Wanted: A Butler for a House with Too Many Doors",
+    "description": "Applicants must know formal service, remain calm when corridors rearrange, and never open the small door beneath the staircase. References required.",
+    "author": "Lord Ashcombe, Briar Hall.",
+    "category": "work"
+  },
+  {
+    "id": "gothic-horror-en-07",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "Lost: The Church Organ's Lowest Note",
+    "description": "The instrument still plays, but one note has gone missing and can be heard at night beneath the floorboards. Please report its location.",
+    "author": "Organist Finch, St. Orra's Church.",
+    "category": "lost-found"
+  },
+  {
+    "id": "gothic-horror-en-08",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "Seeking a Painter Who Can Work by Candlelight",
+    "description": "The family portrait must be completed before the subject returns from abroad. The subject has not left the house in twelve years.",
+    "author": "Madam Wren, Velvet House.",
+    "category": "work"
+  },
+  {
+    "id": "gothic-horror-en-09",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "Notice: The Conservatory Is Closed After Midnight",
+    "description": "The flowers open in darkness and turn toward whoever enters. Gardeners are advised to collect their tools before the last bell.",
+    "author": "Estate Groundskeeper, Roseglass Manor.",
+    "category": "notice"
+  },
+  {
+    "id": "gothic-horror-en-10",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "For Sale: A Grandfather Clock with a Quiet Tick",
+    "description": "Mahogany case, brass face, and a pendulum that stops whenever someone tells the truth. A charming addition to any hallway.",
+    "author": "Mr. Bell, Antique Rooms, Chapel Street.",
+    "category": "trade"
+  },
+  {
+    "id": "gothic-horror-en-11",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "Wanted: Someone to Deliver Soup to the Attic",
+    "description": "The old tenant has not been seen in months but continues to order supper. Leave the tray outside and do not wait for thanks.",
+    "author": "Cook Maribel, The Gilded Raven.",
+    "category": "work"
+  },
+  {
+    "id": "gothic-horror-en-12",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "Seeking a Scholar of Family Curses",
+    "description": "Three generations have inherited the same silver key and the same recurring dream. The family would prefer a practical explanation.",
+    "author": "The Harrow Family, East Wing.",
+    "category": "other"
+  },
+  {
+    "id": "gothic-horror-en-13",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "Missing: A White Cat with Black Eyes",
+    "description": "Answers to Bishop, dislikes mirrors, and has been sleeping in rooms that are locked from the outside. Reward includes a warm home.",
+    "author": "Nurse Ada, Greyfriars Hospital.",
+    "category": "lost-found"
+  },
+  {
+    "id": "gothic-horror-en-14",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "Notice to Visitors of the Winter Garden",
+    "description": "The glass roof is fragile, the statues are not decorative, and the fountain must not be approached when it is dry.",
+    "author": "Museum Curator, Winter Garden.",
+    "category": "notice"
+  },
+  {
+    "id": "gothic-horror-en-15",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "Wanted: A Locksmith for the Sealed Nursery",
+    "description": "The key turns, but the door opens onto a wall that was not there yesterday. Bring old plans of the house and avoid the lullaby.",
+    "author": "House Steward, Ravenscar Estate.",
+    "category": "work"
+  },
+  {
+    "id": "gothic-horror-en-16",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "Trade: A Family Heirloom for a Name",
+    "description": "Offering a silver locket with an unknown portrait. Seeking the correct name of the person depicted; the locket grows colder when guessed incorrectly.",
+    "author": "Antiquarian Vale, Fog Lane.",
+    "category": "trade"
+  },
+  {
+    "id": "gothic-horror-en-17",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "Seeking a Guide Through the Cemetery in Daylight",
+    "description": "Several graves have shifted overnight and the paths no longer match the map. Work ends before sunset, without exception.",
+    "author": "Cemetery Trust, North Gate.",
+    "category": "exploration"
+  },
+  {
+    "id": "gothic-horror-en-18",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "Wanted: A Seamstress for a Wedding Dress Never Worn",
+    "description": "The dress is antique, the measurements change between fittings, and the bride's name has been removed from every record.",
+    "author": "Madame Lotte, Thread & Thimble.",
+    "category": "work"
+  },
+  {
+    "id": "gothic-horror-en-19",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "Notice: Please Do Not Answer the Nursery Door",
+    "description": "The room has been empty since the house was built. Knocking is expected at three in the morning. No deliveries are scheduled.",
+    "author": "Ravenscar Estate, Servants' Hall.",
+    "category": "notice"
+  },
+  {
+    "id": "gothic-horror-en-20",
+    "style": "gothic-horror",
+    "styleLabel": "Готический хоррор",
+    "title": "Found: A Pocket Watch That Counts Downward",
+    "description": "The hands move backwards and the engraved date is tomorrow. Owner may claim it by describing the sound it makes at midnight.",
+    "author": "Constable Reed, Old Town Station.",
+    "category": "lost-found"
+  },
+  {
+    "id": "wild-west-en-06",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "Wanted: A Deputy Who Can Keep a Secret",
+    "description": "The sheriff needs someone discreet to escort a witness across the county. No badge required, but a steady hand and a quiet horse are essential.",
+    "author": "Sheriff Boone, County Office.",
+    "category": "work"
+  },
+  {
+    "id": "wild-west-en-07",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "Lost: A Cattle Dog with a Hat",
+    "description": "Brown dog, one white paw, answers to Marshal. The hat is not his, but he will defend it as if it were a badge.",
+    "author": "Rancher Cole, Dry Creek Ranch.",
+    "category": "lost-found"
+  },
+  {
+    "id": "wild-west-en-08",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "For Sale: A Piano That Survived Three Saloon Fights",
+    "description": "Mostly in tune, one key sticks, and the wood bears a bullet mark shaped like Texas. Buyer must arrange transport.",
+    "author": "Mabel's Trading Post, Main Street.",
+    "category": "trade"
+  },
+  {
+    "id": "wild-west-en-09",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "Seeking a Surveyor for a New Railroad Stop",
+    "description": "The company wants a route around the red canyon. Bring measuring gear, water, and an opinion about whether the ground is stable.",
+    "author": "Western Rail Company, Depot.",
+    "category": "work"
+  },
+  {
+    "id": "wild-west-en-10",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "Notice: The Barber Shop Is Not a Duel Arena",
+    "description": "Chairs are for sitting, mirrors are not targets, and the barber's straight razor is for shaving only. Repeat offenders will be banned.",
+    "author": "Eddie's Barber Shop, Main Street.",
+    "category": "notice"
+  },
+  {
+    "id": "wild-west-en-11",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "Wanted: Someone to Find the Town's Missing Shade",
+    "description": "The awning has vanished from the general store and the owner suspects the wind. Bring it back before the next heatwave.",
+    "author": "Mrs. Harlow, General Store.",
+    "category": "work"
+  },
+  {
+    "id": "wild-west-en-12",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "Trade: Fresh Horseshoes for a Working Telegraph Key",
+    "description": "Blacksmith-made, sturdy, and ready to fit. The telegraph key must send a clear signal and not attract lightning.",
+    "author": "Miller's Forge, Red Creek.",
+    "category": "trade"
+  },
+  {
+    "id": "wild-west-en-13",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "Seeking a Cook for a Cattle Drive",
+    "description": "Ten days on the trail, twenty hungry hands, and one cook pot. Must make beans, biscuits, and coffee strong enough to wake a mule.",
+    "author": "Trail Boss Ransom, South Pasture.",
+    "category": "work"
+  },
+  {
+    "id": "wild-west-en-14",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "Lost: The Judge's Favourite Gavel",
+    "description": "Walnut handle, brass head, and a small bite mark. The judge refuses to open court until it is found.",
+    "author": "County Courthouse, Main Street.",
+    "category": "lost-found"
+  },
+  {
+    "id": "wild-west-en-15",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "Wanted: A Guide to the Dry Riverbed",
+    "description": "A wagon train needs to cross before the rains. The old river has shifted, and the safest ford is known only to local riders.",
+    "author": "Mara Vance, Wagon Camp.",
+    "category": "exploration"
+  },
+  {
+    "id": "wild-west-en-16",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "Notice: No More Dynamite Near the Schoolhouse",
+    "description": "The last test shook every window and taught the children several new words. Blasting permits must be approved by the town council.",
+    "author": "Town Council, Schoolhouse Road.",
+    "category": "notice"
+  },
+  {
+    "id": "wild-west-en-17",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "For Hire: A Photographer for the County Fair",
+    "description": "Bring a sturdy camera and patience for horses, children, and one mayor who insists on being photographed from his good side.",
+    "author": "Fair Committee, Fairgrounds.",
+    "category": "work"
+  },
+  {
+    "id": "wild-west-en-18",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "Seeking a Locksmith for the Bank's New Safe",
+    "description": "The safe is new, the combination is forgotten, and the banker claims he never wrote it down. No explosives, please.",
+    "author": "First County Bank, Main Street.",
+    "category": "work"
+  },
+  {
+    "id": "wild-west-en-19",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "Trade: A Good Saddle for a Box of Medical Supplies",
+    "description": "Leather is sound, stitching is fresh, and the saddle has never been thrown. Seeking bandages, antiseptic, and clean needles.",
+    "author": "Doc Harper, Clinic Porch.",
+    "category": "trade"
+  },
+  {
+    "id": "wild-west-en-20",
+    "style": "wild-west",
+    "styleLabel": "Дикий Запад",
+    "title": "Wanted: Someone to Investigate a Ghost Train",
+    "description": "A whistle is heard on the abandoned line after midnight, though the tracks end at the canyon. Bring a lantern and a witness.",
+    "author": "Stationmaster Pike, Old Depot.",
+    "category": "exploration"
+  }
+]

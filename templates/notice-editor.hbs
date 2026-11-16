@@ -1,0 +1,20 @@
+<form class="qb-form qb-notice-form">
+  <p class="qb-notice-source-hint">{{localize "QUEST-BOARD.NoticeEditHint"}}</p>
+  <div class="form-group">
+    <label>{{localize "QUEST-BOARD.QuestTitle"}}</label>
+    <input name="title" type="text" value="{{notice.title}}" required>
+  </div>
+  <div class="form-group">
+    <label>{{localize "QUEST-BOARD.QuestDescription"}}</label>
+    <textarea name="description" rows="12" required>{{notice.description}}</textarea>
+  </div>
+  <div class="form-group">
+    <label>{{localize "QUEST-BOARD.QuestAuthor"}}</label>
+    <input name="author" type="text" value="{{notice.author}}">
+  </div>
+  <label class="qb-checkbox"><input name="addSeal" type="checkbox" {{#if notice.addSeal}}checked{{/if}}> {{localize "QUEST-BOARD.AddSeal"}}</label>
+  <footer class="form-footer">
+    <button type="button" data-action="cancel" class="secondary">{{localize "QUEST-BOARD.Cancel"}}</button>
+    <button type="button" data-action="save">{{localize "QUEST-BOARD.SaveNotice"}}</button>
+  </footer>
+</form>

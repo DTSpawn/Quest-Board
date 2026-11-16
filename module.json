@@ -1,8 +1,8 @@
 {
   "id": "quest-board",
   "title": "Quest Board | Доска объявлений",
-  "description": "Интерактивные доски объявлений с настраиваемыми темами и пользовательскими текстурами для Foundry Virtual Tabletop.",
-  "version": "1.3.10",
+  "description": "Интерактивные доски объявлений, квесты и библиотека готовых городских объявлений для Foundry Virtual Tabletop.",
+  "version": "1.6.1",
   "authors": [
     {
       "name": "Quest Board Team"

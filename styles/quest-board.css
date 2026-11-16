@@ -1717,3 +1717,146 @@
   .qb-manager-heading-player .qb-manager-player-toolbar { width:100%; }
   .qb-manager-heading-player .qb-manager-player-toolbar button { width:100%; }
 }
+
+
+/* General notice library */
+.qb-board-header-actions { display:flex; align-items:center; justify-content:flex-end; gap:8px; flex-wrap:wrap; }
+.qb-notice-library { padding:18px; }
+.qb-notice-library-filters { display:grid; grid-template-columns:1fr 1fr 1.2fr; gap:10px; align-items:end; margin:14px 0 10px; }
+.qb-notice-library-filters .form-group { margin:0; min-width:0; }
+.qb-notice-library-filters label { display:block; margin-bottom:5px; color:#e6d2ae; font-size:12px; }
+.qb-notice-library-filters select,
+.qb-notice-library-filters input { width:100%; min-width:0; }
+.qb-notice-library-count { color:#bba98b; font-size:12px; margin:8px 0 10px; }
+.qb-notice-library-list { display:flex; flex-direction:column; gap:8px; max-height:470px; overflow:auto; padding-right:4px; }
+.qb-notice-library-item { display:flex; align-items:center; gap:12px; padding:11px; border:1px solid #62482f; border-radius:6px; background:rgba(255,240,210,.055); }
+.qb-notice-library-copy { flex:1; min-width:0; }
+.qb-notice-library-item-heading { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.qb-notice-library-item-heading strong { color:#f2dfba; }
+.qb-notice-library-item-heading span { flex-shrink:0; color:#c5a875; font-size:11px; border:1px solid #735637; border-radius:12px; padding:2px 7px; }
+.qb-notice-library-item p { margin:6px 0; color:#d0c0a4; font-size:12px; line-height:1.4; }
+.qb-notice-library-item small { color:#a99576; font-size:11px; }
+.qb-notice-library-item > button { flex-shrink:0; border:1px solid #b58a50; border-radius:4px; background:linear-gradient(#8a6338,#5d3e25); color:#fff1d5; padding:8px 10px; }
+.qb-notice-source-hint { color:#bba98b; font-size:12px; margin-top:0; }
+.qb-notice-form textarea { min-height:220px; }
+@media (max-width: 640px) {
+  .qb-notice-library-filters { grid-template-columns:1fr; }
+  .qb-notice-library-item { align-items:flex-start; flex-direction:column; }
+  .qb-notice-library-item > button { align-self:flex-end; }
+}
+
+
+/* v1.5.2 — keep board headings readable and flyer titles wrapped cleanly. */
+.qb-board-topline {
+  align-items: flex-start;
+  gap: 12px;
+}
+.qb-board-topline > div:first-child {
+  flex: 1 1 340px;
+  min-width: 0;
+  max-width: 58%;
+}
+.qb-board-topline h2 {
+  max-width: 100%;
+  font-size: clamp(22px, 2.7vw, 32px);
+  line-height: 1.08;
+  text-wrap: balance;
+  overflow-wrap: normal;
+  hyphens: auto;
+}
+.qb-board-header-actions {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 58%;
+}
+.qb-note-open .qb-note-title {
+  display: -webkit-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
+  text-wrap: balance;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  line-height: 1.12;
+}
+.qb-note-content { min-width: 0; width: 100%; }
+@media (max-width: 720px) {
+  .qb-board-topline { flex-direction: column; align-items: stretch; }
+  .qb-board-topline > div:first-child,
+  .qb-board-header-actions { max-width: 100%; width: 100%; }
+  .qb-board-header-actions { justify-content: flex-start; }
+}
+
+
+/* v1.5.6 — fit complete random flyer text instead of clipping it. */
+.qb-note-open .qb-note-title {
+  display: block;
+  max-height: none;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+  font-size: clamp(10px, 1.55cqw, 16px);
+  line-height: 1.08;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+}
+.qb-note-open .qb-note-summary {
+  display: block;
+  max-height: none;
+  height: auto;
+  overflow: visible;
+  font-size: clamp(8px, 1.18cqw, 12px);
+  line-height: 1.22;
+  overflow-wrap: break-word;
+}
+
+
+/* v1.5.7 — constrain flyer text to the paper and let JS scale it to fit. */
+.qb-note-open {
+  overflow: hidden !important;
+  box-sizing: border-box;
+}
+.qb-note-open .qb-note-content {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-height: 0 !important;
+  gap: 3%;
+  overflow: hidden;
+}
+.qb-note-open .qb-note-title {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  max-height: 34%;
+  flex: 0 1 auto;
+  margin: 4% 0 1%;
+  padding: 0 0 3%;
+  overflow: hidden;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  -webkit-line-clamp: unset;
+  line-height: 1.08;
+  text-align: center;
+}
+.qb-note-open .qb-note-summary {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  max-height: none;
+  height: auto;
+  flex: 1 1 0;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  line-height: 1.16;
+}

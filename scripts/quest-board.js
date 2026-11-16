@@ -35,6 +35,57 @@ function getQuestCategory(id) {
   return QUEST_CATEGORIES.find(category => category.id === id) ?? null;
 }
 
+const NOTICE_LIBRARY_URLS = {
+  ru: `modules/${MODULE_ID}/data/notices.ru.json`,
+  en: `modules/${MODULE_ID}/data/notices.en.json`
+};
+const noticeLibraryPromises = new Map();
+
+const NOTICE_THEMES = [
+  { id: "medieval", labelKey: "ThemeMedieval" },
+  { id: "dark-fantasy", labelKey: "ThemeDarkFantasy" },
+  { id: "high-fantasy", labelKey: "ThemeHighFantasy" },
+  { id: "sci-fi", labelKey: "ThemeSciFi" },
+  { id: "cyberpunk", labelKey: "ThemeCyberpunk" },
+  { id: "solarpunk", labelKey: "ThemeSolarpunk" },
+  { id: "steampunk", labelKey: "ThemeSteampunk" },
+  { id: "modern", labelKey: "ThemeModern" },
+  { id: "post-apocalyptic", labelKey: "ThemePostApocalyptic" },
+  { id: "gothic-horror", labelKey: "ThemeGothicHorror" },
+  { id: "wild-west", labelKey: "ThemeWildWest" }
+];
+
+const NOTICE_CATEGORIES = [
+  { id: "trade", labelKey: "NoticeCategoryTrade" },
+  { id: "work", labelKey: "NoticeCategoryWork" },
+  { id: "service", labelKey: "NoticeCategoryService" },
+  { id: "lost-found", labelKey: "NoticeCategoryLostFound" },
+  { id: "notice", labelKey: "NoticeCategoryPublic" },
+  { id: "other", labelKey: "NoticeCategoryOther" }
+];
+
+async function loadNoticeLibrary() {
+  const language = String(game?.i18n?.lang || "en").toLowerCase().startsWith("ru") ? "ru" : "en";
+  const url = NOTICE_LIBRARY_URLS[language];
+  if (!noticeLibraryPromises.has(language)) {
+    const promise = fetch(url)
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then(data => {
+        if (!Array.isArray(data)) throw new Error("Notice library has an invalid format.");
+        return data;
+      })
+      .catch(error => {
+        noticeLibraryPromises.delete(language);
+        throw error;
+      });
+    noticeLibraryPromises.set(language, promise);
+  }
+  return noticeLibraryPromises.get(language);
+}
+
 
 const THEME_SCENE_ICONS = {
   medieval: `modules/${MODULE_ID}/assets/scene-icons/medieval.webp`,
@@ -292,7 +343,7 @@ function notifyError(error) {
 
 function openBoard(boardId, source = "manager") {
   const board = getBoard(boardId);
-  if (!board) return ui.notifications.warn(qbLocalize("NoBoardFound"));
+  if (!board) return ui.notifications.warn("Доска не найдена.");
   // Hidden boards are excluded from the player manager, but remain accessible
   // through their placed scene tile.
   if (!game.user.isGM && board.showToPlayers === false && source !== "tile") {
@@ -766,6 +817,168 @@ class QuestArchive extends HandlebarsApplicationMixin(ApplicationV2) {
   static async remove(_event, target) { const id = target.dataset.archiveId; const ok = await foundry.applications.api.DialogV2.confirm({ window: { title: qbLocalize("Delete") }, content: qbLocalize("ArchiveDeleteConfirm") }); if (!ok) return; await saveArchive(getArchive().filter(e => e.id !== id)); await this.render({ force: true }); }
 }
 
+
+class NoticeLibrary extends HandlebarsApplicationMixin(ApplicationV2) {
+  constructor(options = {}) {
+    super(options);
+    this.boardId = options.boardId;
+    this.theme = options.theme || getAppearance().theme || "medieval";
+    this.category = "all";
+    this.search = "";
+  }
+
+  static DEFAULT_OPTIONS = {
+    id: "quest-board-notice-library",
+    classes: ["quest-board", "quest-board-notice-library"],
+    window: { title: "Библиотека объявлений", resizable: true },
+    position: { width: 760, height: 700 },
+    actions: { selectNotice: this.selectNotice }
+  };
+
+  static PARTS = { main: { template: `modules/${MODULE_ID}/templates/notice-library.hbs` } };
+
+  async _prepareContext() {
+    const library = await loadNoticeLibrary();
+    const query = this.search.trim().toLocaleLowerCase(game.i18n.lang);
+    const notices = library.filter(notice =>
+      notice.style === this.theme &&
+      (this.category === "all" || notice.category === this.category) &&
+      (!query || `${notice.title} ${notice.description} ${notice.author}`.toLocaleLowerCase(game.i18n.lang).includes(query))
+    );
+    return {
+      themes: NOTICE_THEMES.map(theme => ({ id: theme.id, label: qbLocalize(theme.labelKey), selected: theme.id === this.theme })),
+      categories: NOTICE_CATEGORIES.map(category => ({ id: category.id, label: qbLocalize(category.labelKey), selected: category.id === this.category })),
+      notices: notices.map(notice => ({
+        ...notice,
+        categoryLabel: qbLocalize(NOTICE_CATEGORIES.find(category => category.id === notice.category)?.labelKey || "NoticeCategoryOther"),
+        descriptionPreview: notice.description.length > 180 ? `${notice.description.slice(0, 177)}…` : notice.description
+      })),
+      totalCount: library.filter(notice => notice.style === this.theme).length,
+      resultCount: notices.length,
+      categoryAllSelected: this.category === "all",
+      search: this.search,
+      themeLabel: qbLocalize(NOTICE_THEMES.find(theme => theme.id === this.theme)?.labelKey || "ThemeMedieval"),
+      hasNotices: notices.length > 0
+    };
+  }
+
+  _onRender(context, options) {
+    super._onRender(context, options);
+    const themeSelect = this.element.querySelector('[name="noticeTheme"]');
+    const categorySelect = this.element.querySelector('[name="noticeCategory"]');
+    const searchInput = this.element.querySelector('[name="noticeSearch"]');
+    themeSelect?.addEventListener("change", async event => {
+      this.theme = event.currentTarget.value;
+      await this.render({ force: true });
+    });
+    categorySelect?.addEventListener("change", async event => {
+      this.category = event.currentTarget.value;
+      await this.render({ force: true });
+    });
+    searchInput?.addEventListener("input", event => { this.search = event.currentTarget.value; });
+    searchInput?.addEventListener("change", async () => this.render({ force: true }));
+    searchInput?.addEventListener("keydown", async event => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        this.search = searchInput.value;
+        await this.render({ force: true });
+      }
+    });
+  }
+
+  static async selectNotice(_event, target) {
+    const noticeId = target.dataset.noticeId;
+    if (!noticeId) return;
+    try {
+      const notice = (await loadNoticeLibrary()).find(item => item.id === noticeId);
+      if (!notice) return ui.notifications.warn("Не удалось найти выбранное объявление.");
+      if (!getBoard(this.boardId)) return ui.notifications.warn("Доска не найдена.");
+      new NoticeEditor({ boardId: this.boardId, noticeData: notice }).render({ force: true });
+    } catch (error) {
+      console.error(`${MODULE_ID} | Failed to load notice library`, error);
+      ui.notifications.error("Не удалось загрузить библиотеку объявлений.");
+    }
+  }
+}
+
+class NoticeEditor extends HandlebarsApplicationMixin(ApplicationV2) {
+  constructor(options = {}) {
+    super(options);
+    this.boardId = options.boardId;
+    this.noticeId = options.noticeId || null;
+    this.noticeData = options.noticeData ? foundry.utils.deepClone(options.noticeData) : null;
+  }
+
+  static DEFAULT_OPTIONS = {
+    id: "quest-board-notice-editor",
+    classes: ["quest-board", "quest-board-notice-editor"],
+    window: { title: "Редактирование объявления", resizable: true },
+    position: { width: 560, height: 560 },
+    actions: { save: this.save, cancel: this.cancel }
+  };
+
+  static PARTS = { main: { template: `modules/${MODULE_ID}/templates/notice-editor.hbs` } };
+
+  async _prepareContext() {
+    const board = getBoard(this.boardId);
+    const existing = board?.notes.find(note => note.id === this.noticeId && note.entryType === "notice");
+    const notice = foundry.utils.deepClone(existing || this.noticeData || {});
+    return {
+      notice,
+      isNew: !this.noticeId,
+      hasSource: Boolean(this.noticeData)
+    };
+  }
+
+  static async save() {
+    const form = this.element.querySelector("form");
+    if (!form) return;
+    const data = new FormData(form);
+    const boards = getBoards();
+    const board = boards.find(item => item.id === this.boardId);
+    if (!board) return ui.notifications.warn("Доска не найдена.");
+    const existing = board.notes.find(note => note.id === this.noticeId && note.entryType === "notice");
+    const description = String(data.get("description") || "").trim();
+    const note = {
+      ...(existing || {}),
+      id: existing?.id ?? foundry.utils.randomID(),
+      entryType: "notice",
+      questType: "standard",
+      category: "",
+      title: String(data.get("title") || "").trim(),
+      summary: description, // Keep the complete notice text; the flyer layout handles fitting.
+      description,
+      author: String(data.get("author") || "").trim(),
+      image: "",
+      addSeal: data.get("addSeal") === "on",
+      customPaperImage: "",
+      customSealImage: "",
+      link: "",
+      journalUuid: "",
+      x: existing?.x ?? 8 + Math.random() * 65,
+      y: existing?.y ?? 8 + Math.random() * 55,
+      rotation: existing?.rotation ?? 0,
+      scale: existing?.scale ?? 1,
+      published: true,
+      legacyRewardMigrated: true
+    };
+    if (!note.title) return ui.notifications.warn("Укажи заголовок объявления.");
+    if (!note.description) return ui.notifications.warn("Добавь текст объявления.");
+    if (existing) Object.assign(existing, note);
+    else board.notes.push(note);
+    try {
+      await saveBoards(boards);
+      await this.close();
+      await refreshOpenBoardWindows(this.boardId);
+      ui.notifications.info(qbLocalize("NoticeSaved"));
+    } catch (error) {
+      notifyError(error);
+    }
+  }
+
+  static cancel() { this.close(); }
+}
+
 class QuestTemplates extends HandlebarsApplicationMixin(ApplicationV2) {
   static DEFAULT_OPTIONS = { id: "quest-board-templates", classes: ["quest-board", "quest-board-templates"], window: { title: "Шаблоны объявлений", resizable: true }, position: { width: 560, height: 520 }, actions: { remove: this.remove, createQuest: this.createQuest, preview: this.preview } };
   static PARTS = { main: { template: `modules/${MODULE_ID}/templates/templates.hbs` } };
@@ -991,6 +1204,7 @@ class QuestBoardWindow extends HandlebarsApplicationMixin(ApplicationV2) {
     actions: {
       openSaved: this.openSaved,
       addQuest: this.addQuest,
+      addNotice: this.addNotice,
       editQuest: this.editQuest,
       deleteQuest: this.deleteQuest,
       toggleArrange: this.toggleArrange
@@ -1000,6 +1214,40 @@ class QuestBoardWindow extends HandlebarsApplicationMixin(ApplicationV2) {
   _onRender(context, options) {
     super._onRender(context, options);
     applyAutomaticTextContrast(this.element, ".qb-paper-bg-small", ".qb-note-open");
+    // Fit each flyer title and full description inside the parchment area.
+    this.element.querySelectorAll(".qb-note-open").forEach(flyer => {
+      const content = flyer.querySelector(".qb-note-content");
+      const title = flyer.querySelector(".qb-note-title");
+      const summary = flyer.querySelector(".qb-note-summary");
+      if (!content) return;
+      content.style.height = "100%";
+      content.style.minHeight = "0";
+      content.style.overflow = "hidden";
+      if (title) {
+        title.style.maxHeight = "34%";
+        title.style.overflow = "hidden";
+        title.style.flex = "0 1 auto";
+        let size = 16;
+        title.style.fontSize = `${size}px`;
+        while (size > 8 && title.scrollHeight > title.clientHeight + 1) {
+          size -= 0.5;
+          title.style.fontSize = `${size}px`;
+        }
+      }
+      if (summary) {
+        summary.style.flex = "1 1 0";
+        summary.style.minHeight = "0";
+        summary.style.overflow = "hidden";
+        summary.style.maxHeight = "none";
+        let size = 12;
+        summary.style.fontSize = `${size}px`;
+        // Allow the full text to fit by progressively reducing its font size.
+        while (size > 6 && summary.scrollHeight > summary.clientHeight + 1) {
+          size -= 0.5;
+          summary.style.fontSize = `${size}px`;
+        }
+      }
+    });
     // Explicit flyer click handling keeps quest opening reliable across Foundry v14 action delegation.
     this.element.querySelectorAll(".qb-note-open").forEach(button => {
       button.addEventListener("click", event => {
@@ -1072,7 +1320,9 @@ class QuestBoardWindow extends HandlebarsApplicationMixin(ApplicationV2) {
     const notes = allNotes
       .filter(note => {
         if (this.categoryFilter === "all") return true;
-        if (this.categoryFilter === "uncategorized") return !getQuestCategory(note.category);
+        if (this.categoryFilter === "notices") return note.entryType === "notice";
+        if (this.categoryFilter === "uncategorized") return note.entryType !== "notice" && !getQuestCategory(note.category);
+        if (note.entryType === "notice") return false;
         return note.category === this.categoryFilter;
       })
       .map(note => {
@@ -1105,6 +1355,7 @@ class QuestBoardWindow extends HandlebarsApplicationMixin(ApplicationV2) {
       : resolveAppearanceAsset(appearance, "boardImage");
     const filterOptions = [
       { id: "all", label: qbLocalize("CategoryFilterAll") },
+      { id: "notices", label: qbLocalize("NoticeTypeFilter") },
       ...QUEST_CATEGORIES.map(category => ({ id: category.id, label: qbLocalize(category.label) })),
       { id: "uncategorized", label: qbLocalize("CategoryUncategorized") }
     ].map(option => ({ ...option, selected: this.categoryFilter === option.id }));
@@ -1116,7 +1367,72 @@ class QuestBoardWindow extends HandlebarsApplicationMixin(ApplicationV2) {
   }
   static openSaved() { new SavedAnnouncementsWindow().render({ force: true }); }
   static addQuest() { new QuestEditor({ boardId: this.boardId }).render({ force: true }); }
-  static editQuest(_event, target) { new QuestEditor({ boardId: this.boardId, questId: target.dataset.questId }).render({ force: true }); }
+  static async addNotice() {
+    if (!game.user.isGM) return;
+    try {
+      const boards = getBoards();
+      const board = boards.find(item => item.id === this.boardId);
+      if (!board) return ui.notifications.warn("Доска не найдена.");
+
+      // The notice style follows the currently selected Quest Board appearance.
+      // No category, search term, or other filter participates in the draw.
+      const theme = getAppearance().theme || "medieval";
+      const library = await loadNoticeLibrary();
+      const matchingNotices = library.filter(notice => notice.style === theme);
+      if (!matchingNotices.length) {
+        return ui.notifications.warn(`Для стиля «${theme}» пока нет готовых объявлений.`);
+      }
+
+      const source = foundry.utils.deepClone(
+        matchingNotices[Math.floor(Math.random() * matchingNotices.length)]
+      );
+      const description = String(source.description || "").trim();
+      const note = {
+        id: foundry.utils.randomID(),
+        entryType: "notice",
+        questType: "standard",
+        category: "",
+        title: String(source.title || "").trim(),
+        summary: description, // Keep the complete notice text; the flyer layout handles fitting.
+        description,
+        author: String(source.author || "").trim(),
+        image: "",
+        // Random notices are plain flyers: never add a wax seal or imprint.
+        addSeal: false,
+        customPaperImage: "",
+        customSealImage: "",
+        link: "",
+        journalUuid: "",
+        x: 8 + Math.random() * 65,
+        y: 8 + Math.random() * 55,
+        // 75% receive a random tilt in 5-degree increments, limited to +/-20 degrees.
+        // The values match the manual rotation controls.
+        rotation: Math.random() < 0.75
+          ? (Math.floor(Math.random() * 8) + 1) * 5 * (Math.random() < 0.5 ? -1 : 1)
+          : 0,
+        scale: Number((0.85 + Math.random() * 0.20).toFixed(2)),
+        published: true,
+        legacyRewardMigrated: true
+      };
+      if (!note.title || !note.description) {
+        return ui.notifications.warn("В библиотеке найдено объявление с пустым заголовком или текстом.");
+      }
+
+      board.notes ??= [];
+      board.notes.push(note);
+      await saveBoards(boards);
+      await refreshOpenBoardWindows(this.boardId);
+      ui.notifications.info(qbLocalize("NoticeSaved"));
+    } catch (error) {
+      console.error(`${MODULE_ID} | Failed to add a random notice`, error);
+      ui.notifications.error("Не удалось добавить случайное объявление.");
+    }
+  }
+  static editQuest(_event, target) {
+    const note = getBoard(this.boardId)?.notes.find(item => item.id === target.dataset.questId);
+    if (note?.entryType === "notice") new NoticeEditor({ boardId: this.boardId, noticeId: note.id }).render({ force: true });
+    else new QuestEditor({ boardId: this.boardId, questId: target.dataset.questId }).render({ force: true });
+  }
   static async deleteQuest(_event, target) {
     const questId = target.dataset.questId;
     const boards = getBoards();
@@ -1224,8 +1540,9 @@ class QuestBoardWindow extends HandlebarsApplicationMixin(ApplicationV2) {
           const angle = Math.atan2(dy, dx);
           // Normalize angular delta to avoid jumps when crossing +/-180 degrees.
           const angleDelta = Math.atan2(Math.sin(angle - startAngle), Math.cos(angle - startAngle));
+          // Rotation is always snapped to 5-degree steps and clamped to +/-20 degrees.
           let rotation = initialRotation + angleDelta * 180 / Math.PI;
-          if (!moveEvent.shiftKey) rotation = Math.round(rotation / 5) * 5;
+          rotation = Math.max(-20, Math.min(20, Math.round(rotation / 5) * 5));
           const scale = Math.max(0.55, Math.min(1.8, initialScale * distance / startDistance));
           noteEl.dataset.rotation = rotation;
           noteEl.dataset.scale = scale;

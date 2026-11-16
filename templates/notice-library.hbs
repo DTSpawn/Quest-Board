@@ -1,0 +1,49 @@
+<section class="qb-notice-library qb-utility-window">
+  <header class="qb-utility-heading">
+    <h2>{{localize "QUEST-BOARD.NoticeLibraryTitle"}}</h2>
+    <p>{{localize "QUEST-BOARD.NoticeLibraryHint"}}</p>
+  </header>
+  <div class="qb-notice-library-filters">
+    <div class="form-group">
+      <label>{{localize "QUEST-BOARD.NoticeStyle"}}</label>
+      <select name="noticeTheme">
+        {{#each themes as |theme|}}
+          <option value="{{theme.id}}" {{#if theme.selected}}selected{{/if}}>{{theme.label}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="form-group">
+      <label>{{localize "QUEST-BOARD.NoticeCategory"}}</label>
+      <select name="noticeCategory">
+        <option value="all" {{#if categoryAllSelected}}selected{{/if}}>{{localize "QUEST-BOARD.NoticeCategoryAll"}}</option>
+        {{#each categories as |category|}}
+          <option value="{{category.id}}" {{#if category.selected}}selected{{/if}}>{{category.label}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="form-group qb-notice-search">
+      <label>{{localize "QUEST-BOARD.NoticeSearch"}}</label>
+      <input name="noticeSearch" type="search" value="{{search}}" placeholder="{{localize "QUEST-BOARD.NoticeSearchPlaceholder"}}">
+    </div>
+  </div>
+  <div class="qb-notice-library-count">{{localize "QUEST-BOARD.NoticeResults" count=resultCount total=totalCount style=themeLabel}}</div>
+  <div class="qb-notice-library-list">
+    {{#each notices as |notice|}}
+      <article class="qb-notice-library-item">
+        <div class="qb-notice-library-copy">
+          <div class="qb-notice-library-item-heading">
+            <strong>{{notice.title}}</strong>
+            <span>{{notice.categoryLabel}}</span>
+          </div>
+          <p>{{notice.descriptionPreview}}</p>
+          <small>{{notice.author}}</small>
+        </div>
+        <button type="button" data-action="selectNotice" data-notice-id="{{notice.id}}" title="{{localize "QUEST-BOARD.NoticeChoose"}}">
+          <i class="fa-solid fa-file-circle-plus"></i> {{localize "QUEST-BOARD.NoticeChoose"}}
+        </button>
+      </article>
+    {{else}}
+      <div class="qb-empty"><i class="fa-solid fa-magnifying-glass"></i><p>{{localize "QUEST-BOARD.NoticeNoResults"}}</p></div>
+    {{/each}}
+  </div>
+</section>

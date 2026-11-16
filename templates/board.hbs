@@ -1,6 +1,6 @@
 <section class="qb-board-window">
   {{#if board}}
-    <header class="qb-board-topline"><div><h2>{{board.name}}</h2>{{#if board.location}}<span>{{board.location}}</span>{{/if}}</div><div class="qb-board-header-actions">{{#if isGM}}<button type="button" data-action="toggleArrange" class="qb-arrange-toggle {{#if arrangeMode}}is-active{{/if}}"><i class="fa-solid fa-up-down-left-right"></i> {{#if arrangeMode}}{{localize "QUEST-BOARD.ArrangeDone"}}{{else}}{{localize "QUEST-BOARD.ArrangeNotes"}}{{/if}}</button><button type="button" data-action="addQuest"><i class="fa-solid fa-plus"></i> {{localize "QUEST-BOARD.AddQuest"}}</button>{{/if}}</div></header>
+    <header class="qb-board-topline"><div><h2>{{board.name}}</h2>{{#if board.location}}<span>{{board.location}}</span>{{/if}}</div><div class="qb-board-header-actions">{{#if isGM}}<button type="button" data-action="toggleArrange" class="qb-arrange-toggle {{#if arrangeMode}}is-active{{/if}}"><i class="fa-solid fa-up-down-left-right"></i> {{#if arrangeMode}}{{localize "QUEST-BOARD.ArrangeDone"}}{{else}}{{localize "QUEST-BOARD.ArrangeNotes"}}{{/if}}</button><button type="button" data-action="addQuest"><i class="fa-solid fa-plus"></i> {{localize "QUEST-BOARD.AddQuest"}}</button><button type="button" data-action="addNotice"><i class="fa-solid fa-scroll"></i> {{localize "QUEST-BOARD.AddNotice"}}</button>{{/if}}</div></header>
     <div class="qb-category-filter">
       <label for="qb-category-filter">{{localize "QUEST-BOARD.CategoryFilterLabel"}}</label>
       <select id="qb-category-filter" name="categoryFilter">
